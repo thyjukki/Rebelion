@@ -120,7 +120,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("hover") && Inventory.CanvasGroup.alpha == 0)
+        if (eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("hover") && Inventory.CanvasGroup.alpha == 1)
         {
             UseItem();
         }

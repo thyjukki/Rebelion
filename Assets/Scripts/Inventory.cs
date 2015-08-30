@@ -194,7 +194,7 @@ public class Inventory : MonoBehaviour {
 
     public void MoveItem(GameObject clicked)
     {
-        if (from == null && canvasGroup.alpha == 0)
+        if (from == null && canvasGroup.alpha == 1)
         {
             if (!clicked.GetComponent<Slot>().isEmpty)
             {
