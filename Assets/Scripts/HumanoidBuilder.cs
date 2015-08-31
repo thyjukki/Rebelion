@@ -26,12 +26,12 @@ public class HumanoidBuilder : MonoBehaviour {
     void LateUpdate()
     {
         GameObject EarObject;
-        GameObject PantsObject;
+        //GameObject PantsObject;
         GameObject EyesObject;
         GameObject NoseObject;
 
         EarObject = this.transform.FindChild("Ears").gameObject; // First get the child objects of character
-        PantsObject = this.transform.FindChild("Pants").gameObject;
+        //PantsObject = this.transform.FindChild("Pants").gameObject;
         EyesObject = this.transform.FindChild("Eyes").gameObject;
         NoseObject = this.transform.FindChild("Nose").gameObject;
 

@@ -22,6 +22,15 @@ public class Inventory : MonoBehaviour {
 
     public GameObject iconPrefab;
 
+    public GameObject toolTipObject;
+    private static GameObject tooltip;
+
+    public Text sizeTextObject;
+    private static Text sizeText;
+
+    public Text visualTextObject;
+    private static Text visualText;
+
     public Canvas canvas;
 
     private static CanvasGroup canvasGroup;
@@ -56,7 +65,9 @@ public class Inventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        tooltip = toolTipObject;
+        visualText = visualTextObject;
+        sizeText = sizeTextObject;
         canvasGroup = transform.parent.GetComponent<CanvasGroup>();
         CreateLayout();
 	}
@@ -99,6 +110,28 @@ public class Inventory : MonoBehaviour {
 
         }
 	}
+
+    public void ShowToolTip(GameObject slot)
+    {
+        Slot tmpSlot = slot.GetComponent<Slot>();
+
+        if (!tmpSlot.isEmpty && hoverObject == null)
+        {
+            tooltip.SetActive(true);
+
+            float xPos = slot.transform.position.x + slotPaddingLeft;
+            float yPos = slot.transform.position.y - slot.GetComponent<RectTransform>().sizeDelta.y - slotPaddingTop;
+
+            visualText.text = sizeText.text = tmpSlot.CurrentItem.GetToolTip();
+            tooltip.transform.position = new Vector2(xPos, yPos);
+        }
+        
+    }
+
+    public void HideToolTip()
+    {
+        tooltip.SetActive(false);
+    }
 
     private void CreateLayout()
     {
