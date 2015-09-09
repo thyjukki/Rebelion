@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
 
     public Sprite sprite;
 
-    public int maxSize;
+    public bool stackable;
 
     public float strenght, dexterity, stamina, mana;
 

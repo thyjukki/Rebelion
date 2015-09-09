@@ -31,7 +31,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
     public bool IsAvailable
     {
-        get { return CurrentItem.maxSize > items.Count; }
+        get { return CurrentItem.stackable || items.Count == 0; }
     }
 
     public Sprite ItemSprite

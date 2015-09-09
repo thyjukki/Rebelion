@@ -18,23 +18,10 @@ public class Inventory : MonoBehaviour {
 
     public float slotSize;
 
-    public GameObject slotPrefab;
-
-    public GameObject iconPrefab;
-
-    public GameObject toolTipObject;
-    private static GameObject tooltip;
-
-    public Text sizeTextObject;
-    private static Text sizeText;
-
-    public Text visualTextObject;
-    private static Text visualText;
-
-    public Canvas canvas;
 
     private static CanvasGroup canvasGroup;
 
+    Slot to;
     public static CanvasGroup CanvasGroup
     {
         get { return Inventory.canvasGroup; }
@@ -45,15 +32,11 @@ public class Inventory : MonoBehaviour {
     private bool fadingIn;
     private bool fadingOut;
 
-    public EventSystem eventSystem;
-
     private float hoverYOffset;
 
-    private static GameObject hoverObject;
+
 
     private List<GameObject> allSlots;
-
-    private static Slot from, to;
 
     private static int emptySlots;
 
@@ -65,9 +48,6 @@ public class Inventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        tooltip = toolTipObject;
-        visualText = visualTextObject;
-        sizeText = sizeTextObject;
         canvasGroup = transform.parent.GetComponent<CanvasGroup>();
         CreateLayout();
 	}
@@ -77,23 +57,23 @@ public class Inventory : MonoBehaviour {
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (!eventSystem.IsPointerOverGameObject(-1) && from != null)
+            if (!InventoryManager.Instance.eventSystem.IsPointerOverGameObject(-1) && InventoryManager.Instance.From != null)
             {
-                from.GetComponent<Image>().color = Color.white;
-                from.ClearSlot();
+                InventoryManager.Instance.From.GetComponent<Image>().color = Color.white;
+                InventoryManager.Instance.From.ClearSlot();
                 Destroy(GameObject.Find("Hover"));
                 to = null;
-                from = null;
+                InventoryManager.Instance.From = null;
                 emptySlots++;
             }
         }
 
-	    if (hoverObject != null)
+	    if (InventoryManager.Instance.HoverObject != null)
         {
             Vector2 position;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out position);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(InventoryManager.Instance.canvas.transform as RectTransform, Input.mousePosition, InventoryManager.Instance.canvas.worldCamera, out position);
             position.Set(position.x, position.y - hoverYOffset);
-            hoverObject.transform.position = canvas.transform.TransformPoint(position);
+            InventoryManager.Instance.HoverObject.transform.position = InventoryManager.Instance.canvas.transform.TransformPoint(position);
         }
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -115,22 +95,22 @@ public class Inventory : MonoBehaviour {
     {
         Slot tmpSlot = slot.GetComponent<Slot>();
 
-        if (!tmpSlot.isEmpty && hoverObject == null)
+        if (!tmpSlot.isEmpty && InventoryManager.Instance.HoverObject == null)
         {
-            tooltip.SetActive(true);
+            InventoryManager.Instance.toolTipObject.SetActive(true);
 
             float xPos = slot.transform.position.x + slotPaddingLeft;
             float yPos = slot.transform.position.y - slot.GetComponent<RectTransform>().sizeDelta.y - slotPaddingTop;
 
-            visualText.text = sizeText.text = tmpSlot.CurrentItem.GetToolTip();
-            tooltip.transform.position = new Vector2(xPos, yPos);
+            InventoryManager.Instance.visualTextObject.text = InventoryManager.Instance.sizeTextObject.text = tmpSlot.CurrentItem.GetToolTip();
+            InventoryManager.Instance.toolTipObject.transform.position = new Vector2(xPos, yPos);
         }
         
     }
 
     public void HideToolTip()
     {
-        tooltip.SetActive(false);
+        InventoryManager.Instance.toolTipObject.SetActive(false);
     }
 
     private void CreateLayout()
@@ -155,7 +135,7 @@ public class Inventory : MonoBehaviour {
         {
             for (int x = 0; x < colums; x++)
             {
-                GameObject newSlot = (GameObject)Instantiate(slotPrefab);
+                GameObject newSlot = (GameObject)Instantiate(InventoryManager.Instance.slotPrefab);
 
                 RectTransform slotRect = newSlot.GetComponent<RectTransform>();
 
@@ -166,8 +146,8 @@ public class Inventory : MonoBehaviour {
                 slotRect.localPosition = inventoryRect.localPosition + new Vector3(slotPaddingLeft * (x + 1) + (slotSize * x)
                     , -slotPaddingTop * (y + 1) - (slotSize * y));
 
-                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slotSize *canvas.scaleFactor);
-                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slotSize * canvas.scaleFactor);
+                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slotSize * InventoryManager.Instance.canvas.scaleFactor);
+                slotRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slotSize * InventoryManager.Instance.canvas.scaleFactor);
                 newSlot.transform.SetParent(this.transform);
 
                 allSlots.Add(newSlot);
@@ -197,7 +177,7 @@ public class Inventory : MonoBehaviour {
 
     public bool AddItem (Item item)
     {
-        if (item.maxSize == 1)
+        if (!item.stackable)
         {
             PlaceEmpty(item);
             return true;
@@ -227,26 +207,26 @@ public class Inventory : MonoBehaviour {
 
     public void MoveItem(GameObject clicked)
     {
-        if (from == null && canvasGroup.alpha == 1)
+        if (InventoryManager.Instance.From == null && canvasGroup.alpha == 1)
         {
             if (!clicked.GetComponent<Slot>().isEmpty)
             {
-                from = clicked.GetComponent<Slot>();
-                from.GetComponent<Image>().color = Color.gray;
+                InventoryManager.Instance.From = clicked.GetComponent<Slot>();
+                InventoryManager.Instance.From.GetComponent<Image>().color = Color.gray;
 
-                hoverObject = (GameObject)Instantiate(iconPrefab);
-                hoverObject.GetComponent<Image>().sprite = clicked.transform.FindChild("ButtonIcon").GetComponent<Image>().sprite;
-                hoverObject.name = "Hover";
+                InventoryManager.Instance.HoverObject = (GameObject)Instantiate(InventoryManager.Instance.iconPrefab);
+                InventoryManager.Instance.HoverObject.GetComponent<Image>().sprite = clicked.transform.FindChild("ButtonIcon").GetComponent<Image>().sprite;
+                InventoryManager.Instance.HoverObject.name = "Hover";
 
-                RectTransform hoverTransform = hoverObject.GetComponent<RectTransform>();
+                RectTransform hoverTransform = InventoryManager.Instance.HoverObject.GetComponent<RectTransform>();
                 RectTransform clickedTranfsorm = clicked.GetComponent<RectTransform>();
 
                 hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, clickedTranfsorm.sizeDelta.x);
                 hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, clickedTranfsorm.sizeDelta.y);
 
-                hoverObject.transform.SetParent(GameObject.Find("Canvas").transform);
+                InventoryManager.Instance.HoverObject.transform.SetParent(GameObject.Find("Canvas").transform);
 
-                hoverObject.transform.localScale = from.gameObject.transform.localScale;
+                InventoryManager.Instance.HoverObject.transform.localScale = InventoryManager.Instance.From.gameObject.transform.localScale;
             }
         }
         else if (to == null)
@@ -256,23 +236,23 @@ public class Inventory : MonoBehaviour {
             Destroy(GameObject.Find("Hover"));
         }
 
-        if (to != null && from != null)
+        if (to != null && InventoryManager.Instance.From != null)
         {
             Stack<Item> tmpTo = new Stack<Item>(to.Items);
-            to.AddItems(from.Items);
+            to.AddItems(InventoryManager.Instance.From.Items);
 
             if (tmpTo.Count == 0)
             {
-                from.ClearSlot();
+                InventoryManager.Instance.From.ClearSlot();
             }
             else
             {
-                from.AddItems(tmpTo);
+                InventoryManager.Instance.From.AddItems(tmpTo);
             }
 
-            from.GetComponent<Image>().color = Color.white;
+            InventoryManager.Instance.From.GetComponent<Image>().color = Color.white;
             to = null;
-            from = null;
+            InventoryManager.Instance.From = null;
 
             Destroy(GameObject.Find("Hover"));
         }
@@ -282,11 +262,11 @@ public class Inventory : MonoBehaviour {
 
     private void PutItemBack()
     {
-        if (from != null)
+        if (InventoryManager.Instance.From != null)
         {
             Destroy(GameObject.Find("Hover"));
-            from.GetComponent<Image>().color = Color.white;
-            from = null;
+            InventoryManager.Instance.From.GetComponent<Image>().color = Color.white;
+            InventoryManager.Instance.From = null;
         }
     }
 
