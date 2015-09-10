@@ -12,6 +12,8 @@ public class CharacterMovement : MonoBehaviour {
 
     public Inventory inventory;
 
+    private Inventory chest;
+
 	// Use this for initialization
 	void Start () {
         rbody = GetComponent<Rigidbody2D>();
@@ -22,6 +24,24 @@ public class CharacterMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        ParseMovement();
+        
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inventory.Open();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (chest != null)
+            {
+                chest.Open();
+            }
+        }
+    }
+
+    private void ParseMovement()
+    {
         Vector2 movement_vector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         if (movement_vector != Vector2.zero)
@@ -36,13 +56,18 @@ public class CharacterMovement : MonoBehaviour {
         }
 
         rbody.MovePosition(rbody.position + movement_vector * speed * Time.deltaTime);
-	}
-
+	
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Item")
         {
             inventory.AddItem(other.GetComponent<Item>());
+        }
+
+        if (other.tag == "Chest")
+        {
+            chest = other.GetComponent<ChestScript>().chestInventory;
         }
     }
 }

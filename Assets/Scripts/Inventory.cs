@@ -19,13 +19,9 @@ public class Inventory : MonoBehaviour {
     public float slotSize;
 
 
-    private static CanvasGroup canvasGroup;
+    private CanvasGroup canvasGroup;
 
     Slot to;
-    public static CanvasGroup CanvasGroup
-    {
-        get { return Inventory.canvasGroup; }
-    }
 
     public float fadeTime;
 
@@ -48,7 +44,7 @@ public class Inventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        canvasGroup = transform.parent.GetComponent<CanvasGroup>();
+        canvasGroup = GetComponent<CanvasGroup>();
         CreateLayout();
 	}
 	
@@ -76,20 +72,20 @@ public class Inventory : MonoBehaviour {
             InventoryManager.Instance.HoverObject.transform.position = InventoryManager.Instance.canvas.transform.TransformPoint(position);
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (canvasGroup.alpha > 0)
-            {
-                StartCoroutine("FadeOut");
-                PutItemBack();
-            }
-            else
-            {
-                StartCoroutine("FadeIn");
-            }
-
-        }
 	}
+
+    public void Open()
+    {
+        if (canvasGroup.alpha > 0)
+        {
+            StartCoroutine("FadeOut");
+            PutItemBack();
+        }
+        else
+        {
+            StartCoroutine("FadeIn");
+        }
+    }
 
     public void ShowToolTip(GameObject slot)
     {
