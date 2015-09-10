@@ -162,7 +162,7 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    private bool PlaceEmpty(Item item)
+    private bool PlaceEmpty(ItemScript item)
     {
         if (emptySlots > 0)
         {
@@ -182,7 +182,7 @@ public class Inventory : MonoBehaviour {
         return false;
     }
 
-    public bool AddItem (Item item)
+    public bool AddItem (ItemScript item)
     {
         if (!item.stackable)
         {
@@ -245,7 +245,7 @@ public class Inventory : MonoBehaviour {
 
         if (to != null && InventoryManager.Instance.From != null)
         {
-            Stack<Item> tmpTo = new Stack<Item>(to.Items);
+            Stack<ItemScript> tmpTo = new Stack<ItemScript>(to.Items);
             to.AddItems(InventoryManager.Instance.From.Items);
 
             if (tmpTo.Count == 0)

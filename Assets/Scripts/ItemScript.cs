@@ -2,10 +2,24 @@
 using System.Collections;
 
 
-public enum ItemType { Mana, Health };
+public enum ItemType {
+    Consumable,
+    Mainhand,
+    Twohand,
+    Offhand,
+    Head,
+    Neck,
+    Chest,
+    Ring,
+    Legs,
+    Bracers,
+    Boots,
+    Trinket
+};
+
 public enum Quality { Common, Uncommon, Rare, Epic, Legendary, Artifact };
 
-public class Item : MonoBehaviour
+public class ItemScript : MonoBehaviour
 {
 
     public ItemType type;
@@ -24,7 +38,7 @@ public class Item : MonoBehaviour
 
     public void Use()
     {
-        switch (type)
+        /*switch (type)
         {
             case ItemType.Mana:
                 Debug.Log("I just used a mana potion");
@@ -32,7 +46,7 @@ public class Item : MonoBehaviour
             case ItemType.Health:
                 Debug.Log("I just used a health potion");
                 break;
-        }
+        }*/
     }
 
     public string GetToolTip()

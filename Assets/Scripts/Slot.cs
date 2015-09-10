@@ -6,9 +6,9 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour, IPointerClickHandler {
 
-    private Stack<Item> items;
+    private Stack<ItemScript> items;
 
-    public Stack<Item> Items
+    public Stack<ItemScript> Items
     {
         get { return items; }
         set { items = value; }
@@ -24,7 +24,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         get { return items.Count == 0; }
     }
 
-    public Item CurrentItem
+    public ItemScript CurrentItem
     {
         get { return items.Peek(); }
     }
@@ -44,7 +44,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
 	// Use this for initialization
 	void Start () {
-        items = new Stack<Item>();
+        items = new Stack<ItemScript>();
         RectTransform slotRect = GetComponent<RectTransform>();
         RectTransform txtRect = stackTxt.GetComponent<RectTransform>();
         RectTransform iconRect = transform.FindChild("ButtonIcon").GetComponent<RectTransform>();
@@ -74,7 +74,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
 	}
 
-    public void AddItem(Item item)
+    public void AddItem(ItemScript item)
     {
         items.Push(item);
 
@@ -88,9 +88,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         IconSprite.enabled = true;
     }
 
-    public void AddItems(Stack<Item> items)
+    public void AddItems(Stack<ItemScript> items)
     {
-        this.items = new Stack<Item>(items);
+        this.items = new Stack<ItemScript>(items);
 
         stackTxt.text = items.Count > 1 ? items.Count.ToString() : string.Empty;
 

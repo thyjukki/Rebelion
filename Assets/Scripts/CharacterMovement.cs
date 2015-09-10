@@ -62,7 +62,7 @@ public class CharacterMovement : MonoBehaviour {
     {
         if (other.tag == "Item")
         {
-            inventory.AddItem(other.GetComponent<Item>());
+            inventory.AddItem(other.GetComponent<ItemScript>());
         }
 
         if (other.tag == "Chest")
