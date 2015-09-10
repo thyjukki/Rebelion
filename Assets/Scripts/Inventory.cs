@@ -30,13 +30,19 @@ public class Inventory : MonoBehaviour {
 
     private float hoverYOffset;
 
+    private bool isOpen;
 
+    public bool IsOpen
+    {
+        get { return isOpen; }
+        set { isOpen = value; }
+    }
 
     private List<GameObject> allSlots;
 
-    private static int emptySlots;
+    private int emptySlots;
 
-    public static int EmptySlots
+    public int EmptySlots
     {
         get { return emptySlots; }
         set { emptySlots = value; }
@@ -44,6 +50,7 @@ public class Inventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        IsOpen = false;
         canvasGroup = GetComponent<CanvasGroup>();
         CreateLayout();
 	}
@@ -53,7 +60,7 @@ public class Inventory : MonoBehaviour {
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (!InventoryManager.Instance.eventSystem.IsPointerOverGameObject(-1) && InventoryManager.Instance.From != null)
+            if (!InventoryManager.Instance.eventSystem.IsPointerOverGameObject(-1) && InventoryManager.Instance.From != null && IsOpen)
             {
                 InventoryManager.Instance.From.GetComponent<Image>().color = Color.white;
                 InventoryManager.Instance.From.ClearSlot();
@@ -80,10 +87,14 @@ public class Inventory : MonoBehaviour {
         {
             StartCoroutine("FadeOut");
             PutItemBack();
+            HideToolTip();
+
+            IsOpen = false;
         }
         else
         {
             StartCoroutine("FadeIn");
+            IsOpen = true;
         }
     }
 
@@ -91,7 +102,7 @@ public class Inventory : MonoBehaviour {
     {
         Slot tmpSlot = slot.GetComponent<Slot>();
 
-        if (!tmpSlot.isEmpty && InventoryManager.Instance.HoverObject == null)
+        if (slot.GetComponentInParent<Inventory>().isOpen && !tmpSlot.isEmpty && InventoryManager.Instance.HoverObject == null)
         {
             InventoryManager.Instance.toolTipObject.SetActive(true);
 
@@ -203,7 +214,7 @@ public class Inventory : MonoBehaviour {
 
     public void MoveItem(GameObject clicked)
     {
-        if (InventoryManager.Instance.From == null && canvasGroup.alpha == 1)
+        if (InventoryManager.Instance.From == null && clicked.transform.parent.GetComponent<Inventory>().isOpen)
         {
             if (!clicked.GetComponent<Slot>().isEmpty)
             {

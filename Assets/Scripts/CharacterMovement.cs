@@ -70,4 +70,16 @@ public class CharacterMovement : MonoBehaviour {
             chest = other.GetComponent<ChestScript>().chestInventory;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Chest")
+        {
+            if (chest.IsOpen)
+            {
+                chest.Open();
+            }
+            chest = null;
+        }
+    }
 }

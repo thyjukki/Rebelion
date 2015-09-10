@@ -39,6 +39,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         get { return IconSprite.sprite; }
     }
 
+
+    private CanvasGroup canvasGroup;
+
 	// Use this for initialization
 	void Start () {
         items = new Stack<Item>();
@@ -59,6 +62,11 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
         iconRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slotRect.sizeDelta.y);
         iconRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slotRect.sizeDelta.x);
+
+        if (transform.parent != null)
+        {
+            canvasGroup = transform.parent.GetComponent<CanvasGroup>();
+        }
 	}
 	
 	// Update is called once per frame
@@ -106,7 +114,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
             if (this.isEmpty)
             {
                 IconSprite.enabled = false;
-                Inventory.EmptySlots++;
+                GetComponentInParent<Inventory>().EmptySlots++;
             }
         }
     }
@@ -120,7 +128,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("hover") && Inventory.CanvasGroup.alpha == 1)
+        if (eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("hover") && canvasGroup.alpha == 1)
         {
             UseItem();
         }
