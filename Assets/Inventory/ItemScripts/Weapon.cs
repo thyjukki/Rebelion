@@ -10,11 +10,11 @@ public class Weapon : Equipment
 
     }
 
-    public Weapon(string itemName, string description,
+    public Weapon(int id, string itemName, string description,
         ItemType itemType, Quality quality,
         string spritePath, int maxSize
         , int strenght, int dexterity, int stamina, int magic, float attackSpeed)
-        : base(itemName, description,
+        : base(id, itemName, description,
         itemType, quality,
         spritePath, maxSize,
         strenght, dexterity, stamina, magic)

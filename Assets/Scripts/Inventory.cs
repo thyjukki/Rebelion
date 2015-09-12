@@ -184,7 +184,7 @@ public class Inventory : MonoBehaviour {
 
     public bool AddItem (ItemScript item)
     {
-        if (!item.stackable)
+        if (item.Item.MaxSize == 1)
         {
             PlaceEmpty(item);
             return true;

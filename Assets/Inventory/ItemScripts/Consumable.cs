@@ -12,10 +12,10 @@ public class Consumable : Item
 
     }
 
-    public Consumable(string itemName,string description,
+    public Consumable(int id, string itemName,string description,
         ItemType itemType, Quality quality,
         string spritePath, int maxSize, int health, int mana)
-        : base(itemName, description,
+        : base(id, itemName, description,
         itemType, quality,
         spritePath, maxSize)
     {

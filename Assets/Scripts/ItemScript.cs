@@ -24,17 +24,15 @@ public class ItemScript : MonoBehaviour
 
     public ItemType type;
 
-    public Quality quality;
-
     public Sprite sprite;
 
-    public bool stackable;
+    private Item item;
 
-    public float strenght, dexterity, stamina, mana;
-
-    public string itemName;
-
-    public string description;
+    public Item Item
+    {
+        get { return Item; }
+        set { Item = value; }
+    }
 
     public void Use()
     {
@@ -51,7 +49,9 @@ public class ItemScript : MonoBehaviour
 
     public string GetToolTip()
     {
-        string stats = string.Empty;
+        return item.GetTooltip();
+
+        /*string stats = string.Empty;
         string color = string.Empty;
         string newLine = string.Empty;
 
@@ -120,6 +120,6 @@ public class ItemScript : MonoBehaviour
         return string.Format("<color=" + color +
             "><size=16>{0}</size></color><size=14><i><color=lime>"
             +newLine+"{1}</color></i>{2}</size>"
-            , itemName, description, stats);
+            , itemName, description, stats);*/
     }
 }

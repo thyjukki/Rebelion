@@ -13,11 +13,11 @@ public class Equipment : Item
 
     }
 
-    public Equipment(string itemName, string description,
+    public Equipment(int id, string itemName, string description,
         ItemType itemType, Quality quality,
         string spritePath, int maxSize
         , int strenght, int dexterity, int stamina, int magic)
-        : base(itemName, description,
+        : base(id, itemName, description,
         itemType, quality,
         spritePath, maxSize)
     {

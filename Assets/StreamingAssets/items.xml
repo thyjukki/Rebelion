@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ItemContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Weapons />
+  <Consumables>
+    <Item xsi:type="Consumable">
+      <Id>0</Id>
+      <ItemType>Consumable</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>potions/small_glass_bottle</SpritePath>
+      <ItemName>Small Glass Bottle</ItemName>
+      <Description>This is an empty glass bottle.</Description>
+      <MaxSize>1</MaxSize>
+      <Health>0</Health>
+      <Mana>0</Mana>
+    </Item>
+  </Consumables>
+  <Equipments />
+</ItemContainer>

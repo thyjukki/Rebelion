@@ -7,6 +7,7 @@ using System.IO;
 public enum Category { Equipment, Weapon, Consumable};
 public class ItemManager : MonoBehaviour
 {
+    public int id;
     public ItemType itemType;
     public Quality quality;
     public Category category;
@@ -34,6 +35,26 @@ public class ItemManager : MonoBehaviour
 
         itemContainer = (ItemContainer)serializer.Deserialize(fs);
 
+        serializer.Serialize(fs, itemContainer);
+
+        fs.Close();
+
+        switch (category)
+        {
+            case Category.Equipment:
+                itemContainer.Equipments.Add(new Equipment(id, itemName, description, itemType, quality, spritePath, maxSize, strenght, dexterity, stamina, magic));
+                break;
+            case Category.Weapon:
+                itemContainer.Weapons.Add(new Weapon(id, itemName, description, itemType, quality, spritePath, maxSize, strenght, dexterity, stamina, magic, attackSpeed));
+                break;
+            case Category.Consumable:
+                itemContainer.Consumables.Add(new Consumable(id, itemName, description, itemType, quality, spritePath, maxSize, health, mana));
+                break;
+            default:
+                break;
+        }
+
+        fs = new FileStream(Path.Combine(Application.streamingAssetsPath, "Items.xml"), FileMode.Open);
         serializer.Serialize(fs, itemContainer);
     }
 }

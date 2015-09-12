@@ -3,6 +3,8 @@ using System.Collections;
 
 public abstract class Item
 {
+    public int Id { get; set; }
+
     public ItemType ItemType { get; set; }
     public Quality Quality { get; set; }
 
@@ -18,10 +20,11 @@ public abstract class Item
 
     }
 
-    public Item(string itemName, string description,
+    public Item(int id, string itemName, string description,
         ItemType itemType, Quality quality,
         string spritePath, int maxSize)
     {
+        this.Id = id;
         this.Description = description;
         this.ItemName = itemName;
         this.ItemType = itemType;
