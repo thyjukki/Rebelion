@@ -47,11 +47,47 @@ public class InventoryManager : MonoBehaviour {
 
     public Text visualTextObject;
 
+    public GameObject selectStackSize;
+
+    public Text stackText;
+
+    private int splitAmount;
+
+    public int SplitAmount
+    {
+        get { return splitAmount; }
+        set { splitAmount = value; }
+    }
+    private int maxStackCount;
+
+    public int MaxStackCount
+    {
+        get { return maxStackCount; }
+        set { maxStackCount = value; }
+    }
+    private Slot movingSlot;
+
+    public Slot MovingSlot
+    {
+        get { return movingSlot; }
+        set { movingSlot = value; }
+    }
+
     public Canvas canvas;
 
     public EventSystem eventSystem;
 
     private Slot from, to;
+
+    private GameObject clicked;
+
+    public GameObject Clicked
+    {
+        get { return clicked; }
+        set { clicked = value; }
+    }
+
+
 
     public Slot To
     {
@@ -74,5 +110,15 @@ public class InventoryManager : MonoBehaviour {
 
         itemContainer = (ItemContainer)serializer.Deserialize(textReader);
         textReader.Close();
+
+        movingSlot = GameObject.Find("MovingSlot").GetComponent<Slot>();
+    }
+
+    public void SetStackInfo(int maxStackCount)
+    {
+        selectStackSize.SetActive(true);
+        Instance.SplitAmount = 0;
+        Instance.MaxStackCount = maxStackCount;
+        Instance.stackText.text = InventoryManager.Instance.SplitAmount.ToString();
     }
 }

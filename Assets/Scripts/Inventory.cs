@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour {
 
     public float fadeTime;
 
+
     private bool fadingIn;
     private bool fadingOut;
 
@@ -199,8 +200,15 @@ public class Inventory : MonoBehaviour {
                 {
                     if (tmp.CurrentItem.type == item.type && tmp.IsAvailable)
                     {
-                        tmp.AddItem(item);
-                        return true;
+                        if (!InventoryManager.Instance.MovingSlot.isEmpty && InventoryManager.Instance.Clicked.GetComponent<Slot>() == tmp.GetComponent<Slot>())
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            tmp.AddItem(item);
+                            return true;
+                        }
                     }
                 }
             }
@@ -214,29 +222,34 @@ public class Inventory : MonoBehaviour {
 
     public void MoveItem(GameObject clicked)
     {
-        if (InventoryManager.Instance.From == null && clicked.transform.parent.GetComponent<Inventory>().isOpen)
+        InventoryManager.Instance.Clicked = clicked;
+
+        if (!InventoryManager.Instance.MovingSlot.isEmpty)
+        {
+            Slot tmp = clicked.GetComponent<Slot>();
+
+            if (tmp.isEmpty)
+            {
+                tmp.AddItems(InventoryManager.Instance.MovingSlot.Items);
+                InventoryManager.Instance.MovingSlot.Items.Clear();
+                Destroy(GameObject.Find("Hover"));
+            }
+            else if (!tmp.isEmpty && InventoryManager.Instance.MovingSlot.CurrentItem.type == tmp.CurrentItem.type && tmp.IsAvailable)
+            {
+                MergeStacks(InventoryManager.Instance.MovingSlot, tmp);
+            }
+        }
+        else if (InventoryManager.Instance.From == null && clicked.transform.parent.GetComponent<Inventory>().isOpen && !Input.GetKey(KeyCode.LeftShift))
         {
             if (!clicked.GetComponent<Slot>().isEmpty)
             {
                 InventoryManager.Instance.From = clicked.GetComponent<Slot>();
                 InventoryManager.Instance.From.GetComponent<Image>().color = Color.gray;
 
-                InventoryManager.Instance.HoverObject = (GameObject)Instantiate(InventoryManager.Instance.iconPrefab);
-                InventoryManager.Instance.HoverObject.GetComponent<Image>().sprite = clicked.transform.FindChild("ButtonIcon").GetComponent<Image>().sprite;
-                InventoryManager.Instance.HoverObject.name = "Hover";
-
-                RectTransform hoverTransform = InventoryManager.Instance.HoverObject.GetComponent<RectTransform>();
-                RectTransform clickedTranfsorm = clicked.GetComponent<RectTransform>();
-
-                hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, clickedTranfsorm.sizeDelta.x);
-                hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, clickedTranfsorm.sizeDelta.y);
-
-                InventoryManager.Instance.HoverObject.transform.SetParent(GameObject.Find("Canvas").transform);
-
-                InventoryManager.Instance.HoverObject.transform.localScale = InventoryManager.Instance.From.gameObject.transform.localScale;
+                CreateHoverIcon();
             }
         }
-        else if (to == null)
+        else if (to == null && !Input.GetKey(KeyCode.LeftShift))
         {
             to = clicked.GetComponent<Slot>();
 
@@ -267,6 +280,76 @@ public class Inventory : MonoBehaviour {
 
     }
 
+    public void SplitStack()
+    {
+        InventoryManager instance = InventoryManager.Instance;
+        instance.selectStackSize.SetActive(false);
+
+        if (instance.SplitAmount == instance.MaxStackCount)
+        {
+            MoveItem(instance.Clicked);
+        }
+        else if (instance.SplitAmount > 0)
+        {
+            instance.MovingSlot.Items = instance.Clicked.GetComponent<Slot>().RemoveItems(instance.SplitAmount);
+
+            CreateHoverIcon();
+        }
+    }
+
+    public void ChangeStacktText (int i)
+    {
+        InventoryManager.Instance.SplitAmount += i;
+
+        if (InventoryManager.Instance.SplitAmount < 0)
+        {
+            InventoryManager.Instance.SplitAmount = 0;
+        }
+
+        if (InventoryManager.Instance.SplitAmount > InventoryManager.Instance.MaxStackCount)
+        {
+            InventoryManager.Instance.SplitAmount = InventoryManager.Instance.MaxStackCount;
+        }
+    }
+
+    public void MergeStacks(Slot source, Slot destination)
+    {
+        int max = destination.CurrentItem.Item.MaxSize - destination.Items.Count;
+
+        int count = source.Items.Count < max ? source.Items.Count : max;
+
+        for (int i = 0; i < count; i++)
+        {
+            destination.AddItem(source.RemoveItem());
+            InventoryManager.Instance.HoverObject.transform.GetChild(0).GetComponent<Text>().text = InventoryManager.Instance.MovingSlot.Items.Count.ToString();
+        }
+
+        if (source.Items.Count == 0)
+        {
+            source.ClearSlot();
+            Destroy(GameObject.Find("Hover"));
+        }
+    }
+
+    private void CreateHoverIcon()
+    {
+        InventoryManager.Instance.HoverObject = (GameObject)Instantiate(InventoryManager.Instance.iconPrefab);
+        InventoryManager.Instance.HoverObject.GetComponent<Image>().sprite = InventoryManager.Instance.Clicked.transform.FindChild("ButtonIcon").GetComponent<Image>().sprite;
+        InventoryManager.Instance.HoverObject.name = "Hover";
+
+        RectTransform hoverTransform = InventoryManager.Instance.HoverObject.GetComponent<RectTransform>();
+        RectTransform clickedTranfsorm = InventoryManager.Instance.Clicked.GetComponent<RectTransform>();
+
+        hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, clickedTranfsorm.sizeDelta.x);
+        hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, clickedTranfsorm.sizeDelta.y);
+
+        InventoryManager.Instance.HoverObject.transform.SetParent(GameObject.Find("Canvas").transform);
+
+        InventoryManager.Instance.HoverObject.transform.localScale = InventoryManager.Instance.Clicked.gameObject.transform.localScale;
+
+        InventoryManager.Instance.HoverObject.transform.GetChild(0).GetComponent<Text>().text = InventoryManager.Instance.MovingSlot.Items.Count > 1 ? InventoryManager.Instance.MovingSlot.Items.Count.ToString() : string.Empty;
+    }
+
     private void PutItemBack()
     {
         if (InventoryManager.Instance.From != null)
@@ -275,6 +358,18 @@ public class Inventory : MonoBehaviour {
             InventoryManager.Instance.From.GetComponent<Image>().color = Color.white;
             InventoryManager.Instance.From = null;
         }
+        else if (!InventoryManager.Instance.MovingSlot.isEmpty)
+        {
+            Destroy(GameObject.Find("Hover"));
+            foreach (ItemScript item in InventoryManager.Instance.MovingSlot.Items)
+            {
+                InventoryManager.Instance.Clicked.GetComponent<Slot>().AddItem(item);
+            }
+
+            InventoryManager.Instance.MovingSlot.ClearSlot();
+        }
+
+        InventoryManager.Instance.selectStackSize.SetActive(false);
     }
 
     private IEnumerator FadeOut()

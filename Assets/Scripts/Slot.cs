@@ -126,11 +126,47 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         stackTxt.text = string.Empty;
     }
 
+    public ItemScript RemoveItem()
+    {
+        ItemScript tmp;
+
+        tmp = items.Pop();
+
+        stackTxt.text = items.Count > 1 ? items.Count.ToString() : string.Empty;
+
+        return tmp;
+    }
+
+    public Stack<ItemScript> RemoveItems(int amount)
+    {
+        Stack<ItemScript> tmp = new Stack<ItemScript>();
+
+        for (int i = 0; i < amount; i++)
+        {
+            tmp.Push(items.Pop());
+        }
+
+        stackTxt.text = items.Count > 1 ? items.Count.ToString() : string.Empty;
+
+        return tmp;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("hover") && canvasGroup.alpha == 1)
         {
             UseItem();
+        }
+        else if (eventData.button == PointerEventData.InputButton.Left && Input.GetKey(KeyCode.LeftShift) && items.Count > 0)
+        {
+            Vector2 position;
+
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(InventoryManager.Instance.canvas.transform as RectTransform, Input.mousePosition, InventoryManager.Instance.canvas.worldCamera, out position);
+            
+            InventoryManager.Instance.selectStackSize.SetActive(true);
+            
+            InventoryManager.Instance.selectStackSize.transform.position = InventoryManager.Instance.canvas.transform.TransformPoint(position);
+            InventoryManager.Instance.SetStackInfo(items.Count);
         }
     }
 }
