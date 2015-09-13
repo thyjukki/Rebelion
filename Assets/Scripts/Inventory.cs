@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class Inventory : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class Inventory : MonoBehaviour {
 
     private CanvasGroup canvasGroup;
 
-    Slot to;
+    //Slot to;
 
     public float fadeTime;
 
@@ -41,13 +42,11 @@ public class Inventory : MonoBehaviour {
 
     private List<GameObject> allSlots;
 
-    private int emptySlots;
-
-    public int EmptySlots
+    /*public int EmptySlots
     {
         get { return emptySlots; }
         set { emptySlots = value; }
-    }
+    }*/
 
 	// Use this for initialization
 	void Start () {
@@ -57,9 +56,12 @@ public class Inventory : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
 
-        if (Input.GetMouseButtonUp(0))
+        // Delete the object
+        // TODO(Jukki) remove this?
+        /*if (Input.GetMouseButtonUp(0))
         {
             if (!InventoryManager.Instance.eventSystem.IsPointerOverGameObject(-1) && InventoryManager.Instance.From != null && IsOpen)
             {
@@ -69,6 +71,14 @@ public class Inventory : MonoBehaviour {
                 to = null;
                 InventoryManager.Instance.From = null;
                 emptySlots++;
+            }
+        }*/
+
+        if (Input.GetMouseButton(2))
+        {
+            if (InventoryManager.Instance.eventSystem.IsPointerOverGameObject(-1))
+            {
+                MoveInventory();
             }
         }
 
@@ -82,6 +92,9 @@ public class Inventory : MonoBehaviour {
 
 	}
 
+    /// <summary>
+    /// Shows the inventory
+    /// </summary>
     public void Open()
     {
         if (canvasGroup.alpha > 0)
@@ -99,6 +112,11 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+
+    /// <summary>
+    /// Shows the tooltip of the given slot
+    /// </summary>
+    /// <param name="slot"></param>
     public void ShowToolTip(GameObject slot)
     {
         Slot tmpSlot = slot.GetComponent<Slot>();
@@ -116,16 +134,106 @@ public class Inventory : MonoBehaviour {
         
     }
 
+
+    /// <summary>
+    /// Hides the tool tip
+    /// </summary>
     public void HideToolTip()
     {
         InventoryManager.Instance.toolTipObject.SetActive(false);
     }
 
+
+
+    private int EmptySlots()
+    {
+        int count = 0;
+
+        foreach (GameObject tmp in allSlots)
+        {
+            Slot slot = tmp.GetComponent<Slot>();
+            if (slot.isEmpty)
+                count++;
+        }
+        return count;
+    }
+
+    /// <summary>
+    /// Saves the inventory to PlayerPrefs
+    /// 
+    /// NOT DONE
+    /// </summary>
+    public void SaveInventory()
+    {
+        string content = string.Empty;
+
+        for (int i = 0; i < allSlots.Count; i++)
+        {
+            Slot tmp = allSlots[i].GetComponent<Slot>();
+
+            if (!tmp.isEmpty)
+            {
+                content += i + "-" + tmp.CurrentItem.Item.GetType().ToString() + "-" + tmp.CurrentItem.Item.Id + "-" + tmp.Items.Count.ToString() + ";";
+            }
+        }
+
+        Debug.Log(content);
+        PlayerPrefs.SetString("content", content);
+        PlayerPrefs.SetInt("slots", slots);
+        PlayerPrefs.SetFloat("rows", rows);
+        PlayerPrefs.SetFloat("slotPaddengLeft", slotPaddingLeft);
+        PlayerPrefs.SetFloat("slotPaddingTop", slotPaddingTop);
+        PlayerPrefs.SetFloat("slotSize", slotSize);
+
+        PlayerPrefs.Save();
+    }
+    
+    /// <summary>
+    /// Loads the inventory from PlayerPrefs
+    /// 
+    /// NOT DONE
+    /// </summary>
+    /*public void LoadInventory()
+    {
+        string content = PlayerPrefs.GetString("content");
+
+        slots = PlayerPrefs.GetInt("slots");
+        rows = PlayerPrefs.GetInt("rows");
+        slotPaddingLeft = PlayerPrefs.GetFloat("slotPaddingLeft");
+        slotPaddingTop = PlayerPrefs.GetFloat("slotSize");
+
+        CreateLayout();
+
+        string[] splitContent = content.Split(';');
+
+        foreach (string tmp in splitContent)
+        {
+            string[] splitValues = tmp.Split('-');
+
+            if (splitValues.Length == 3)
+            {
+                int index = Int32.Parse(splitValues[0]);
+                Category type = (Category)Enum.Parse(typeof(Category), splitValues[1]);
+                int id = Int32.Parse(splitValues[2]);
+                int count = Int32.Parse(splitValues[3]);
+
+                ItemScript item = ItemScript.CreateItem(type, id);
+
+                for (int i = 0; i < count; i++)
+                {
+                    //GameObject loadedItem = Instantiate(InventoryManager.Instance.itemObject);
+                }
+            }
+        }
+    }*/
+
+
+    /// <summary>
+    /// Create initial layout of the inventory
+    /// </summary>
     private void CreateLayout()
     {
         allSlots = new List<GameObject>();
-
-        emptySlots = slots;
 
         hoverYOffset = slotSize * 0.01f;
 
@@ -163,9 +271,30 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Moves the inventory around (disable maybe)
+    /// </summary>
+    private void MoveInventory()
+    {
+        Vector2 mousePos;
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(InventoryManager.Instance.canvas.transform as RectTransform
+            , new Vector3(Input.mousePosition.x - (inventoryRect.sizeDelta.x / 2 * InventoryManager.Instance.canvas.scaleFactor)
+                , Input.mousePosition.y + (inventoryRect.sizeDelta.y / 2 * InventoryManager.Instance.canvas.scaleFactor))
+            , InventoryManager.Instance.canvas.worldCamera, out mousePos);
+
+        transform.position = InventoryManager.Instance.canvas.transform.TransformPoint(mousePos);
+    }
+
+
+    /// <summary>
+    /// Place an item to first avaible empty slot
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns>true if we were able to place the item in inventory</returns>
     private bool PlaceEmpty(ItemScript item)
     {
-        if (emptySlots > 0)
+        if (EmptySlots() > 0)
         {
             foreach (GameObject slot in allSlots)
             {
@@ -174,7 +303,6 @@ public class Inventory : MonoBehaviour {
                 if (tmp.isEmpty)
                 {
                     tmp.AddItem(item);
-                    emptySlots--;
                     return true;
                 }
             }
@@ -183,8 +311,15 @@ public class Inventory : MonoBehaviour {
         return false;
     }
 
+
+    /// <summary>
+    /// Adds an item to inventory
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns>true if we were able to add item to inventory</returns>
     public bool AddItem (ItemScript item)
     {
+        //If we have unstackable item then just find the first avaible slot
         if (item.Item.MaxSize == 1)
         {
             PlaceEmpty(item);
@@ -198,7 +333,7 @@ public class Inventory : MonoBehaviour {
 
                 if (!tmp.isEmpty)
                 {
-                    if (tmp.CurrentItem.type == item.type && tmp.IsAvailable)
+                    if (tmp.CurrentItem.Item.Id == item.Item.Id && tmp.IsAvailable)
                     {
                         if (!InventoryManager.Instance.MovingSlot.isEmpty && InventoryManager.Instance.Clicked.GetComponent<Slot>() == tmp.GetComponent<Slot>())
                         {
@@ -213,13 +348,18 @@ public class Inventory : MonoBehaviour {
                 }
             }
         }
-        if (emptySlots > 0)
+        if (EmptySlots() > 0)
         {
             PlaceEmpty(item);
         }
         return false;
     }
 
+
+    /// <summary>
+    /// Moves an item in the inventory
+    /// </summary>
+    /// <param name="clicked"></param>
     public void MoveItem(GameObject clicked)
     {
         InventoryManager.Instance.Clicked = clicked;
@@ -234,22 +374,23 @@ public class Inventory : MonoBehaviour {
                 InventoryManager.Instance.MovingSlot.Items.Clear();
                 Destroy(GameObject.Find("Hover"));
             }
-            else if (!tmp.isEmpty && InventoryManager.Instance.MovingSlot.CurrentItem.type == tmp.CurrentItem.type && tmp.IsAvailable)
+            else if (InventoryManager.Instance.MovingSlot.CurrentItem.Item.Id == tmp.CurrentItem.Item.Id && tmp.IsAvailable)
             {
                 MergeStacks(InventoryManager.Instance.MovingSlot, tmp);
             }
         }
-        else if (InventoryManager.Instance.From == null && clicked.transform.parent.GetComponent<Inventory>().isOpen && !Input.GetKey(KeyCode.LeftShift))
+        else if (/*InventoryManager.Instance.From == null && */clicked.transform.parent.GetComponent<Inventory>().isOpen && !Input.GetKey(KeyCode.LeftShift))
         {
             if (!clicked.GetComponent<Slot>().isEmpty)
             {
-                InventoryManager.Instance.From = clicked.GetComponent<Slot>();
-                InventoryManager.Instance.From.GetComponent<Image>().color = Color.gray;
+                InventoryManager.Instance.MovingSlot.Items = clicked.GetComponent<Slot>().RemoveAllItems();
+                /*InventoryManager.Instance.From = clicked.GetComponent<Slot>();
+                InventoryManager.Instance.From.GetComponent<Image>().color = Color.gray;*/
 
                 CreateHoverIcon();
             }
         }
-        else if (to == null && !Input.GetKey(KeyCode.LeftShift))
+        /*else if (to == null && !Input.GetKey(KeyCode.LeftShift))
         {
             to = clicked.GetComponent<Slot>();
 
@@ -275,21 +416,25 @@ public class Inventory : MonoBehaviour {
             InventoryManager.Instance.From = null;
 
             Destroy(GameObject.Find("Hover"));
-        }
+        }*/
 
 
     }
 
+
+    /// <summary>
+    /// Splits the stack
+    /// </summary>
     public void SplitStack()
     {
         InventoryManager instance = InventoryManager.Instance;
         instance.selectStackSize.SetActive(false);
 
-        if (instance.SplitAmount == instance.MaxStackCount)
+        /*if (instance.SplitAmount == instance.MaxStackCount)
         {
             MoveItem(instance.Clicked);
         }
-        else if (instance.SplitAmount > 0)
+        else */if (instance.SplitAmount > 0)
         {
             instance.MovingSlot.Items = instance.Clicked.GetComponent<Slot>().RemoveItems(instance.SplitAmount);
 
@@ -297,9 +442,14 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    public void ChangeStacktText (int i)
+
+    /// <summary>
+    /// Changes the number in the stack popup window
+    /// </summary>
+    /// <param name="i"></param>
+    public void ChangeStacktText(int i)
     {
-        InventoryManager.Instance.SplitAmount += i;
+        InventoryManager.Instance.SplitAmount = i + Int32.Parse(InventoryManager.Instance.stackText.transform.parent.GetComponent<InputField>().text);
 
         if (InventoryManager.Instance.SplitAmount < 0)
         {
@@ -310,8 +460,16 @@ public class Inventory : MonoBehaviour {
         {
             InventoryManager.Instance.SplitAmount = InventoryManager.Instance.MaxStackCount;
         }
+
+        InventoryManager.Instance.stackText.transform.parent.GetComponent<InputField>().text = InventoryManager.Instance.SplitAmount.ToString();
     }
 
+
+    /// <summary>
+    /// Merges 2 slots
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="destination"></param>
     public void MergeStacks(Slot source, Slot destination)
     {
         int max = destination.CurrentItem.Item.MaxSize - destination.Items.Count;
@@ -331,6 +489,10 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+
+    /// <summary>
+    /// Creates the hover icon of the image being moved
+    /// </summary>
     private void CreateHoverIcon()
     {
         InventoryManager.Instance.HoverObject = (GameObject)Instantiate(InventoryManager.Instance.iconPrefab);
@@ -350,15 +512,20 @@ public class Inventory : MonoBehaviour {
         InventoryManager.Instance.HoverObject.transform.GetChild(0).GetComponent<Text>().text = InventoryManager.Instance.MovingSlot.Items.Count > 1 ? InventoryManager.Instance.MovingSlot.Items.Count.ToString() : string.Empty;
     }
 
+
+    /// <summary>
+    /// Places an item back to the slot is was being moved from
+    /// </summary>
     private void PutItemBack()
     {
-        if (InventoryManager.Instance.From != null)
+        /*if (InventoryManager.Instance.From != null)
         {
             Destroy(GameObject.Find("Hover"));
             InventoryManager.Instance.From.GetComponent<Image>().color = Color.white;
             InventoryManager.Instance.From = null;
         }
-        else if (!InventoryManager.Instance.MovingSlot.isEmpty)
+        else */
+        if (!InventoryManager.Instance.MovingSlot.isEmpty)
         {
             Destroy(GameObject.Find("Hover"));
             foreach (ItemScript item in InventoryManager.Instance.MovingSlot.Items)

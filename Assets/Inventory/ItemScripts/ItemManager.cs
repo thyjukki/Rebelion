@@ -19,7 +19,8 @@ public class ItemManager : MonoBehaviour
     public int dexterity;
     public int stamina;
     public int magic;
-    public float attackSpeed;
+    public int attack;
+    public int defence;
     public int health;
     public int mana;
     
@@ -45,7 +46,7 @@ public class ItemManager : MonoBehaviour
                 itemContainer.Equipments.Add(new Equipment(id, itemName, description, itemType, quality, spritePath, maxSize, strenght, dexterity, stamina, magic));
                 break;
             case Category.Weapon:
-                itemContainer.Weapons.Add(new Weapon(id, itemName, description, itemType, quality, spritePath, maxSize, strenght, dexterity, stamina, magic, attackSpeed));
+                itemContainer.Weapons.Add(new Weapon(id, itemName, description, itemType, quality, spritePath, maxSize, strenght, dexterity, stamina, magic, attack, defence));
                 break;
             case Category.Consumable:
                 itemContainer.Consumables.Add(new Consumable(id, itemName, description, itemType, quality, spritePath, maxSize, health, mana));

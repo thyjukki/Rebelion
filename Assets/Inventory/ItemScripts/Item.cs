@@ -37,6 +37,41 @@ public abstract class Item
 
     public virtual string GetTooltip()
     {
-        return null;
+        string color = string.Empty;
+        string newLine = string.Empty;
+
+        if (Description != string.Empty)
+        {
+            newLine = "\n";
+        }
+
+        switch (Quality)
+        {
+            case Quality.Common:
+                color = "white";
+                break;
+            case Quality.Uncommon:
+                color = "lime";
+                break;
+            case Quality.Rare:
+                color = "navy";
+                break;
+            case Quality.Epic:
+                color = "magenta";
+                break;
+            case Quality.Legendary:
+                color = "orange";
+                break;
+            case Quality.Artifact:
+                color = "red";
+                break;
+            default:
+                break;
+        }
+
+        return string.Format("<color=" + color +
+            "><size=10>{0}</size></color><size=8><i><color=lime>"
+            + newLine + "{1}</color></i></size>"
+            , ItemName, Description);
     }
 }

@@ -25,10 +25,22 @@ public class CharacterMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ParseMovement();
-        
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             inventory.Open();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ItemScript itemScript = ItemScript.CreateItem(Category.Consumable, 0);
+            inventory.AddItem(itemScript);
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ItemScript itemScript = ItemScript.CreateItem(Category.Equipment, 0);
+            inventory.AddItem(itemScript);
         }
 
         if (Input.GetKeyDown(KeyCode.E))

@@ -6,13 +6,27 @@
       <Id>0</Id>
       <ItemType>Consumable</ItemType>
       <Quality>Common</Quality>
-      <SpritePath>potions/small_glass_bottle</SpritePath>
+      <SpritePath>Items/Potions/small_glass_bottle</SpritePath>
       <ItemName>Small Glass Bottle</ItemName>
       <Description>This is an empty glass bottle.</Description>
-      <MaxSize>1</MaxSize>
+      <MaxSize>5</MaxSize>
       <Health>0</Health>
       <Mana>0</Mana>
     </Item>
   </Consumables>
-  <Equipments />
+  <Equipments>
+    <Item xsi:type="Equipment">
+      <Id>0</Id>
+      <ItemType>Consumable</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Pants/magenta_pants</SpritePath>
+      <ItemName>Pants (Magneta)</ItemName>
+      <Description>Generic pants with magneta dye.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+    </Item>
+  </Equipments>
 </ItemContainer>

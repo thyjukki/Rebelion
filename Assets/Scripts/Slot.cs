@@ -31,7 +31,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
     public bool IsAvailable
     {
-        get { return CurrentItem.Item.MaxSize > 0 || items.Count == 0; }
+        get { return CurrentItem.Item.MaxSize > items.Count; }
     }
 
     public Sprite ItemSprite
@@ -114,7 +114,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
             if (this.isEmpty)
             {
                 IconSprite.enabled = false;
-                GetComponentInParent<Inventory>().EmptySlots++;
             }
         }
     }
@@ -124,8 +123,14 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         items.Clear();
         IconSprite.enabled = false;
         stackTxt.text = string.Empty;
+
+
     }
 
+    /// <summary>
+    /// Removes a single item from the slot and returns it
+    /// </summary>
+    /// <returns>Removed item</returns>
     public ItemScript RemoveItem()
     {
         ItemScript tmp;
@@ -133,10 +138,17 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         tmp = items.Pop();
 
         stackTxt.text = items.Count > 1 ? items.Count.ToString() : string.Empty;
+        if (isEmpty)
+            ClearSlot();
 
         return tmp;
     }
 
+    /// <summary>
+    /// Removes given number of items and returns them
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <returns>Removed items</returns>
     public Stack<ItemScript> RemoveItems(int amount)
     {
         Stack<ItemScript> tmp = new Stack<ItemScript>();
@@ -147,6 +159,21 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         }
 
         stackTxt.text = items.Count > 1 ? items.Count.ToString() : string.Empty;
+        if (isEmpty)
+            ClearSlot();
+
+        return tmp;
+    }
+
+    /// <summary>
+    /// Removes all the items from the slot
+    /// </summary>
+    /// <returns>All items in the slot</returns>
+    public Stack<ItemScript> RemoveAllItems()
+    {
+        Stack<ItemScript> tmp = new Stack<ItemScript>(items);
+        ClearSlot();
+        stackTxt.text = string.Empty;
 
         return tmp;
     }

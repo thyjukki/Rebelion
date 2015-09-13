@@ -10,6 +10,12 @@ public class InventoryManager : MonoBehaviour {
 
     private ItemContainer itemContainer = new ItemContainer();
 
+    public ItemContainer ItemContainer
+    {
+        get { return itemContainer; }
+        set { itemContainer = value; }
+    }
+
     private static InventoryManager instance;
 
     public static InventoryManager Instance
@@ -33,6 +39,9 @@ public class InventoryManager : MonoBehaviour {
     /// </summary>
     public GameObject iconPrefab;
 
+    /// <summary>
+    /// Object that is shows which item is being moved
+    /// </summary>
     private GameObject hoverObject;
 
     public GameObject HoverObject
@@ -77,8 +86,6 @@ public class InventoryManager : MonoBehaviour {
 
     public EventSystem eventSystem;
 
-    private Slot from, to;
-
     private GameObject clicked;
 
     public GameObject Clicked
@@ -87,19 +94,8 @@ public class InventoryManager : MonoBehaviour {
         set { clicked = value; }
     }
 
+    public GameObject itemObject;
 
-
-    public Slot To
-    {
-        get { return to; }
-        set { to = value; }
-    }
-
-    public Slot From
-    {
-        get { return from; }
-        set { from = value; }
-    }
 
     public void Start()
     {
@@ -110,6 +106,7 @@ public class InventoryManager : MonoBehaviour {
 
         itemContainer = (ItemContainer)serializer.Deserialize(textReader);
         textReader.Close();
+
 
         movingSlot = GameObject.Find("MovingSlot").GetComponent<Slot>();
     }
