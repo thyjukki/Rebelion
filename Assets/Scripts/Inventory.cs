@@ -364,6 +364,10 @@ public class Inventory : MonoBehaviour {
     {
         InventoryManager.Instance.Clicked = clicked;
 
+        CanvasGroup cg = clicked.transform.parent.GetComponent<CanvasGroup>();
+
+        if (cg == null)
+            cg = clicked.transform.parent.parent.GetComponent<CanvasGroup>();
         if (!InventoryManager.Instance.MovingSlot.isEmpty)
         {
             Slot tmp = clicked.GetComponent<Slot>();

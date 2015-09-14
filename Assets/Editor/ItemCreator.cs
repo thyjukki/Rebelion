@@ -7,8 +7,6 @@ using System.IO;
 public class ItemCreator : EditorWindow
 {
 
-    int id;
-
     string itemName;
     string description;
     ItemType itemType;
@@ -27,12 +25,15 @@ public class ItemCreator : EditorWindow
     int health;
     int mana;
 
+    static int currentId = 0;
+
     [MenuItem("Window/Create an item")]
     static void Init()
     {
         // Get existing open window or if none, make a new one:
         ItemCreator window = (ItemCreator)EditorWindow.GetWindow(typeof(ItemCreator));
         window.Show();
+        GetIDCount();
     }
 
 
@@ -43,7 +44,8 @@ public class ItemCreator : EditorWindow
     {
         GUILayout.BeginHorizontal();
         GUILayout.Label("Item ID:", EditorStyles.boldLabel);
-        id = EditorGUILayout.IntField(id, GUILayout.Width(220));
+        EditorGUILayout.LabelField(currentId.ToString(), EditorStyles.boldLabel, GUILayout.Width(220));
+        //currentId = EditorGUILayout.IntField(currentId, GUILayout.Width(220));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
@@ -126,10 +128,50 @@ public class ItemCreator : EditorWindow
         if (GUILayout.Button("Create Item"))
         {
             CreateItem();
+            GetIDCount();
+        }
+        if (GUILayout.Button("Refresh ID"))
+        {
+            GetIDCount();
         }
     }
 
     public void CreateItem()
+    {
+        GetIDCount();
+        ItemContainer itemContainer = new ItemContainer();
+
+        System.Type[] itemTypes = { typeof(Equipment), typeof(Weapon), typeof(Consumable) };
+
+        XmlSerializer serializer = new XmlSerializer(typeof(ItemContainer), itemTypes);
+
+        FileStream fs = new FileStream(Path.Combine(Application.streamingAssetsPath, "Items.xml"), FileMode.Open);
+
+        itemContainer = (ItemContainer)serializer.Deserialize(fs);
+
+        fs.Close();
+
+        switch (category)
+        {
+            case Category.Equipment:
+                itemContainer.Equipments.Add(new Equipment(currentId, itemName, description, itemType, quality, spritePath, maxStackSize, strenght, dexterity, stamina, magic));
+                break;
+            case Category.Weapon:
+                itemContainer.Weapons.Add(new Weapon(currentId, itemName, description, itemType, quality, spritePath, maxStackSize, strenght, dexterity, stamina, magic, attack, defence));
+                break;
+            case Category.Consumable:
+                itemContainer.Consumables.Add(new Consumable(currentId, itemName, description, itemType, quality, spritePath, maxStackSize, health, mana));
+                break;
+            default:
+                break;
+        }
+
+        fs = new FileStream(Path.Combine(Application.streamingAssetsPath, "Items.xml"), FileMode.Create);
+        serializer.Serialize(fs, itemContainer);
+        fs.Close();
+    }
+
+    static void GetIDCount()
     {
         ItemContainer itemContainer = new ItemContainer();
 
@@ -141,27 +183,32 @@ public class ItemCreator : EditorWindow
 
         itemContainer = (ItemContainer)serializer.Deserialize(fs);
 
-        serializer.Serialize(fs, itemContainer);
-
         fs.Close();
 
-        switch (category)
+
+        int minId = 0;
+        foreach (Item item in itemContainer.Consumables)
         {
-            case Category.Equipment:
-                itemContainer.Equipments.Add(new Equipment(id, itemName, description, itemType, quality, spritePath, maxStackSize, strenght, dexterity, stamina, magic));
-                break;
-            case Category.Weapon:
-                itemContainer.Weapons.Add(new Weapon(id, itemName, description, itemType, quality, spritePath, maxStackSize, strenght, dexterity, stamina, magic, attack, defence));
-                break;
-            case Category.Consumable:
-                itemContainer.Consumables.Add(new Consumable(id, itemName, description, itemType, quality, spritePath, maxStackSize, health, mana));
-                break;
-            default:
-                break;
+            if (item.Id == minId)
+            {
+                minId = item.Id + 1;
+            }
+        }
+        foreach (Item item in itemContainer.Equipments)
+        {
+            if (item.Id == minId)
+            {
+                minId = item.Id + 1;
+            }
+        }
+        foreach (Item item in itemContainer.Weapons)
+        {
+            if (item.Id == minId)
+            {
+                minId = item.Id + 1;
+            }
         }
 
-        fs = new FileStream(Path.Combine(Application.streamingAssetsPath, "Items.xml"), FileMode.Create);
-        serializer.Serialize(fs, itemContainer);
-        fs.Close();
+        currentId = minId;
     }
 }

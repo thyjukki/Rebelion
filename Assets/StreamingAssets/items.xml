@@ -16,12 +16,25 @@
   </Consumables>
   <Equipments>
     <Item xsi:type="Equipment">
-      <Id>0</Id>
+      <Id>1</Id>
       <ItemType>Consumable</ItemType>
       <Quality>Common</Quality>
       <SpritePath>Items/Pants/magenta_pants</SpritePath>
       <ItemName>Pants (Magneta)</ItemName>
       <Description>Generic pants with magneta dye.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+    </Item>
+    <Item xsi:type="Equipment">
+      <Id>2</Id>
+      <ItemType>Chest</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Shirts/brown_shirt</SpritePath>
+      <ItemName>Shirt (Brown)</ItemName>
+      <Description>Generic shirt with brown dye.</Description>
       <MaxSize>1</MaxSize>
       <Strenght>0</Strenght>
       <Dexterity>0</Dexterity>

@@ -39,7 +39,13 @@ public class CharacterMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            ItemScript itemScript = ItemScript.CreateItem(Category.Equipment, 0);
+            ItemScript itemScript = ItemScript.CreateItem(Category.Equipment, 1);
+            inventory.AddItem(itemScript);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            ItemScript itemScript = ItemScript.CreateItem(Category.Equipment, 2);
             inventory.AddItem(itemScript);
         }
 
