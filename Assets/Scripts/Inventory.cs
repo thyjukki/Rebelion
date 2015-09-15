@@ -231,7 +231,7 @@ public class Inventory : MonoBehaviour {
     /// <summary>
     /// Create initial layout of the inventory
     /// </summary>
-    private void CreateLayout()
+    public virtual void CreateLayout()
     {
         allSlots = new List<GameObject>();
 

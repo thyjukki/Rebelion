@@ -23,7 +23,7 @@ public class Consumable : Item
         this.Mana = mana;
     }
 
-    public override void Use()
+    public override void Use(Slot slot, ItemScript item)
     {
 
     }

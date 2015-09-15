@@ -24,11 +24,6 @@ public class Weapon : Equipment
         this.Defence = defence;
     }
 
-    public override void Use()
-    {
-
-    }
-
     public override string GetTooltip()
     {
         string stats = string.Empty;

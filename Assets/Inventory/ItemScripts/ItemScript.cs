@@ -14,7 +14,11 @@ public enum ItemType {
     Legs,
     Bracers,
     Boots,
-    Trinket
+    Shoulders,
+    Belt,
+    Trinket,
+    Generic,
+    GenericWeapon
 };
 
 public enum Quality { Common, Uncommon, Rare, Epic, Legendary, Artifact };
@@ -38,17 +42,9 @@ public class ItemScript : MonoBehaviour
         }
     }
 
-    public void Use()
+    public void Use(Slot slot)
     {
-        /*switch (type)
-        {
-            case ItemType.Mana:
-                Debug.Log("I just used a mana potion");
-                break;
-            case ItemType.Health:
-                Debug.Log("I just used a health potion");
-                break;
-        }*/
+        item.Use(slot, this);
     }
 
     public string GetToolTip()

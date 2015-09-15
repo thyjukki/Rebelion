@@ -40,7 +40,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
     }
 
 
-    private CanvasGroup canvasGroup;
+    private Inventory invenotry;
+
+    public ItemType canContain;
 
 	// Use this for initialization
 	void Start () {
@@ -65,7 +67,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
         if (transform.parent != null)
         {
-            canvasGroup = transform.parent.GetComponent<CanvasGroup>();
+            invenotry = transform.parent.GetComponent<Inventory>();
         }
 	}
 	
@@ -97,6 +99,13 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         ChangeSprite(CurrentItem.sprite);
     }
 
+    public static void SwapItems(Slot from, Slot to)
+    {
+        Stack<ItemScript> tmp = from.RemoveAllItems();
+        from.AddItems(to.RemoveAllItems());
+        to.AddItems(tmp);
+    }
+
     private void ChangeSprite (Sprite icon)
     {
         IconSprite.sprite = icon;
@@ -107,14 +116,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
     {
         if (!this.isEmpty)
         {
-            items.Pop().Use();
-
-            stackTxt.text = items.Count > 1 ? items.Count.ToString() : string.Empty;
-
-            if (this.isEmpty)
-            {
-                IconSprite.enabled = false;
-            }
+            items.Peek().Use(this);
         }
     }
 
@@ -180,7 +182,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("hover") && canvasGroup.alpha == 1)
+        if (eventData.button == PointerEventData.InputButton.Right && !GameObject.Find("hover") && invenotry.IsOpen)
         {
             UseItem();
         }

@@ -33,7 +33,7 @@ public abstract class Item
         this.MaxSize = maxSize;
     }
 
-    public abstract void Use();
+    public abstract void Use(Slot slot, ItemScript item);
 
     public virtual string GetTooltip()
     {

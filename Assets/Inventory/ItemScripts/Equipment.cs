@@ -27,9 +27,9 @@ public class Equipment : Item
         this.Magic = magic;
     }
 
-    public override void Use()
+    public override void Use(Slot slot, ItemScript item)
     {
-
+        CharacterPanel.Instance.EquipItem(slot, item);
     }
 
     public override string GetTooltip()
