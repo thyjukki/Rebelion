@@ -30,8 +30,10 @@ public class CharacterPanel : Inventory
     }
 
 	// Use this for initialization
-	void Start () {
-	
+    void Start()
+    {
+        IsOpen = true;
+        canvasGroup = GetComponentInParent<CanvasGroup>();
 	}
 	
 	// Update is called once per frame
@@ -45,6 +47,12 @@ public class CharacterPanel : Inventory
 
     public void EquipItem(Slot slot, ItemScript item)
     {
-        Slot.SwapItems(slot, Array.Find(equipmentSlots, x => x.canContain == item.Item.ItemType));
+        Slot to = Array.Find(equipmentSlots, x => x.canContain == item.Item.ItemType);
+        if (to != null)
+        {
+            Slot.SwapItems(slot, to);
+        }
     }
+
+
 }

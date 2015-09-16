@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour {
     public float slotSize;
 
 
-    private CanvasGroup canvasGroup;
+    protected CanvasGroup canvasGroup;
 
     //Slot to;
 
@@ -30,9 +30,8 @@ public class Inventory : MonoBehaviour {
     private bool fadingIn;
     private bool fadingOut;
 
-    private float hoverYOffset;
 
-    private bool isOpen;
+    protected bool isOpen;
 
     public bool IsOpen
     {
@@ -74,19 +73,11 @@ public class Inventory : MonoBehaviour {
             }
         }*/
 
-        if (Input.GetMouseButton(2))
-        {
-            if (InventoryManager.Instance.eventSystem.IsPointerOverGameObject(-1))
-            {
-                MoveInventory();
-            }
-        }
-
 	    if (InventoryManager.Instance.HoverObject != null)
         {
             Vector2 position;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(InventoryManager.Instance.canvas.transform as RectTransform, Input.mousePosition, InventoryManager.Instance.canvas.worldCamera, out position);
-            position.Set(position.x, position.y - hoverYOffset);
+            position.Set(position.x+ 1, position.y + 1);
             InventoryManager.Instance.HoverObject.transform.position = InventoryManager.Instance.canvas.transform.TransformPoint(position);
         }
 
@@ -125,13 +116,13 @@ public class Inventory : MonoBehaviour {
         {
             InventoryManager.Instance.toolTipObject.SetActive(true);
 
-            float xPos = slot.transform.position.x + slotPaddingLeft;
-            float yPos = slot.transform.position.y - slot.GetComponent<RectTransform>().sizeDelta.y - slotPaddingTop;
+            float xPos = slot.transform.position.x;
+            float yPos = slot.transform.position.y;
 
             InventoryManager.Instance.visualTextObject.text = InventoryManager.Instance.sizeTextObject.text = tmpSlot.CurrentItem.GetToolTip();
             InventoryManager.Instance.toolTipObject.transform.position = new Vector2(xPos, yPos);
         }
-        
+
     }
 
 
@@ -235,8 +226,22 @@ public class Inventory : MonoBehaviour {
     {
         allSlots = new List<GameObject>();
 
-        hoverYOffset = slotSize * 0.01f;
+        GridLayoutGroup glg = GetComponent<GridLayoutGroup>();
 
+        glg.constraint = GridLayoutGroup.Constraint.FixedRowCount;
+        glg.constraintCount = rows;
+        for (int i = 0; i < slots; i++)
+        {
+            GameObject newSlot = (GameObject)Instantiate(InventoryManager.Instance.slotPrefab);
+
+            newSlot.name = "Slot";
+
+            newSlot.transform.SetParent(this.transform);
+
+            allSlots.Add(newSlot);
+        }
+
+        /*
         inventoryWidth = (slots / rows) * (slotSize + slotPaddingLeft) + slotPaddingLeft;
         inventoryHeight = rows * (slotSize + slotPaddingTop) + slotPaddingTop;
 
@@ -268,22 +273,7 @@ public class Inventory : MonoBehaviour {
 
                 allSlots.Add(newSlot);
             }
-        }
-    }
-
-    /// <summary>
-    /// Moves the inventory around (disable maybe)
-    /// </summary>
-    private void MoveInventory()
-    {
-        Vector2 mousePos;
-
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(InventoryManager.Instance.canvas.transform as RectTransform
-            , new Vector3(Input.mousePosition.x - (inventoryRect.sizeDelta.x / 2 * InventoryManager.Instance.canvas.scaleFactor)
-                , Input.mousePosition.y + (inventoryRect.sizeDelta.y / 2 * InventoryManager.Instance.canvas.scaleFactor))
-            , InventoryManager.Instance.canvas.worldCamera, out mousePos);
-
-        transform.position = InventoryManager.Instance.canvas.transform.TransformPoint(mousePos);
+        }*/
     }
 
 
@@ -362,65 +352,45 @@ public class Inventory : MonoBehaviour {
     /// <param name="clicked"></param>
     public void MoveItem(GameObject clicked)
     {
-        InventoryManager.Instance.Clicked = clicked;
+        InventoryManager IGInstance = InventoryManager.Instance;
+        IGInstance.Clicked = clicked;
 
         CanvasGroup cg = clicked.transform.parent.GetComponent<CanvasGroup>();
 
         if (cg == null)
             cg = clicked.transform.parent.parent.GetComponent<CanvasGroup>();
-        if (!InventoryManager.Instance.MovingSlot.isEmpty)
+        if (!IGInstance.MovingSlot.isEmpty)
         {
             Slot tmp = clicked.GetComponent<Slot>();
 
-            if (tmp.isEmpty)
+            if (tmp.isEmpty && (tmp.canContain ==  ItemType.Generic || tmp.canContain == IGInstance.MovingSlot.CurrentItem.Item.ItemType))
             {
-                tmp.AddItems(InventoryManager.Instance.MovingSlot.Items);
-                InventoryManager.Instance.MovingSlot.Items.Clear();
+                tmp.AddItems(IGInstance.MovingSlot.Items);
+                IGInstance.MovingSlot.ClearSlot();
                 Destroy(GameObject.Find("Hover"));
             }
-            else if (InventoryManager.Instance.MovingSlot.CurrentItem.Item.Id == tmp.CurrentItem.Item.Id && tmp.IsAvailable)
+            else if (!tmp.isEmpty && IGInstance.MovingSlot.CurrentItem.Item.Id == tmp.CurrentItem.Item.Id && tmp.IsAvailable)
             {
-                MergeStacks(InventoryManager.Instance.MovingSlot, tmp);
+                MergeStacks(IGInstance.MovingSlot, tmp);
+            }
+            else if (tmp.canContain == IGInstance.MovingSlot.CurrentItem.Item.ItemType || tmp.canContain == ItemType.Generic)
+            {
+                Destroy(GameObject.Find("Hover"));
+                CreateHoverIcon();
+                Slot.SwapItems(IGInstance.MovingSlot, tmp);
             }
         }
-        else if (/*InventoryManager.Instance.From == null && */clicked.transform.parent.GetComponent<Inventory>().isOpen && !Input.GetKey(KeyCode.LeftShift))
+        else if (clicked.transform.parent.GetComponent<Inventory>().isOpen && !Input.GetKey(KeyCode.LeftShift))
         {
             if (!clicked.GetComponent<Slot>().isEmpty)
             {
-                InventoryManager.Instance.MovingSlot.Items = clicked.GetComponent<Slot>().RemoveAllItems();
+                IGInstance.MovingSlot.Items = clicked.GetComponent<Slot>().RemoveAllItems();
                 /*InventoryManager.Instance.From = clicked.GetComponent<Slot>();
                 InventoryManager.Instance.From.GetComponent<Image>().color = Color.gray;*/
 
                 CreateHoverIcon();
             }
         }
-        /*else if (to == null && !Input.GetKey(KeyCode.LeftShift))
-        {
-            to = clicked.GetComponent<Slot>();
-
-            Destroy(GameObject.Find("Hover"));
-        }
-
-        if (to != null && InventoryManager.Instance.From != null)
-        {
-            Stack<ItemScript> tmpTo = new Stack<ItemScript>(to.Items);
-            to.AddItems(InventoryManager.Instance.From.Items);
-
-            if (tmpTo.Count == 0)
-            {
-                InventoryManager.Instance.From.ClearSlot();
-            }
-            else
-            {
-                InventoryManager.Instance.From.AddItems(tmpTo);
-            }
-
-            InventoryManager.Instance.From.GetComponent<Image>().color = Color.white;
-            to = null;
-            InventoryManager.Instance.From = null;
-
-            Destroy(GameObject.Find("Hover"));
-        }*/
 
 
     }

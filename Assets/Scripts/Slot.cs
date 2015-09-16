@@ -44,6 +44,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
     public ItemType canContain;
 
+    private Sprite defaultSprite;
+    private bool defaultState;
+
 	// Use this for initialization
 	void Start () {
         items = new Stack<ItemScript>();
@@ -85,18 +88,27 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
             stackTxt.text = items.Count.ToString();
         }
 
-        ChangeSprite(item.sprite);
+        if (this.items.Count > 0)
+        {
+            ChangeSprite(CurrentItem.sprite);
 
-        IconSprite.enabled = true;
+            IconSprite.enabled = true;
+        }
     }
 
     public void AddItems(Stack<ItemScript> items)
     {
         this.items = new Stack<ItemScript>(items);
 
-        stackTxt.text = items.Count > 1 ? items.Count.ToString() : string.Empty;
+        stackTxt.text = this.items.Count > 1 ? this.items.Count.ToString() : string.Empty;
 
-        ChangeSprite(CurrentItem.sprite);
+
+        if (this.items.Count > 0)
+        {
+            ChangeSprite(this.items.Peek().sprite);
+
+            IconSprite.enabled = true;
+        }
     }
 
     public static void SwapItems(Slot from, Slot to)
@@ -104,6 +116,20 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         Stack<ItemScript> tmp = from.RemoveAllItems();
         from.AddItems(to.RemoveAllItems());
         to.AddItems(tmp);
+
+        if (to.Items.Count > 0)
+        {
+            to.ChangeSprite(to.Items.Peek().sprite);
+
+            to.IconSprite.enabled = true;
+        }
+
+        if (from.Items.Count > 0)
+        {
+            from.ChangeSprite(from.Items.Peek().sprite);
+
+            from.IconSprite.enabled = true;
+        }
     }
 
     private void ChangeSprite (Sprite icon)

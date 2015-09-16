@@ -17,7 +17,7 @@
   <Equipments>
     <Item xsi:type="Equipment">
       <Id>1</Id>
-      <ItemType>Consumable</ItemType>
+      <ItemType>Legs</ItemType>
       <Quality>Common</Quality>
       <SpritePath>Items/Pants/magenta_pants</SpritePath>
       <ItemName>Pants (Magneta)</ItemName>
