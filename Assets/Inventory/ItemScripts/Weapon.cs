@@ -13,11 +13,11 @@ public class Weapon : Equipment
 
     public Weapon(int id, string itemName, string description,
         ItemType itemType, Quality quality,
-        string spritePath, int maxSize
+        string spritePath, string malePath, string femalePath, int maxSize
         , int strenght, int dexterity, int stamina, int magic, int attack , int defence)
         : base(id, itemName, description,
         itemType, quality,
-        spritePath, maxSize,
+        spritePath, malePath, femalePath, maxSize,
         strenght, dexterity, stamina, magic)
     {
         this.Attack = attack;
@@ -47,6 +47,6 @@ public class Weapon : Equipment
             stats += "\n" + Defence.ToString() + " Defence";
         }
 
-        return string.Format("{0}" + "<size=10>{1}</size>", itemTip, stats);
+        return string.Format("{0}" + "<size=15>{1}</size>", itemTip, stats);
     }
 }

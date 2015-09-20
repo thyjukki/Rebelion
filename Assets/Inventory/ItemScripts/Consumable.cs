@@ -14,7 +14,8 @@ public class Consumable : Item
 
     public Consumable(int id, string itemName,string description,
         ItemType itemType, Quality quality,
-        string spritePath, int maxSize, int health, int mana)
+        string spritePath,
+        int maxSize, int health, int mana)
         : base(id, itemName, description,
         itemType, quality,
         spritePath, maxSize)
@@ -42,6 +43,6 @@ public class Consumable : Item
         }
 
         string itemTip = base.GetTooltip();
-        return string.Format("{0}" + "<size=10>{1}</size>", itemTip, stats);
+        return string.Format("{0}" + "<size=15>{1}</size>", itemTip, stats);
     }
 }

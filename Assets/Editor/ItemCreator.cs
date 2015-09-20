@@ -14,7 +14,11 @@ public class ItemCreator : EditorWindow
     Quality quality;
     Category category;
     string spritePath;
+    string malePath;
+    string femalePath;
     Object sprite;
+    Object maleSprite;
+    Object femaleSprite;
     int maxStackSize;
     int strenght;
     int dexterity;
@@ -30,10 +34,10 @@ public class ItemCreator : EditorWindow
     [MenuItem("Window/Create an item")]
     static void Init()
     {
+        GetIDCount();
         // Get existing open window or if none, make a new one:
         ItemCreator window = (ItemCreator)EditorWindow.GetWindow(typeof(ItemCreator));
         window.Show();
-        GetIDCount();
     }
 
 
@@ -79,50 +83,74 @@ public class ItemCreator : EditorWindow
         spritePath = AssetDatabase.GetAssetPath(sprite).Replace("Assets/Resources/", "").Split('.')[0];
         GUILayout.EndHorizontal();
 
+        if (category != Category.Consumable)
+        {
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Sprite:", EditorStyles.boldLabel);
+            maleSprite = EditorGUILayout.ObjectField(maleSprite, typeof(Sprite), false, GUILayout.Width(220));
+            malePath = AssetDatabase.GetAssetPath(maleSprite).Replace("Assets/Resources/", "").Split('.')[0];
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Sprite:", EditorStyles.boldLabel);
+            femaleSprite = EditorGUILayout.ObjectField(femaleSprite, typeof(Sprite), false, GUILayout.Width(220));
+            femalePath = AssetDatabase.GetAssetPath(femaleSprite).Replace("Assets/Resources/", "").Split('.')[0];
+            GUILayout.EndHorizontal();
+        }
+
         GUILayout.BeginHorizontal();
         GUILayout.Label("Max Size:", EditorStyles.boldLabel);
         maxStackSize = EditorGUILayout.IntField(maxStackSize, GUILayout.Width(220));
         GUILayout.EndHorizontal();
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Strenght:", EditorStyles.boldLabel);
-        strenght = EditorGUILayout.IntField(strenght, GUILayout.Width(220));
-        GUILayout.EndHorizontal();
+        if (category != Category.Consumable)
+        {
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Strenght:", EditorStyles.boldLabel);
+            strenght = EditorGUILayout.IntField(strenght, GUILayout.Width(220));
+            GUILayout.EndHorizontal();
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Dexterity:", EditorStyles.boldLabel);
-        dexterity = EditorGUILayout.IntField(dexterity, GUILayout.Width(220));
-        GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Dexterity:", EditorStyles.boldLabel);
+            dexterity = EditorGUILayout.IntField(dexterity, GUILayout.Width(220));
+            GUILayout.EndHorizontal();
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Stamina:", EditorStyles.boldLabel);
-        stamina = EditorGUILayout.IntField(stamina, GUILayout.Width(220));
-        GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Stamina:", EditorStyles.boldLabel);
+            stamina = EditorGUILayout.IntField(stamina, GUILayout.Width(220));
+            GUILayout.EndHorizontal();
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Magic:", EditorStyles.boldLabel);
-        magic = EditorGUILayout.IntField(magic, GUILayout.Width(220));
-        GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Magic:", EditorStyles.boldLabel);
+            magic = EditorGUILayout.IntField(magic, GUILayout.Width(220));
+            GUILayout.EndHorizontal();
+        }
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Attack:", EditorStyles.boldLabel);
-        attack = EditorGUILayout.IntField(attack, GUILayout.Width(220));
-        GUILayout.EndHorizontal();
+        if (category == Category.Weapon)
+        {
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Attack:", EditorStyles.boldLabel);
+            attack = EditorGUILayout.IntField(attack, GUILayout.Width(220));
+            GUILayout.EndHorizontal();
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Defence:", EditorStyles.boldLabel);
-        defence = EditorGUILayout.IntField(defence, GUILayout.Width(220));
-        GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Defence:", EditorStyles.boldLabel);
+            defence = EditorGUILayout.IntField(defence, GUILayout.Width(220));
+            GUILayout.EndHorizontal();
+        }
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Health:", EditorStyles.boldLabel);
-        health = EditorGUILayout.IntField(health, GUILayout.Width(220));
-        GUILayout.EndHorizontal();
+        if (category == Category.Consumable)
+        {
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Health:", EditorStyles.boldLabel);
+            health = EditorGUILayout.IntField(health, GUILayout.Width(220));
+            GUILayout.EndHorizontal();
 
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Mana:", EditorStyles.boldLabel);
-        mana = EditorGUILayout.IntField(mana, GUILayout.Width(220));
-        GUILayout.EndHorizontal();
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Mana:", EditorStyles.boldLabel);
+            mana = EditorGUILayout.IntField(mana, GUILayout.Width(220));
+            GUILayout.EndHorizontal();
+        }
 
         GUILayout.Space(25f);
         if (GUILayout.Button("Create Item"))
@@ -154,10 +182,10 @@ public class ItemCreator : EditorWindow
         switch (category)
         {
             case Category.Equipment:
-                itemContainer.Equipments.Add(new Equipment(currentId, itemName, description, itemType, quality, spritePath, maxStackSize, strenght, dexterity, stamina, magic));
+                itemContainer.Equipments.Add(new Equipment(currentId, itemName, description, itemType, quality, spritePath, malePath, femalePath, maxStackSize, strenght, dexterity, stamina, magic));
                 break;
             case Category.Weapon:
-                itemContainer.Weapons.Add(new Weapon(currentId, itemName, description, itemType, quality, spritePath, maxStackSize, strenght, dexterity, stamina, magic, attack, defence));
+                itemContainer.Weapons.Add(new Weapon(currentId, itemName, description, itemType, quality, spritePath, malePath, femalePath, maxStackSize, strenght, dexterity, stamina, magic, attack, defence));
                 break;
             case Category.Consumable:
                 itemContainer.Consumables.Add(new Consumable(currentId, itemName, description, itemType, quality, spritePath, maxStackSize, health, mana));

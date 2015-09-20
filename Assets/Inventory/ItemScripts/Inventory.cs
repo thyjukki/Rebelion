@@ -13,12 +13,6 @@ public class Inventory : MonoBehaviour {
 
     public int slots;
 
-    public int rows;
-
-    public float slotPaddingLeft, slotPaddingTop;
-
-    public float slotSize;
-
 
     protected CanvasGroup canvasGroup;
 
@@ -171,10 +165,6 @@ public class Inventory : MonoBehaviour {
         Debug.Log(content);
         PlayerPrefs.SetString("content", content);
         PlayerPrefs.SetInt("slots", slots);
-        PlayerPrefs.SetFloat("rows", rows);
-        PlayerPrefs.SetFloat("slotPaddengLeft", slotPaddingLeft);
-        PlayerPrefs.SetFloat("slotPaddingTop", slotPaddingTop);
-        PlayerPrefs.SetFloat("slotSize", slotSize);
 
         PlayerPrefs.Save();
     }
@@ -226,10 +216,6 @@ public class Inventory : MonoBehaviour {
     {
         allSlots = new List<GameObject>();
 
-        GridLayoutGroup glg = GetComponent<GridLayoutGroup>();
-
-        glg.constraint = GridLayoutGroup.Constraint.FixedRowCount;
-        glg.constraintCount = rows;
         for (int i = 0; i < slots; i++)
         {
             GameObject newSlot = (GameObject)Instantiate(InventoryManager.Instance.slotPrefab);
@@ -350,7 +336,7 @@ public class Inventory : MonoBehaviour {
     /// Moves an item in the inventory
     /// </summary>
     /// <param name="clicked"></param>
-    public void MoveItem(GameObject clicked)
+    public virtual void MoveItem(GameObject clicked)
     {
         InventoryManager IGInstance = InventoryManager.Instance;
         IGInstance.Clicked = clicked;
@@ -470,7 +456,7 @@ public class Inventory : MonoBehaviour {
     private void CreateHoverIcon()
     {
         InventoryManager.Instance.HoverObject = (GameObject)Instantiate(InventoryManager.Instance.iconPrefab);
-        InventoryManager.Instance.HoverObject.GetComponent<Image>().sprite = InventoryManager.Instance.Clicked.transform.FindChild("ButtonIcon").GetComponent<Image>().sprite;
+        InventoryManager.Instance.HoverObject.GetComponent<Image>().sprite = InventoryManager.Instance.MovingSlot.CurrentItem.sprite;
         InventoryManager.Instance.HoverObject.name = "Hover";
 
         RectTransform hoverTransform = InventoryManager.Instance.HoverObject.GetComponent<RectTransform>();

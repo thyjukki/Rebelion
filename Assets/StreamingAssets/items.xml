@@ -20,6 +20,8 @@
       <ItemType>Legs</ItemType>
       <Quality>Common</Quality>
       <SpritePath>Items/Pants/magenta_pants</SpritePath>
+      <MalePath>Items/Pants/male/magenta</MalePath>
+      <FemalePath>Items/Pants/female/magenta</FemalePath>
       <ItemName>Pants (Magneta)</ItemName>
       <Description>Generic pants with magneta dye.</Description>
       <MaxSize>1</MaxSize>
@@ -33,6 +35,8 @@
       <ItemType>Chest</ItemType>
       <Quality>Common</Quality>
       <SpritePath>Items/Shirts/brown_shirt</SpritePath>
+      <MalePath>Items/Shirts/male/brown</MalePath>
+      <FemalePath>Items/Shirts/female/brown</FemalePath>
       <ItemName>Shirt (Brown)</ItemName>
       <Description>Generic shirt with brown dye.</Description>
       <MaxSize>1</MaxSize>

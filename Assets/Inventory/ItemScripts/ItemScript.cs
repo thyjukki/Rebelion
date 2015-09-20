@@ -23,7 +23,7 @@ public enum ItemType {
 
 public enum Quality { Common, Uncommon, Rare, Epic, Legendary, Artifact };
 
-public class ItemScript : MonoBehaviour
+public class ItemScript
 {
 
     public ItemType type;
@@ -54,12 +54,14 @@ public class ItemScript : MonoBehaviour
 
     public static ItemScript CreateItem(Category type, int id)
     {
-        GameObject tmp = Instantiate(InventoryManager.Instance.itemObject);
+        /*GameObject tmp = Instantiate(InventoryManager.Instance.itemObject);
         tmp.AddComponent<ItemScript>();
         ItemScript itemScript = tmp.GetComponent<ItemScript>();
 
 
-        Destroy(tmp);
+        Destroy(tmp);*/
+        ItemScript itemScript = new ItemScript();
+
         switch (type)
         {
             case Category.Equipment:

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum Category { Equipment, Weapon, Consumable };
 public abstract class Item
 {
     public int Id { get; set; }
@@ -70,7 +71,7 @@ public abstract class Item
         }
 
         return string.Format("<color=" + color +
-            "><size=10>{0}</size></color><size=8><i><color=lime>"
+            "><size=15>{0}</size></color><size=10><i><color=lime>"
             + newLine + "{1}</color></i></size>"
             , ItemName, Description);
     }

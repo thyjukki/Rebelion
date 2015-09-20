@@ -18,6 +18,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
     public Text stackTxt;
 
+    public Sprite emptySprite;
+
 
     public bool isEmpty
     {
@@ -71,6 +73,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
         if (transform.parent != null)
         {
             invenotry = transform.parent.GetComponent<Inventory>();
+        }
+
+        if (emptySprite != null)
+        {
+            IconSprite.enabled = true;
+            IconSprite.sprite = emptySprite;
         }
 	}
 	
@@ -149,7 +157,16 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
     public void ClearSlot()
     {
         items.Clear();
-        IconSprite.enabled = false;
+
+        if (emptySprite != null)
+        {
+            IconSprite.enabled = true;
+            IconSprite.sprite = emptySprite;
+        }
+        else
+        {
+            IconSprite.enabled = false;
+        }
         stackTxt.text = string.Empty;
 
 

@@ -7,6 +7,8 @@ public class Equipment : Item
     public int Dexterity { get; set; }
     public int Stamina { get; set; }
     public int Magic { get; set; }
+    public string MalePath { get; set; }
+    public string FemalePath { get; set; }
 
     public Equipment()
     {
@@ -15,7 +17,7 @@ public class Equipment : Item
 
     public Equipment(int id, string itemName, string description,
         ItemType itemType, Quality quality,
-        string spritePath, int maxSize
+        string spritePath, string malePath, string femalePath, int maxSize
         , int strenght, int dexterity, int stamina, int magic)
         : base(id, itemName, description,
         itemType, quality,
@@ -25,6 +27,8 @@ public class Equipment : Item
         this.Dexterity = dexterity;
         this.Stamina = stamina;
         this.Magic = magic;
+        this.MalePath = malePath;
+        this.FemalePath = femalePath;
     }
 
     public override void Use(Slot slot, ItemScript item)
@@ -70,6 +74,6 @@ public class Equipment : Item
         }
 
         string itemTip = base.GetTooltip();
-        return string.Format("{0}" + "<size=10>{1}</size>", itemTip, stats);
+        return string.Format("{0}" + "<size=15>{1}</size>", itemTip, stats);
     }
 }

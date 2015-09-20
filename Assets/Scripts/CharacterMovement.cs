@@ -12,6 +12,8 @@ public class CharacterMovement : MonoBehaviour {
 
     public Inventory inventory;
 
+    public CharacterPanel characterPanel;
+
     private Inventory chest;
 
 	// Use this for initialization
@@ -29,6 +31,7 @@ public class CharacterMovement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.I))
         {
             inventory.Open();
+            characterPanel.Open();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
