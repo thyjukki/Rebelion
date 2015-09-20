@@ -15,9 +15,12 @@ public class EquipmentSlot : MonoBehaviour {
 
     public Sprite[] subSprites;
 
+    private SpriteRenderer parentSpriteRenderer;
+
 	// Use this for initialization
 	void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        parentSpriteRenderer = this.transform.parent.GetComponent<SpriteRenderer>();
 
 	    if (item == null)
         {
@@ -34,7 +37,7 @@ public class EquipmentSlot : MonoBehaviour {
     {
         if (spriteRenderer.enabled)
         {
-            Sprite newSprite = Array.Find(subSprites, item => item.name == spriteRenderer.sprite.name);
+            Sprite newSprite = Array.Find(subSprites, spr => spr.name == parentSpriteRenderer.sprite.name);
 
             if (newSprite)
                 spriteRenderer.sprite = newSprite;

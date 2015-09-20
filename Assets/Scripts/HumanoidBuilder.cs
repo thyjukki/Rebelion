@@ -16,78 +16,86 @@ public class HumanoidBuilder : MonoBehaviour {
     public Ears EarType;
     public Nose NoseType;
 
+    public CharacterPart EarObject;
+    public CharacterPart EyesObject;
+    public CharacterPart NoseObject;
+
+    public Sprite[] subCharSprites;
+    private SpriteRenderer charRenderer;
+
+    void Start()
+    {
+        SetBodyParts();
+        SetBody();
+    }
+
     void LateUpdate()
     {
-        GameObject EarObject;
-        GameObject EyesObject;
-        GameObject NoseObject;
+        // Find replacement sprites
+        Sprite newCharSprite = Array.Find(subCharSprites, item => item.name == charRenderer.sprite.name);
 
-        EarObject = this.transform.FindChild("Ears").gameObject; // First get the child objects of character
-        EyesObject = this.transform.FindChild("Eyes").gameObject;
-        NoseObject = this.transform.FindChild("Nose").gameObject;
+        if (newCharSprite) // If replacement sprites were found, replace them
+            charRenderer.sprite = newCharSprite;
+	}
 
-        if (EarType == Ears.Normal) // Check what type of ears the character has
-            EarObject.SetActive(false);
-        else
-            EarObject.SetActive(true);
-
-        if (NoseType == Nose.Normal) // Check what type of ears the character has
-            NoseObject.SetActive(false);
-        else
-            NoseObject.SetActive(true);
-
-
+    void SetBody()
+    {
         string path; // Check if the character is female and then get path names
         if (female)
             path = "Characters/Female/";
         else
             path = "Characters/Male/";
 
-        string earPath = path + "Ears/";
-        if (EarType == Ears.Big)
-            earPath = earPath + "bigears_" + skinName;
-        else if (EarType == Ears.Elf)
-            earPath = earPath + "elvenears_" + skinName;
+        subCharSprites = Resources.LoadAll<Sprite>(path + skinName); // Find sub Sprites
 
-        string nosePath = path + "Nose/";
-        if (NoseType == Nose.BigNose)
-            nosePath = nosePath + "bignose_" + skinName;
-        else if (NoseType == Nose.ButtonNose)
-            nosePath = nosePath + "buttonnose_" + skinName;
-        else if (NoseType == Nose.StraightNose)
-            nosePath = nosePath + "straightnose_" + skinName;
+        charRenderer = GetComponent<SpriteRenderer>(); // Get all sprite renderer
+    }
 
-        Sprite[] subCharSprites = Resources.LoadAll<Sprite>(path + skinName); // Find sub Sprites
-        Sprite[] subEarSprites = Resources.LoadAll<Sprite>(earPath);
-        Sprite[] subEyeSprites = Resources.LoadAll<Sprite>(path + "Eyes/" + eyeName);
-        Sprite[] subNoseSprites = Resources.LoadAll<Sprite>(nosePath);
+    void SetBodyParts()
+    {
+        string path; // Check if the character is female and then get path names
+        if (female)
+            path = "Characters/Female/";
+        else
+            path = "Characters/Male/";
 
+        if (EarObject != null)
+        {
+            if (EarType == Ears.Normal) // Check what type of ears the character has
+                EarObject.DisableSprite();
+            else
+            {
+                string earPath = path + "Ears/";
+                if (EarType == Ears.Big)
+                    earPath = earPath + "bigears_" + skinName;
+                else if (EarType == Ears.Elf)
+                    earPath = earPath + "elvenears_" + skinName;
 
-        var charRenderer = GetComponent<SpriteRenderer>(); // Get all sprite renderers
-        var earRenderer = EarObject.GetComponent<SpriteRenderer>();
-        var eyesRenderer = EyesObject.GetComponent<SpriteRenderer>();
-        var noseRenderer = NoseObject.GetComponent<SpriteRenderer>();
+                EarObject.SetSprite(earPath);
+            }
+        }
 
-        string charSpriteName = charRenderer.sprite.name;
-        string earSpriteName = earRenderer.sprite.name;
-        string eyeSpriteName = eyesRenderer.sprite.name;
-        string noseSpriteName = noseRenderer.sprite.name;
+        if (NoseObject != null)
+        {
+            if (NoseType == Nose.Normal) // Check what type of ears the character has
+                NoseObject.DisableSprite();
+            else
+            {
+                string nosePath = path + "Nose/";
+                if (NoseType == Nose.BigNose)
+                    nosePath = nosePath + "bignose_" + skinName;
+                else if (NoseType == Nose.ButtonNose)
+                    nosePath = nosePath + "buttonnose_" + skinName;
+                else if (NoseType == Nose.StraightNose)
+                    nosePath = nosePath + "straightnose_" + skinName;
 
-        var newCharSprite = Array.Find(subCharSprites, item => item.name == charSpriteName); // Find replacement sprites
-        var newEarSprite = Array.Find(subEarSprites, item => item.name == earSpriteName);
-        var newEyeSprite = Array.Find(subEyeSprites, item => item.name == eyeSpriteName);
-        var newNoseSprite = Array.Find(subNoseSprites, item => item.name == noseSpriteName);
+                NoseObject.SetSprite(nosePath);
+            }
+        }
 
-        if (newCharSprite) // If replacement sprites were found, replace them
-            charRenderer.sprite = newCharSprite;
-
-        if (newEarSprite)
-            earRenderer.sprite = newEarSprite;
-
-        if (newEyeSprite)
-            eyesRenderer.sprite = newEyeSprite;
-
-        if (newNoseSprite)
-            noseRenderer.sprite = newNoseSprite;
-	}
+        if (EyesObject != null && eyeName != String.Empty)
+        {
+            EyesObject.SetSprite(path + "Eyes/" + eyeName);
+        }
+    }
 }

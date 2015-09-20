@@ -78,7 +78,7 @@ public class ItemCreator : EditorWindow
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        GUILayout.Label("Sprite:", EditorStyles.boldLabel);
+        GUILayout.Label("Inventory Sprite:", EditorStyles.boldLabel);
         sprite = EditorGUILayout.ObjectField(sprite, typeof(Sprite), false, GUILayout.Width(220));
         spritePath = AssetDatabase.GetAssetPath(sprite).Replace("Assets/Resources/", "").Split('.')[0];
         GUILayout.EndHorizontal();
@@ -86,13 +86,13 @@ public class ItemCreator : EditorWindow
         if (category != Category.Consumable)
         {
             GUILayout.BeginHorizontal();
-            GUILayout.Label("Sprite:", EditorStyles.boldLabel);
+            GUILayout.Label("Male Sprite:", EditorStyles.boldLabel);
             maleSprite = EditorGUILayout.ObjectField(maleSprite, typeof(Sprite), false, GUILayout.Width(220));
             malePath = AssetDatabase.GetAssetPath(maleSprite).Replace("Assets/Resources/", "").Split('.')[0];
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
-            GUILayout.Label("Sprite:", EditorStyles.boldLabel);
+            GUILayout.Label("Female Sprite:", EditorStyles.boldLabel);
             femaleSprite = EditorGUILayout.ObjectField(femaleSprite, typeof(Sprite), false, GUILayout.Width(220));
             femalePath = AssetDatabase.GetAssetPath(femaleSprite).Replace("Assets/Resources/", "").Split('.')[0];
             GUILayout.EndHorizontal();

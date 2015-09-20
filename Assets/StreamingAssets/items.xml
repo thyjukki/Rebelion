@@ -20,8 +20,6 @@
       <ItemType>Legs</ItemType>
       <Quality>Common</Quality>
       <SpritePath>Items/Pants/magenta_pants</SpritePath>
-      <MalePath>Items/Pants/male/magenta</MalePath>
-      <FemalePath>Items/Pants/female/magenta</FemalePath>
       <ItemName>Pants (Magneta)</ItemName>
       <Description>Generic pants with magneta dye.</Description>
       <MaxSize>1</MaxSize>
@@ -29,14 +27,14 @@
       <Dexterity>0</Dexterity>
       <Stamina>0</Stamina>
       <Magic>0</Magic>
+      <MalePath>Items/Pants/male/magenta</MalePath>
+      <FemalePath>Items/Pants/female/magenta</FemalePath>
     </Item>
     <Item xsi:type="Equipment">
       <Id>2</Id>
       <ItemType>Chest</ItemType>
       <Quality>Common</Quality>
       <SpritePath>Items/Shirts/brown_shirt</SpritePath>
-      <MalePath>Items/Shirts/male/brown</MalePath>
-      <FemalePath>Items/Shirts/female/brown</FemalePath>
       <ItemName>Shirt (Brown)</ItemName>
       <Description>Generic shirt with brown dye.</Description>
       <MaxSize>1</MaxSize>
@@ -44,6 +42,23 @@
       <Dexterity>0</Dexterity>
       <Stamina>0</Stamina>
       <Magic>0</Magic>
+      <MalePath>Items/Shirts/male/brown</MalePath>
+      <FemalePath>Items/Shirts/female/brown_sleeveless</FemalePath>
+    </Item>
+    <Item xsi:type="Equipment">
+      <Id>3</Id>
+      <ItemType>Belt</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Belts/belt_leather</SpritePath>
+      <ItemName>Leather Belt</ItemName>
+      <Description>Regular leather belt.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+      <MalePath>Items/Belts/Male/leather</MalePath>
+      <FemalePath>Items/Belts/Female/leather</FemalePath>
     </Item>
   </Equipments>
 </ItemContainer>

@@ -60,6 +60,16 @@ public class CharacterPanel : Inventory
         }
     }
 
+    public void EquipItem(ItemScript item)
+    {
+        Slot to = Array.Find(equipmentSlots, x => x.canContain == item.Item.ItemType);
+        if (to != null)
+        {
+            to.AddItem(item);
+            SetClothing(to.name);
+        }
+    }
+
     public Slot GetSlot(string name)
     {
         return slotByNames[name];
@@ -113,7 +123,7 @@ public class CharacterPanel : Inventory
         }
         else if (!slot.isEmpty)
         {
-            if (equipment.Item.Item != slot.CurrentItem.Item)
+            if (equipment.Item == null || equipment.Item.Item != slot.CurrentItem.Item)
             {
                 equipment.SetItem(slot.CurrentItem);
             }

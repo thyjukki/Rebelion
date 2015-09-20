@@ -21,6 +21,10 @@ public class CharacterMovement : MonoBehaviour {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
+        inventory.AddItem(ItemScript.CreateItem(Category.Consumable, 0));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 1));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 2));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 3));
         //pantsAnim = transform.GetChild(0).GetComponent<SpriteRenderer>();
 	}
 	
@@ -32,24 +36,6 @@ public class CharacterMovement : MonoBehaviour {
         {
             inventory.Open();
             characterPanel.Open();
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ItemScript itemScript = ItemScript.CreateItem(Category.Consumable, 0);
-            inventory.AddItem(itemScript);
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ItemScript itemScript = ItemScript.CreateItem(Category.Equipment, 1);
-            inventory.AddItem(itemScript);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            ItemScript itemScript = ItemScript.CreateItem(Category.Equipment, 2);
-            inventory.AddItem(itemScript);
         }
 
         if (Input.GetKeyDown(KeyCode.E))

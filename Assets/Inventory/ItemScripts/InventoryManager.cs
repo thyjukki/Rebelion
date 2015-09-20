@@ -96,8 +96,7 @@ public class InventoryManager : MonoBehaviour {
 
     public GameObject itemObject;
 
-
-    public void Start()
+    public void Awake()
     {
         Type[] itemTypes = { typeof(Equipment), typeof(Weapon), typeof(Consumable) };
 
@@ -106,6 +105,10 @@ public class InventoryManager : MonoBehaviour {
 
         itemContainer = (ItemContainer)serializer.Deserialize(textReader);
         textReader.Close();
+    }
+
+    public void Start()
+    {
 
 
         movingSlot = GameObject.Find("MovingSlot").GetComponent<Slot>();

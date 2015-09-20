@@ -43,11 +43,15 @@ public class Inventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        IsOpen = false;
         canvasGroup = GetComponent<CanvasGroup>();
-        CreateLayout();
 	}
 	
+    void Awake()
+    {
+        IsOpen = false;
+        CreateLayout();
+
+    }
 	// Update is called once per frame
     void Update()
     {

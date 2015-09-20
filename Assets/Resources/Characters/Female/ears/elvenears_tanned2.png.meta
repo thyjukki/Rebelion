@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4ee5074ae43320b448ac49467b0c0138
-timeCreated: 1440831250
+timeCreated: 1442758632
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -182,6 +182,148 @@ TextureImporter:
     21300350: ear_175
     21300352: ear_176
     21300354: ear_177
+    21300356: humanoid_0
+    21300358: humanoid_1
+    21300360: humanoid_2
+    21300362: humanoid_3
+    21300364: humanoid_4
+    21300366: humanoid_5
+    21300368: humanoid_6
+    21300370: humanoid_7
+    21300372: humanoid_8
+    21300374: humanoid_9
+    21300376: humanoid_10
+    21300378: humanoid_11
+    21300380: humanoid_12
+    21300382: humanoid_13
+    21300384: humanoid_14
+    21300386: humanoid_15
+    21300388: humanoid_16
+    21300390: humanoid_17
+    21300392: humanoid_18
+    21300394: humanoid_19
+    21300396: humanoid_20
+    21300398: humanoid_21
+    21300400: humanoid_22
+    21300402: humanoid_23
+    21300404: humanoid_24
+    21300406: humanoid_25
+    21300408: humanoid_26
+    21300410: humanoid_27
+    21300412: humanoid_28
+    21300414: humanoid_29
+    21300416: humanoid_30
+    21300418: humanoid_31
+    21300420: humanoid_32
+    21300422: humanoid_33
+    21300424: humanoid_34
+    21300426: humanoid_35
+    21300428: humanoid_36
+    21300430: humanoid_37
+    21300432: humanoid_38
+    21300434: humanoid_39
+    21300436: humanoid_40
+    21300438: humanoid_41
+    21300440: humanoid_42
+    21300442: humanoid_43
+    21300444: humanoid_44
+    21300446: humanoid_45
+    21300448: humanoid_46
+    21300450: humanoid_47
+    21300452: humanoid_48
+    21300454: humanoid_49
+    21300456: humanoid_50
+    21300458: humanoid_51
+    21300460: humanoid_52
+    21300462: humanoid_53
+    21300464: humanoid_54
+    21300466: humanoid_55
+    21300468: humanoid_56
+    21300470: humanoid_57
+    21300472: humanoid_58
+    21300474: humanoid_59
+    21300476: humanoid_96
+    21300478: humanoid_97
+    21300480: humanoid_98
+    21300482: humanoid_99
+    21300484: humanoid_100
+    21300486: humanoid_101
+    21300488: humanoid_102
+    21300490: humanoid_103
+    21300492: humanoid_104
+    21300494: humanoid_105
+    21300496: humanoid_106
+    21300498: humanoid_107
+    21300500: humanoid_108
+    21300502: humanoid_109
+    21300504: humanoid_110
+    21300506: humanoid_111
+    21300508: humanoid_112
+    21300510: humanoid_113
+    21300512: humanoid_114
+    21300514: humanoid_115
+    21300516: humanoid_116
+    21300518: humanoid_117
+    21300520: humanoid_118
+    21300522: humanoid_119
+    21300524: humanoid_120
+    21300526: humanoid_121
+    21300528: humanoid_122
+    21300530: humanoid_123
+    21300532: humanoid_124
+    21300534: humanoid_125
+    21300536: humanoid_126
+    21300538: humanoid_127
+    21300540: humanoid_128
+    21300542: humanoid_129
+    21300544: humanoid_130
+    21300546: humanoid_131
+    21300548: humanoid_132
+    21300550: humanoid_133
+    21300552: humanoid_134
+    21300554: humanoid_135
+    21300556: humanoid_136
+    21300558: humanoid_137
+    21300560: humanoid_138
+    21300562: humanoid_139
+    21300564: humanoid_140
+    21300566: humanoid_141
+    21300568: humanoid_142
+    21300570: humanoid_143
+    21300572: humanoid_144
+    21300574: humanoid_145
+    21300576: humanoid_146
+    21300578: humanoid_147
+    21300580: humanoid_148
+    21300582: humanoid_149
+    21300584: humanoid_150
+    21300586: humanoid_151
+    21300588: humanoid_152
+    21300590: humanoid_153
+    21300592: humanoid_154
+    21300594: humanoid_155
+    21300596: humanoid_156
+    21300598: humanoid_157
+    21300600: humanoid_158
+    21300602: humanoid_159
+    21300604: humanoid_160
+    21300606: humanoid_161
+    21300608: humanoid_162
+    21300610: humanoid_163
+    21300612: humanoid_164
+    21300614: humanoid_165
+    21300616: humanoid_166
+    21300618: humanoid_167
+    21300620: humanoid_168
+    21300622: humanoid_169
+    21300624: humanoid_170
+    21300626: humanoid_171
+    21300628: humanoid_172
+    21300630: humanoid_173
+    21300632: humanoid_174
+    21300634: humanoid_175
+    21300636: humanoid_176
+    21300638: humanoid_177
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -215,6 +357,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -227,7 +370,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: ear_0
+    - name: humanoid_0
       rect:
         serializedVersion: 2
         x: 0
@@ -235,9 +378,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_1
+    - name: humanoid_1
       rect:
         serializedVersion: 2
         x: 64
@@ -245,9 +388,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_2
+    - name: humanoid_2
       rect:
         serializedVersion: 2
         x: 128
@@ -255,9 +398,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_3
+    - name: humanoid_3
       rect:
         serializedVersion: 2
         x: 192
@@ -265,9 +408,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_4
+    - name: humanoid_4
       rect:
         serializedVersion: 2
         x: 256
@@ -275,9 +418,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_5
+    - name: humanoid_5
       rect:
         serializedVersion: 2
         x: 320
@@ -285,9 +428,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_6
+    - name: humanoid_6
       rect:
         serializedVersion: 2
         x: 384
@@ -295,9 +438,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_7
+    - name: humanoid_7
       rect:
         serializedVersion: 2
         x: 0
@@ -305,9 +448,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_8
+    - name: humanoid_8
       rect:
         serializedVersion: 2
         x: 64
@@ -315,9 +458,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_9
+    - name: humanoid_9
       rect:
         serializedVersion: 2
         x: 128
@@ -325,9 +468,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_10
+    - name: humanoid_10
       rect:
         serializedVersion: 2
         x: 192
@@ -335,9 +478,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_11
+    - name: humanoid_11
       rect:
         serializedVersion: 2
         x: 256
@@ -345,9 +488,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_12
+    - name: humanoid_12
       rect:
         serializedVersion: 2
         x: 320
@@ -355,9 +498,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_13
+    - name: humanoid_13
       rect:
         serializedVersion: 2
         x: 384
@@ -365,9 +508,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_14
+    - name: humanoid_14
       rect:
         serializedVersion: 2
         x: 0
@@ -375,9 +518,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_15
+    - name: humanoid_15
       rect:
         serializedVersion: 2
         x: 64
@@ -385,9 +528,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_16
+    - name: humanoid_16
       rect:
         serializedVersion: 2
         x: 128
@@ -395,9 +538,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_17
+    - name: humanoid_17
       rect:
         serializedVersion: 2
         x: 192
@@ -405,9 +548,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_18
+    - name: humanoid_18
       rect:
         serializedVersion: 2
         x: 256
@@ -415,9 +558,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_19
+    - name: humanoid_19
       rect:
         serializedVersion: 2
         x: 320
@@ -425,9 +568,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_20
+    - name: humanoid_20
       rect:
         serializedVersion: 2
         x: 384
@@ -435,9 +578,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_21
+    - name: humanoid_21
       rect:
         serializedVersion: 2
         x: 0
@@ -445,9 +588,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_22
+    - name: humanoid_22
       rect:
         serializedVersion: 2
         x: 64
@@ -455,9 +598,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_23
+    - name: humanoid_23
       rect:
         serializedVersion: 2
         x: 128
@@ -465,9 +608,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_24
+    - name: humanoid_24
       rect:
         serializedVersion: 2
         x: 192
@@ -475,9 +618,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_25
+    - name: humanoid_25
       rect:
         serializedVersion: 2
         x: 256
@@ -485,9 +628,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_26
+    - name: humanoid_26
       rect:
         serializedVersion: 2
         x: 320
@@ -495,9 +638,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_27
+    - name: humanoid_27
       rect:
         serializedVersion: 2
         x: 384
@@ -505,9 +648,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_28
+    - name: humanoid_28
       rect:
         serializedVersion: 2
         x: 0
@@ -515,9 +658,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_29
+    - name: humanoid_29
       rect:
         serializedVersion: 2
         x: 64
@@ -525,9 +668,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_30
+    - name: humanoid_30
       rect:
         serializedVersion: 2
         x: 128
@@ -535,9 +678,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_31
+    - name: humanoid_31
       rect:
         serializedVersion: 2
         x: 192
@@ -545,9 +688,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_32
+    - name: humanoid_32
       rect:
         serializedVersion: 2
         x: 256
@@ -555,9 +698,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_33
+    - name: humanoid_33
       rect:
         serializedVersion: 2
         x: 320
@@ -565,9 +708,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_34
+    - name: humanoid_34
       rect:
         serializedVersion: 2
         x: 384
@@ -575,9 +718,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_35
+    - name: humanoid_35
       rect:
         serializedVersion: 2
         x: 448
@@ -585,9 +728,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_36
+    - name: humanoid_36
       rect:
         serializedVersion: 2
         x: 0
@@ -595,9 +738,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_37
+    - name: humanoid_37
       rect:
         serializedVersion: 2
         x: 64
@@ -605,9 +748,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_38
+    - name: humanoid_38
       rect:
         serializedVersion: 2
         x: 128
@@ -615,9 +758,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_39
+    - name: humanoid_39
       rect:
         serializedVersion: 2
         x: 192
@@ -625,9 +768,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_40
+    - name: humanoid_40
       rect:
         serializedVersion: 2
         x: 256
@@ -635,9 +778,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_41
+    - name: humanoid_41
       rect:
         serializedVersion: 2
         x: 320
@@ -645,9 +788,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_42
+    - name: humanoid_42
       rect:
         serializedVersion: 2
         x: 384
@@ -655,9 +798,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_43
+    - name: humanoid_43
       rect:
         serializedVersion: 2
         x: 448
@@ -665,9 +808,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_44
+    - name: humanoid_44
       rect:
         serializedVersion: 2
         x: 0
@@ -675,9 +818,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_45
+    - name: humanoid_45
       rect:
         serializedVersion: 2
         x: 64
@@ -685,9 +828,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_46
+    - name: humanoid_46
       rect:
         serializedVersion: 2
         x: 128
@@ -695,9 +838,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_47
+    - name: humanoid_47
       rect:
         serializedVersion: 2
         x: 192
@@ -705,9 +848,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_48
+    - name: humanoid_48
       rect:
         serializedVersion: 2
         x: 256
@@ -715,9 +858,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_49
+    - name: humanoid_49
       rect:
         serializedVersion: 2
         x: 320
@@ -725,9 +868,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_50
+    - name: humanoid_50
       rect:
         serializedVersion: 2
         x: 384
@@ -735,9 +878,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_51
+    - name: humanoid_51
       rect:
         serializedVersion: 2
         x: 448
@@ -745,9 +888,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_52
+    - name: humanoid_52
       rect:
         serializedVersion: 2
         x: 0
@@ -755,9 +898,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_53
+    - name: humanoid_53
       rect:
         serializedVersion: 2
         x: 64
@@ -765,9 +908,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_54
+    - name: humanoid_54
       rect:
         serializedVersion: 2
         x: 128
@@ -775,9 +918,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_55
+    - name: humanoid_55
       rect:
         serializedVersion: 2
         x: 192
@@ -785,9 +928,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_56
+    - name: humanoid_56
       rect:
         serializedVersion: 2
         x: 256
@@ -797,7 +940,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_57
+    - name: humanoid_57
       rect:
         serializedVersion: 2
         x: 320
@@ -805,9 +948,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_58
+    - name: humanoid_58
       rect:
         serializedVersion: 2
         x: 384
@@ -815,9 +958,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_59
+    - name: humanoid_59
       rect:
         serializedVersion: 2
         x: 448
@@ -825,7 +968,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: up_walk_0
       rect:
@@ -1187,7 +1330,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_96
+    - name: humanoid_96
       rect:
         serializedVersion: 2
         x: 0
@@ -1195,9 +1338,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_97
+    - name: humanoid_97
       rect:
         serializedVersion: 2
         x: 64
@@ -1205,9 +1348,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_98
+    - name: humanoid_98
       rect:
         serializedVersion: 2
         x: 128
@@ -1215,9 +1358,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_99
+    - name: humanoid_99
       rect:
         serializedVersion: 2
         x: 192
@@ -1225,9 +1368,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_100
+    - name: humanoid_100
       rect:
         serializedVersion: 2
         x: 256
@@ -1235,9 +1378,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_101
+    - name: humanoid_101
       rect:
         serializedVersion: 2
         x: 320
@@ -1245,9 +1388,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_102
+    - name: humanoid_102
       rect:
         serializedVersion: 2
         x: 0
@@ -1255,9 +1398,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_103
+    - name: humanoid_103
       rect:
         serializedVersion: 2
         x: 64
@@ -1265,9 +1408,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_104
+    - name: humanoid_104
       rect:
         serializedVersion: 2
         x: 128
@@ -1275,9 +1418,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_105
+    - name: humanoid_105
       rect:
         serializedVersion: 2
         x: 192
@@ -1285,9 +1428,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_106
+    - name: humanoid_106
       rect:
         serializedVersion: 2
         x: 256
@@ -1295,9 +1438,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_107
+    - name: humanoid_107
       rect:
         serializedVersion: 2
         x: 320
@@ -1305,9 +1448,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_108
+    - name: humanoid_108
       rect:
         serializedVersion: 2
         x: 0
@@ -1315,9 +1458,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_109
+    - name: humanoid_109
       rect:
         serializedVersion: 2
         x: 64
@@ -1325,9 +1468,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_110
+    - name: humanoid_110
       rect:
         serializedVersion: 2
         x: 128
@@ -1335,9 +1478,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_111
+    - name: humanoid_111
       rect:
         serializedVersion: 2
         x: 192
@@ -1345,9 +1488,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_112
+    - name: humanoid_112
       rect:
         serializedVersion: 2
         x: 256
@@ -1355,9 +1498,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_113
+    - name: humanoid_113
       rect:
         serializedVersion: 2
         x: 320
@@ -1365,9 +1508,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_114
+    - name: humanoid_114
       rect:
         serializedVersion: 2
         x: 0
@@ -1375,9 +1518,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_115
+    - name: humanoid_115
       rect:
         serializedVersion: 2
         x: 64
@@ -1385,9 +1528,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_116
+    - name: humanoid_116
       rect:
         serializedVersion: 2
         x: 128
@@ -1395,9 +1538,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_117
+    - name: humanoid_117
       rect:
         serializedVersion: 2
         x: 192
@@ -1405,9 +1548,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_118
+    - name: humanoid_118
       rect:
         serializedVersion: 2
         x: 256
@@ -1415,9 +1558,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_119
+    - name: humanoid_119
       rect:
         serializedVersion: 2
         x: 320
@@ -1425,9 +1568,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_120
+    - name: humanoid_120
       rect:
         serializedVersion: 2
         x: 0
@@ -1435,9 +1578,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_121
+    - name: humanoid_121
       rect:
         serializedVersion: 2
         x: 64
@@ -1445,9 +1588,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_122
+    - name: humanoid_122
       rect:
         serializedVersion: 2
         x: 128
@@ -1455,9 +1598,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_123
+    - name: humanoid_123
       rect:
         serializedVersion: 2
         x: 192
@@ -1465,9 +1608,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_124
+    - name: humanoid_124
       rect:
         serializedVersion: 2
         x: 256
@@ -1475,9 +1618,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_125
+    - name: humanoid_125
       rect:
         serializedVersion: 2
         x: 320
@@ -1485,9 +1628,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_126
+    - name: humanoid_126
       rect:
         serializedVersion: 2
         x: 384
@@ -1495,9 +1638,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_127
+    - name: humanoid_127
       rect:
         serializedVersion: 2
         x: 448
@@ -1505,9 +1648,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_128
+    - name: humanoid_128
       rect:
         serializedVersion: 2
         x: 512
@@ -1515,9 +1658,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_129
+    - name: humanoid_129
       rect:
         serializedVersion: 2
         x: 576
@@ -1525,9 +1668,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_130
+    - name: humanoid_130
       rect:
         serializedVersion: 2
         x: 640
@@ -1535,9 +1678,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_131
+    - name: humanoid_131
       rect:
         serializedVersion: 2
         x: 704
@@ -1545,9 +1688,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_132
+    - name: humanoid_132
       rect:
         serializedVersion: 2
         x: 768
@@ -1555,9 +1698,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_133
+    - name: humanoid_133
       rect:
         serializedVersion: 2
         x: 0
@@ -1565,9 +1708,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_134
+    - name: humanoid_134
       rect:
         serializedVersion: 2
         x: 64
@@ -1575,9 +1718,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_135
+    - name: humanoid_135
       rect:
         serializedVersion: 2
         x: 128
@@ -1585,9 +1728,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_136
+    - name: humanoid_136
       rect:
         serializedVersion: 2
         x: 192
@@ -1595,9 +1738,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_137
+    - name: humanoid_137
       rect:
         serializedVersion: 2
         x: 256
@@ -1605,9 +1748,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_138
+    - name: humanoid_138
       rect:
         serializedVersion: 2
         x: 320
@@ -1615,9 +1758,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_139
+    - name: humanoid_139
       rect:
         serializedVersion: 2
         x: 384
@@ -1625,9 +1768,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_140
+    - name: humanoid_140
       rect:
         serializedVersion: 2
         x: 448
@@ -1635,9 +1778,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_141
+    - name: humanoid_141
       rect:
         serializedVersion: 2
         x: 512
@@ -1645,9 +1788,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_142
+    - name: humanoid_142
       rect:
         serializedVersion: 2
         x: 576
@@ -1655,9 +1798,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_143
+    - name: humanoid_143
       rect:
         serializedVersion: 2
         x: 640
@@ -1665,9 +1808,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_144
+    - name: humanoid_144
       rect:
         serializedVersion: 2
         x: 704
@@ -1675,9 +1818,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_145
+    - name: humanoid_145
       rect:
         serializedVersion: 2
         x: 768
@@ -1685,9 +1828,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_146
+    - name: humanoid_146
       rect:
         serializedVersion: 2
         x: 0
@@ -1695,9 +1838,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_147
+    - name: humanoid_147
       rect:
         serializedVersion: 2
         x: 64
@@ -1705,9 +1848,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_148
+    - name: humanoid_148
       rect:
         serializedVersion: 2
         x: 128
@@ -1715,9 +1858,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_149
+    - name: humanoid_149
       rect:
         serializedVersion: 2
         x: 192
@@ -1725,9 +1868,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_150
+    - name: humanoid_150
       rect:
         serializedVersion: 2
         x: 256
@@ -1735,9 +1878,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_151
+    - name: humanoid_151
       rect:
         serializedVersion: 2
         x: 320
@@ -1745,9 +1888,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_152
+    - name: humanoid_152
       rect:
         serializedVersion: 2
         x: 384
@@ -1755,9 +1898,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_153
+    - name: humanoid_153
       rect:
         serializedVersion: 2
         x: 448
@@ -1765,9 +1908,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_154
+    - name: humanoid_154
       rect:
         serializedVersion: 2
         x: 512
@@ -1775,9 +1918,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_155
+    - name: humanoid_155
       rect:
         serializedVersion: 2
         x: 576
@@ -1785,9 +1928,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_156
+    - name: humanoid_156
       rect:
         serializedVersion: 2
         x: 640
@@ -1795,9 +1938,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_157
+    - name: humanoid_157
       rect:
         serializedVersion: 2
         x: 704
@@ -1805,9 +1948,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_158
+    - name: humanoid_158
       rect:
         serializedVersion: 2
         x: 768
@@ -1815,9 +1958,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_159
+    - name: humanoid_159
       rect:
         serializedVersion: 2
         x: 0
@@ -1825,9 +1968,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_160
+    - name: humanoid_160
       rect:
         serializedVersion: 2
         x: 64
@@ -1835,9 +1978,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_161
+    - name: humanoid_161
       rect:
         serializedVersion: 2
         x: 128
@@ -1845,9 +1988,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_162
+    - name: humanoid_162
       rect:
         serializedVersion: 2
         x: 192
@@ -1855,9 +1998,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_163
+    - name: humanoid_163
       rect:
         serializedVersion: 2
         x: 256
@@ -1865,9 +2008,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_164
+    - name: humanoid_164
       rect:
         serializedVersion: 2
         x: 320
@@ -1875,9 +2018,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_165
+    - name: humanoid_165
       rect:
         serializedVersion: 2
         x: 384
@@ -1885,9 +2028,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_166
+    - name: humanoid_166
       rect:
         serializedVersion: 2
         x: 448
@@ -1895,9 +2038,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_167
+    - name: humanoid_167
       rect:
         serializedVersion: 2
         x: 512
@@ -1905,9 +2048,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_168
+    - name: humanoid_168
       rect:
         serializedVersion: 2
         x: 576
@@ -1915,9 +2058,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_169
+    - name: humanoid_169
       rect:
         serializedVersion: 2
         x: 640
@@ -1925,9 +2068,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_170
+    - name: humanoid_170
       rect:
         serializedVersion: 2
         x: 704
@@ -1935,9 +2078,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_171
+    - name: humanoid_171
       rect:
         serializedVersion: 2
         x: 768
@@ -1945,9 +2088,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_172
+    - name: humanoid_172
       rect:
         serializedVersion: 2
         x: 0
@@ -1955,9 +2098,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_173
+    - name: humanoid_173
       rect:
         serializedVersion: 2
         x: 64
@@ -1965,9 +2108,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_174
+    - name: humanoid_174
       rect:
         serializedVersion: 2
         x: 128
@@ -1975,9 +2118,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_175
+    - name: humanoid_175
       rect:
         serializedVersion: 2
         x: 192
@@ -1985,9 +2128,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_176
+    - name: humanoid_176
       rect:
         serializedVersion: 2
         x: 256
@@ -1995,9 +2138,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ear_177
+    - name: humanoid_177
       rect:
         serializedVersion: 2
         x: 320
@@ -2005,7 +2148,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
