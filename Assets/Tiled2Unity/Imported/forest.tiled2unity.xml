@@ -1,33 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 8/16/2015 11:20:13 AM-->
-<Tiled2Unity version="0.9.11.2">
+<!--Last exported: 9/27/2015 11:40:48 AM-->
+<Tiled2Unity version="0.9.13.0">
   <AssignMaterial mesh="mesh_[00]_[07]" material="grass" sortingLayerName="" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[04]" material="dirt" sortingLayerName="" sortingOrder="1" />
   <AssignMaterial mesh="mesh_[02]_[22]" material="trunk" sortingLayerName="" sortingOrder="2" />
   <AssignMaterial mesh="mesh_[03]_[21]" material="treetop" sortingLayerName="" sortingOrder="3" />
   <AssignMaterial mesh="mesh_[04]_[38]" material="red" sortingLayerName="" sortingOrder="4" />
   <Prefab name="forest" numTilesWide="15" numTilesHigh="15" tileWidth="32" tileHeight="32" exportScale="0.01" mapWidthInPixels="480" mapHeightInPixels="480">
-    <GameObject name="Grass_00">
-      <GameObject copy="mesh_[00]_[07]" />
+    <GameObject name="Grass_00" x="0" y="0">
+      <GameObject copy="mesh_[00]_[07]" opacity="0.9" />
     </GameObject>
-    <GameObject name="Dirt_01">
-      <GameObject copy="mesh_[01]_[04]" />
+    <GameObject name="Dirt_01" x="0" y="0">
+      <GameObject copy="mesh_[01]_[04]" opacity="1" />
     </GameObject>
-    <GameObject name="Trees_Bottom_02">
-      <GameObject copy="mesh_[02]_[22]" />
+    <GameObject name="Trees_Bottom_02" x="0" y="0">
+      <GameObject copy="mesh_[02]_[22]" opacity="1" />
     </GameObject>
-    <GameObject name="Trees_Top_03">
-      <GameObject copy="mesh_[03]_[21]" />
+    <GameObject name="Trees_Top_03" x="0" y="0">
+      <GameObject copy="mesh_[03]_[21]" opacity="1" />
     </GameObject>
-    <GameObject name="Collisions_04">
-      <GameObject copy="mesh_[04]_[38]" />
+    <GameObject name="Collisions_04" x="0" y="0">
+      <GameObject copy="mesh_[04]_[38]" opacity="0.29" />
       <GameObject name="Collision">
         <PolygonCollider2D>
           <Path>4.48,-2.24 4.15,-2.24 4.15,-2.55 4.48,-2.55</Path>
           <Path>0.64,-2.24 0.31,-2.24 0.31,-2.55 0.64,-2.55</Path>
         </PolygonCollider2D>
+      </GameObject>
+    </GameObject>
+    <GameObject name="Characters" x="0" y="0">
+      <GameObject name="Player" x="0.23999999463558197" y="-3.6099998950958252" rotation="0" />
+      <GameObject name="1" x="3.4600000381469727" y="-3.6099998950958252" rotation="0">
+        <Property name="CharID" value="0" />
       </GameObject>
     </GameObject>
   </Prefab>

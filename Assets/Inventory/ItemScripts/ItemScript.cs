@@ -79,4 +79,29 @@ public class ItemScript
 
         return itemScript;
     }
+
+    public static ItemScript CreateItem(int id)
+    {
+        /*GameObject tmp = Instantiate(InventoryManager.Instance.itemObject);
+        tmp.AddComponent<ItemScript>();
+        ItemScript itemScript = tmp.GetComponent<ItemScript>();
+
+
+        Destroy(tmp);*/
+        ItemScript itemScript = new ItemScript(id);
+
+        itemScript.Item = InventoryManager.Instance.ItemContainer.AllItems().Find(x => x.Id == id);
+
+        return itemScript;
+    }
+
+    public ItemScript(int id)
+    {
+        this.Item = InventoryManager.Instance.ItemContainer.AllItems().Find(x => x.Id == id);
+    }
+
+    public ItemScript()
+    {
+
+    }
 }

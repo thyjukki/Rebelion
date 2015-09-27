@@ -12,7 +12,7 @@ public class CharacterPart : MonoBehaviour
     private SpriteRenderer parentSpriteRenderer;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         parentSpriteRenderer = this.transform.parent.GetComponent<SpriteRenderer>();

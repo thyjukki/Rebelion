@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<NPCContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Npcs>
+    <NPC>
+      <Equipments>
+        <KeyValuePairOfStringInt32>
+          <Key>Legs</Key>
+          <Value>1</Value>
+        </KeyValuePairOfStringInt32>
+        <KeyValuePairOfStringInt32>
+          <Key>Chest</Key>
+          <Value>2</Value>
+        </KeyValuePairOfStringInt32>
+      </Equipments>
+      <ID>0</ID>
+      <Female>true</Female>
+      <Skin>dark</Skin>
+      <Ears />
+      <Nose />
+      <EyeColor />
+    </NPC>
+  </Npcs>
+</NPCContainer>

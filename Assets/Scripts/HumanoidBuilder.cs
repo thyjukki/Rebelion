@@ -6,15 +6,105 @@ using System.Collections.Generic;
 public class HumanoidBuilder : MonoBehaviour {
 
 
-    public enum Ears { Normal, Big, Elf };
-    public enum Nose { Normal, BigNose, ButtonNose, StraightNose };
 
     public bool female = false;
+
     public string skinName = "";
+
     public string eyeName = "";
 
-    public Ears EarType;
-    public Nose NoseType;
+
+    public string earType;
+    public string noseType;
+
+
+    public bool Female
+    {
+        get { return female; }
+        set
+        {
+            female = value;
+            SetBodyParts();
+            SetBody();
+        }
+    }
+    public string SkinName
+    {
+        get { return skinName; }
+        set
+        {
+            skinName = value;
+            SetBody();
+        }
+    }
+    public string EyeName
+    {
+        get { return eyeName; }
+        set
+        {
+            eyeName = value;
+            string path; // Check if the character is female and then get path names
+            if (female)
+                path = "Characters/Female/";
+            else
+                path = "Characters/Male/";
+
+            if (EyesObject != null && eyeName != String.Empty)
+            {
+                EyesObject.SetSprite(path + "Eyes/" + eyeName);
+            }
+        }
+    }
+    public string EarType
+    {
+        get { return earType; }
+        set
+        {
+            earType = value;
+            string path; // Check if the character is female and then get path names
+            if (female)
+                path = "Characters/Female/";
+            else
+                path = "Characters/Male/";
+
+            if (EarObject != null)
+            {
+                if (earType == string.Empty) // Check what type of ears the character has
+                    EarObject.DisableSprite();
+                else
+                {
+                    string earPath = path + "Ears/" + earType + "_" + skinName;
+
+                    EarObject.SetSprite(earPath);
+                }
+            }
+        }
+    }
+    public string NoseType
+    {
+        get { return noseType; }
+        set
+        {
+            noseType = value;
+            string path; // Check if the character is female and then get path names
+            if (female)
+                path = "Characters/Female/";
+            else
+                path = "Characters/Male/";
+
+            if (NoseObject != null)
+            {
+                if (noseType == string.Empty) // Check what type of ears the character has
+                    NoseObject.DisableSprite();
+                else
+                {
+                    string nosePath = path + "Nose/" + noseType + "bignose_" + skinName;
+
+                    NoseObject.SetSprite(nosePath);
+                }
+            }
+        }
+    }
 
     public CharacterPart EarObject;
     public CharacterPart EyesObject;
@@ -61,15 +151,11 @@ public class HumanoidBuilder : MonoBehaviour {
 
         if (EarObject != null)
         {
-            if (EarType == Ears.Normal) // Check what type of ears the character has
+            if (earType == string.Empty) // Check what type of ears the character has
                 EarObject.DisableSprite();
             else
             {
-                string earPath = path + "Ears/";
-                if (EarType == Ears.Big)
-                    earPath = earPath + "bigears_" + skinName;
-                else if (EarType == Ears.Elf)
-                    earPath = earPath + "elvenears_" + skinName;
+                string earPath = path + "Ears/" + earType + "_" + skinName;
 
                 EarObject.SetSprite(earPath);
             }
@@ -77,17 +163,11 @@ public class HumanoidBuilder : MonoBehaviour {
 
         if (NoseObject != null)
         {
-            if (NoseType == Nose.Normal) // Check what type of ears the character has
+            if (noseType == string.Empty) // Check what type of ears the character has
                 NoseObject.DisableSprite();
             else
             {
-                string nosePath = path + "Nose/";
-                if (NoseType == Nose.BigNose)
-                    nosePath = nosePath + "bignose_" + skinName;
-                else if (NoseType == Nose.ButtonNose)
-                    nosePath = nosePath + "buttonnose_" + skinName;
-                else if (NoseType == Nose.StraightNose)
-                    nosePath = nosePath + "straightnose_" + skinName;
+                string nosePath = path + "Nose/" + noseType + "bignose_" + skinName;
 
                 NoseObject.SetSprite(nosePath);
             }

@@ -26,4 +26,14 @@ public class ItemContainer {
         get { return equipments; }
         set { equipments = value; }
     }
+
+    public List<Item> AllItems()
+    {
+        List<Item> collector = new List<Item>(weapons);
+        collector.AddRange(consumables);
+        collector.AddRange(equipments);
+        return collector;
+    }
+
+
 }

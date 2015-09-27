@@ -25,7 +25,6 @@ public class CharacterMovement : MonoBehaviour {
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 1));
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 2));
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 3));
-        //pantsAnim = transform.GetChild(0).GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame

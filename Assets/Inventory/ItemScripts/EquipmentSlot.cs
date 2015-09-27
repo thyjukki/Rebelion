@@ -64,13 +64,13 @@ public class EquipmentSlot : MonoBehaviour {
         string path;
         Equipment equipment = (Equipment)item.Item;
 
-        if (!this.GetComponentInParent<HumanoidBuilder>().female || equipment.FemalePath == string.Empty)
+        if (!this.GetComponentInParent<HumanoidBuilder>().Female || equipment.FemalePath == string.Empty)
             path = equipment.MalePath;
         else
             path = equipment.FemalePath;
 
         subSprites = Resources.LoadAll<Sprite>(path);
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true;
     }
 }

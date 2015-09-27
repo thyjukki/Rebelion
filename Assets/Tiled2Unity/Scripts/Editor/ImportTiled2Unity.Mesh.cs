@@ -77,7 +77,8 @@ namespace Tiled2Unity
                 GameObject child = null;
                 if (!String.IsNullOrEmpty(copyFrom))
                 {
-                    child = CreateCopyFromMeshObj(copyFrom, objPath);
+                    float opacity = ImportUtils.GetAttributeAsFloat(goXml, "opacity", 1);
+                    child = CreateCopyFromMeshObj(copyFrom, objPath, opacity);
                     if (child == null)
                     {
                         // We're in trouble. Errors should already be in the log.
@@ -94,10 +95,13 @@ namespace Tiled2Unity
                     child.name = name;
                 }
 
+                // Assign the child to the parent
+                child.transform.parent = parent.transform;
+
                 // Set the position
                 float x = ImportUtils.GetAttributeAsFloat(goXml, "x", 0);
                 float y = ImportUtils.GetAttributeAsFloat(goXml, "y", 0);
-                child.transform.position = new Vector3(x, y, 0);
+                child.transform.localPosition = new Vector3(x, y, 0);
 
                 // Set the rotation
                 float r = ImportUtils.GetAttributeAsFloat(goXml, "rotation", 0);
@@ -106,9 +110,6 @@ namespace Tiled2Unity
                     // Use negative 'r' because of change in coordinate systems between Tiled and Unity
                     child.transform.eulerAngles = new Vector3(0, 0, -r);
                 }
-
-                // Assign the child to the parent
-                child.transform.parent = parent.transform;
 
                 // Add any tile animators
                 AddTileAnimatorsTo(child, goXml);
@@ -271,7 +272,7 @@ namespace Tiled2Unity
             }
         }
 
-        private GameObject CreateCopyFromMeshObj(string copyFromName, string objPath)
+        private GameObject CreateCopyFromMeshObj(string copyFromName, string objPath, float opacity)
         {
             // Find a matching game object within the mesh object and "copy" it
             // (In Unity terms, the Instantiated object is a copy)
@@ -285,6 +286,10 @@ namespace Tiled2Unity
                 GameObject gameObj = GameObject.Instantiate(obj) as GameObject;
                 if (gameObj == null)
                     continue;
+
+                // Add a component that will control our initial shader properties
+                TiledInitialShaderProperties shaderProps = gameObj.AddComponent<TiledInitialShaderProperties>();
+                shaderProps.InitialOpacity = opacity;
 
                 // Reset the name so it is not decorated by the Instantiate call
                 gameObj.name = obj.name;
