@@ -3,8 +3,16 @@ using System.Collections;
 using System;
 using System.Xml.Serialization;
 using System.IO;
+using UnityEngine.UI;
 
-public class DialogManager : MonoBehaviour {
+public class DialogManager : MonoBehaviour
+{
+
+    public Text dialogText;
+
+    public Text nameText;
+
+    public CanvasGroup canvasGroup;
 
     private static DialogManager instance;
 

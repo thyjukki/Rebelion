@@ -10,6 +10,7 @@ public class NPC
     public string Ears { set; get; }
     public string Nose { set; get; }
     public string EyeColor { set; get; }
+    public int DialogID { set; get; }
 
     //public struct
 
@@ -20,7 +21,7 @@ public class NPC
     }
 
     public NPC(int id, bool female, string skin, string ears, string nose, string eyecolor
-        , List<KeyValuePair<string, int>> equipments)
+        , List<KeyValuePair<string, int>> equipments, int dialogID)
     {
         this.ID = id;
         this.Female = female;
@@ -29,5 +30,6 @@ public class NPC
         this.Nose = nose;
         this.EyeColor = eyecolor;
         this.Equipments = equipments;
+        this.DialogID = dialogID;
     }
 }

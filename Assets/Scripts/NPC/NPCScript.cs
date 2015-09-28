@@ -70,4 +70,9 @@ public class NPCScript : MonoBehaviour {
             }
         }
     }
+
+    public bool HasDialog()
+    {
+        return npc.DialogID > 0;
+    }
 }

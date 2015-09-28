@@ -75,6 +75,16 @@ public class CharacterMovement : MonoBehaviour {
         {
             chest = other.GetComponent<ChestScript>().chestInventory;
         }
+
+        if (other.tag == "CharNPC")
+        {
+            NPCScript npc = other.gameObject.GetComponent<NPCScript>();
+
+            if (npc.HasDialog())
+            {
+                ObjectText.SetTarget(other.gameObject);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -86,6 +96,12 @@ public class CharacterMovement : MonoBehaviour {
                 chest.Open();
             }
             chest = null;
+        }
+
+        if (other.tag == "CharNPC")
+        {
+
+            ObjectText.RemoveTarget();
         }
     }
 }
