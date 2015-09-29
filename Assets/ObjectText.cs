@@ -40,15 +40,25 @@ public class ObjectText : MonoBehaviour {
         }
     }
 
+    public float YOffset;
+
+    private Vector3 offset;
+
     private Text text;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         text = GetComponent<Text>();
+        offset = new Vector3(0F, YOffset, 0F);
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
-        text.transform.position = target.transform.position;
+	void LateUpdate ()
+    {
+        if (target != null)
+        {
+            text.transform.position = target.transform.position + offset;
+        }
 	}
 
     public static void SetTarget(GameObject tg)

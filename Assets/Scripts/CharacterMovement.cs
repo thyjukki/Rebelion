@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CharacterMovement : MonoBehaviour {
 
@@ -16,6 +17,8 @@ public class CharacterMovement : MonoBehaviour {
 
     private Inventory chest;
 
+    private List<GameObject> touching;
+
 	// Use this for initialization
 	void Start () {
         rbody = GetComponent<Rigidbody2D>();
@@ -25,23 +28,49 @@ public class CharacterMovement : MonoBehaviour {
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 1));
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 2));
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 3));
+
+        touching = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         ParseMovement();
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetButtonDown("Inventory"))
         {
             inventory.Open();
             characterPanel.Open();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        /*if (Input.GetKeyDown(KeyCode.E))
         {
             if (chest != null)
             {
                 chest.Open();
+            }
+        }*/
+
+        if (touching.Count > 0)
+        {
+            foreach (GameObject other in touching)
+            {
+                if (other.tag == "CharNPC")
+                {
+
+                    NPCScript npc = other.gameObject.GetComponent<NPCScript>();
+                    if (npc.HasDialog() && !DialogManager.Instance.IsOpen)
+                    {
+                        if (Input.GetButtonDown("Talk"))
+                        {
+                            DialogManager.Instance.StartDialog(npc);
+                            ObjectText.RemoveTarget();
+                        }
+                        else
+                        {
+                            ObjectText.SetTarget(other.gameObject);
+                        }
+                    }
+                }
             }
         }
     }
@@ -78,12 +107,7 @@ public class CharacterMovement : MonoBehaviour {
 
         if (other.tag == "CharNPC")
         {
-            NPCScript npc = other.gameObject.GetComponent<NPCScript>();
-
-            if (npc.HasDialog())
-            {
-                ObjectText.SetTarget(other.gameObject);
-            }
+            touching.Add(other.gameObject);
         }
     }
 
@@ -100,8 +124,7 @@ public class CharacterMovement : MonoBehaviour {
 
         if (other.tag == "CharNPC")
         {
-
-            ObjectText.RemoveTarget();
+            touching.Remove(other.gameObject);
         }
     }
 }

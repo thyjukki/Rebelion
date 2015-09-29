@@ -13,6 +13,7 @@
         </KeyValuePairOfStringInt32>
       </Equipments>
       <ID>0</ID>
+      <Name>Tanya</Name>
       <DialogID>1</DialogID>
       <Female>true</Female>
       <Skin>dark</Skin>

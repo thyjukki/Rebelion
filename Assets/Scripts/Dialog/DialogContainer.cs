@@ -12,4 +12,8 @@ public class DialogContainer
         set { dialogs = value; }
     }
 
+    public Dialog FindDialog(int id)
+    {
+        return dialogs.Find(x => x.ID == id);
+    }
 }

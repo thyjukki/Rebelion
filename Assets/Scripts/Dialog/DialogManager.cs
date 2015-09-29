@@ -16,8 +16,6 @@ public class DialogManager : MonoBehaviour
 
     private static DialogManager instance;
 
-    //private DialogContainer dialogContainer = new DialogContainer();
-
     public static DialogManager Instance
     {
         get
@@ -31,6 +29,18 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    private bool isOpen = false;
+    public bool IsOpen
+    {
+        get { return isOpen; }
+        private set
+        {
+            isOpen = value;
+        }
+    }
+
+    private DialogContainer dialogContainer;
+
 	// Use this for initialization
 	void Start () {
         Type[] dialogTypes = { typeof(Dialog)};
@@ -38,7 +48,7 @@ public class DialogManager : MonoBehaviour
         XmlSerializer serializer = new XmlSerializer(typeof(DialogContainer), dialogTypes);
         TextReader textReader = new StreamReader(Application.streamingAssetsPath + "/Dialogs.xml");
 
-        //dialogContainer = (DialogContainer)serializer.Deserialize(textReader);
+        dialogContainer = (DialogContainer)serializer.Deserialize(textReader);
         textReader.Close();
 	}
 	
@@ -46,4 +56,16 @@ public class DialogManager : MonoBehaviour
 	void Update () {
 	
 	}
+
+
+    public void StartDialog(NPCScript npcScript)
+    {
+        int dialogID = npcScript.Npc.DialogID;
+
+        Dialog dialog = dialogContainer.FindDialog(dialogID);
+
+        nameText.text = npcScript.Npc.Name;
+        canvasGroup.alpha = 1;
+        IsOpen = true;
+    }
 }
