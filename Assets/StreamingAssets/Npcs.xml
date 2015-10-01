@@ -12,7 +12,7 @@
           <Value>2</Value>
         </KeyValuePairOfStringInt32>
       </Equipments>
-      <ID>0</ID>
+      <ID>1</ID>
       <Name>Tanya</Name>
       <DialogID>1</DialogID>
       <Female>true</Female>

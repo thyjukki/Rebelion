@@ -12,10 +12,10 @@ public class NPC
     public string Nose { set; get; }
     public string EyeColor { set; get; }
     public int DialogID { set; get; }
+    public List<KeyValuePair<string, int>> Equipments { set; get; }
 
     //public struct
 
-    public List<KeyValuePair<string, int>> Equipments;
 
     public NPC()
     {

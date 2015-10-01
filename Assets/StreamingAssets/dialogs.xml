@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <DialogContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Dialogs>
-    <Item xsi:type="Dialog">
-      <ID>0</ID>
-    </Item>
+    <Dialog xsi:type="TextDialog">
+      <ID>1</ID>
+      <NextID>2</NextID>
+      <ActorID>1</ActorID>
+      <Name>Test Dialog 1</Name>
+      <Text>HI. I am tanya. How are you? This is quite awesome!</Text>
+    </Dialog>
+    <Dialog xsi:type="TextDialog">
+      <ID>2</ID>
+      <NextID>3</NextID>
+      <ActorID>1</ActorID>
+      <Name>Test Dialog 2</Name>
+      <Text>Dont be so quiet. Say something!</Text>
+    </Dialog>
+    <Dialog xsi:type="Action">
+      <Actions>
+        <KeyValuePairOfStringInt32>
+          <Key>1. This is great!</Key>
+          <Value>4</Value>
+        </KeyValuePairOfStringInt32>
+        <KeyValuePairOfStringInt32>
+          <Key>2. ALLAHU AKBAR!</Key>
+          <Value>5</Value>
+        </KeyValuePairOfStringInt32>
+      </Actions>
+      <ID>3</ID>
+      <ActorID>0</ActorID>
+      <Name>Test Dialog 3</Name>
+    </Dialog>
+    <Dialog xsi:type="TextDialog">
+      <ID>4</ID>
+      <NextID>-1</NextID>
+      <ActorID>1</ActorID>
+      <Name>Test Dialog 4</Name>
+      <Text>Yes it is!</Text>
+    </Dialog>
+    <Dialog xsi:type="TextDialog">
+      <ID>5</ID>
+      <NextID>-1</NextID>
+      <ActorID>1</ActorID>
+      <Name>Test Dialog 5</Name>
+      <Text>ALLAHU AKBAR!</Text>
+    </Dialog>
   </Dialogs>
 </DialogContainer>
