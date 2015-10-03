@@ -5,11 +5,11 @@
       <Equipments>
         <KeyValuePairOfStringInt32>
           <Key>Legs</Key>
-          <Value>1</Value>
+          <Value>3</Value>
         </KeyValuePairOfStringInt32>
         <KeyValuePairOfStringInt32>
           <Key>Chest</Key>
-          <Value>2</Value>
+          <Value>7</Value>
         </KeyValuePairOfStringInt32>
       </Equipments>
       <ID>1</ID>

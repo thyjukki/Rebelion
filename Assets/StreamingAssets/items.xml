@@ -32,6 +32,51 @@
     </Item>
     <Item xsi:type="Equipment">
       <Id>2</Id>
+      <ItemType>Legs</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Pants/red_pants</SpritePath>
+      <ItemName>Pants (Red)</ItemName>
+      <Description>Generic pants with red dye.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+      <MalePath>Items/Pants/Male/red</MalePath>
+      <FemalePath>Items/Pants/Female/red</FemalePath>
+    </Item>
+    <Item xsi:type="Equipment">
+      <Id>3</Id>
+      <ItemType>Legs</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Pants/white_pants</SpritePath>
+      <ItemName>Pants (White)</ItemName>
+      <Description>Generic pants with white dye.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+      <MalePath>Items/Pants/Male/white</MalePath>
+      <FemalePath>Items/Pants/Female/white</FemalePath>
+    </Item>
+    <Item xsi:type="Equipment">
+      <Id>4</Id>
+      <ItemType>Legs</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Pants/teal_pants</SpritePath>
+      <ItemName>Pants (Teal)</ItemName>
+      <Description>Generic pants with teal dye.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+      <MalePath>Items/Pants/Male/white</MalePath>
+      <FemalePath>Items/Pants/Male/teal</FemalePath>
+    </Item>
+    <Item xsi:type="Equipment">
+      <Id>5</Id>
       <ItemType>Chest</ItemType>
       <Quality>Common</Quality>
       <SpritePath>Items/Shirts/brown_shirt</SpritePath>
@@ -46,7 +91,52 @@
       <FemalePath>Items/Shirts/female/brown_sleeveless</FemalePath>
     </Item>
     <Item xsi:type="Equipment">
-      <Id>3</Id>
+      <Id>6</Id>
+      <ItemType>Chest</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Shirts/teal_shirt</SpritePath>
+      <ItemName>Shirt (Teal)</ItemName>
+      <Description>Generic shirt with teal dye.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+      <MalePath>Items/Shirts/Male/teal</MalePath>
+      <FemalePath>Items/Shirts/Female/teal_sleeveless</FemalePath>
+    </Item>
+    <Item xsi:type="Equipment">
+      <Id>7</Id>
+      <ItemType>Chest</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Shirts/white_shirt</SpritePath>
+      <ItemName>Shirt (White)</ItemName>
+      <Description>Generic shirt with white dye.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+      <MalePath>Items/Shirts/Male/white</MalePath>
+      <FemalePath>Items/Shirts/Female/white_sleeveless</FemalePath>
+    </Item>
+    <Item xsi:type="Equipment">
+      <Id>8</Id>
+      <ItemType>Chest</ItemType>
+      <Quality>Common</Quality>
+      <SpritePath>Items/Shirts/Maroon_shirt</SpritePath>
+      <ItemName>Shirt (Maroon)</ItemName>
+      <Description>Generic shirt with maroon dye.</Description>
+      <MaxSize>1</MaxSize>
+      <Strenght>0</Strenght>
+      <Dexterity>0</Dexterity>
+      <Stamina>0</Stamina>
+      <Magic>0</Magic>
+      <MalePath>Items/Shirts/Male/maroon</MalePath>
+      <FemalePath>Items/Shirts/Female/maroon_sleeveless</FemalePath>
+    </Item>
+    <Item xsi:type="Equipment">
+      <Id>9</Id>
       <ItemType>Belt</ItemType>
       <Quality>Common</Quality>
       <SpritePath>Items/Belts/belt_leather</SpritePath>
