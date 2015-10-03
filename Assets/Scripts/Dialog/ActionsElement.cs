@@ -8,7 +8,7 @@ public class ActionsElement : MonoBehaviour {
 
     private List<GameObject> actions;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         actions = new List<GameObject>();
 	}
 	
@@ -40,9 +40,12 @@ public class ActionsElement : MonoBehaviour {
 
     private void clearActions()
     {
-        foreach (GameObject action in actions)
+        if (actions.Count > 0)
         {
-            GameObject.Destroy(action);
+            foreach (GameObject action in actions)
+            {
+                GameObject.Destroy(action);
+            }
         }
     }
 }
