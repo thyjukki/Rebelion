@@ -23,7 +23,7 @@
       <ItemName>Pants (Magneta)</ItemName>
       <Description>Generic pants with magneta dye.</Description>
       <MaxSize>1</MaxSize>
-      <Strenght>0</Strenght>
+      <Strenght>1</Strenght>
       <Dexterity>0</Dexterity>
       <Stamina>0</Stamina>
       <Magic>0</Magic>
@@ -86,7 +86,7 @@
       <Strenght>0</Strenght>
       <Dexterity>0</Dexterity>
       <Stamina>0</Stamina>
-      <Magic>0</Magic>
+      <Magic>-1</Magic>
       <MalePath>Items/Shirts/male/brown</MalePath>
       <FemalePath>Items/Shirts/female/brown_sleeveless</FemalePath>
     </Item>

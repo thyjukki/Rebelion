@@ -2,12 +2,12 @@
 using System.Collections;
 using UnityEditor;
 
-[CustomEditor(typeof(Stats))]
-public class StatsEditor : Editor
+[CustomEditor(typeof(Atributes))]
+public class AtributeEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        Stats myStats = (Stats)target;
+        Atributes myStats = (Atributes)target;
 
         DrawDefaultInspector();
 
@@ -25,7 +25,7 @@ public class StatsEditor : Editor
 
         if (GUILayout.Button("Give Experience"))
         {
-            myStats.GiveExperience();
+            myStats.GiveExperience(750);
         }
     }
 }
