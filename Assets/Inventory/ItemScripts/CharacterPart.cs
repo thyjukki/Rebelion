@@ -31,13 +31,13 @@ public class CharacterPart : MonoBehaviour
 
     }
 
-    public void DisableSprite()
+    virtual public void DisableSprite()
     {
         spriteRenderer.enabled = false;
         subSprites = null;
     }
 
-    public void SetSprite(string path)
+    virtual public void SetSprite(string path)
     {
 
         subSprites = Resources.LoadAll<Sprite>(path);

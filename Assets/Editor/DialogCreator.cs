@@ -9,8 +9,8 @@ public class DialogCreator : EditorWindow
 {
 
     string dialogText;
-    int actorID;
-    int nextID;
+    int actorID = 0;
+    int nextID = 0;
 
     string text;
 

@@ -30,8 +30,6 @@ public class CharacterPanel : Inventory
     void Start()
     {
         slotByNames = new Dictionary<string, Slot>();
-
-        IsOpen = true;
         canvasGroup = GetComponentInParent<CanvasGroup>();
         equipmentSlots = transform.GetComponentsInChildren<Slot>();
 

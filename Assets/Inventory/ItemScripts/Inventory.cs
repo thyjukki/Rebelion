@@ -24,13 +24,9 @@ public class Inventory : MonoBehaviour {
     private bool fadingIn;
     private bool fadingOut;
 
-
-    protected bool isOpen;
-
     public bool IsOpen
     {
-        get { return isOpen; }
-        set { isOpen = value; }
+        get { return canvasGroup.alpha == 1; }
     }
 
     private List<GameObject> allSlots;
@@ -48,7 +44,6 @@ public class Inventory : MonoBehaviour {
 	
     void Awake()
     {
-        IsOpen = false;
         CreateLayout();
 
     }
@@ -91,13 +86,10 @@ public class Inventory : MonoBehaviour {
             StartCoroutine("FadeOut");
             PutItemBack();
             HideToolTip();
-
-            IsOpen = false;
         }
         else
         {
             StartCoroutine("FadeIn");
-            IsOpen = true;
         }
     }
 
@@ -110,7 +102,7 @@ public class Inventory : MonoBehaviour {
     {
         Slot tmpSlot = slot.GetComponent<Slot>();
 
-        if (slot.GetComponentInParent<Inventory>().isOpen && !tmpSlot.isEmpty && InventoryManager.Instance.HoverObject == null)
+        if (slot.GetComponentInParent<Inventory>().IsOpen && !tmpSlot.isEmpty && InventoryManager.Instance.HoverObject == null)
         {
             InventoryManager.Instance.toolTipObject.SetActive(true);
 
@@ -370,7 +362,7 @@ public class Inventory : MonoBehaviour {
                 Slot.SwapItems(IGInstance.MovingSlot, tmp);
             }
         }
-        else if (clicked.transform.parent.GetComponent<Inventory>().isOpen && !Input.GetKey(KeyCode.LeftShift))
+        else if (clicked.transform.parent.GetComponent<Inventory>().IsOpen && !Input.GetKey(KeyCode.LeftShift))
         {
             if (!clicked.GetComponent<Slot>().isEmpty)
             {

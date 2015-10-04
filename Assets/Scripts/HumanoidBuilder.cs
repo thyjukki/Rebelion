@@ -9,14 +9,20 @@ public class HumanoidBuilder : MonoBehaviour {
 
     public bool female = false;
 
-    public string skinName = "";
+    public string Skin = "";
 
-    public string eyeName = "";
+    public string Eyes = "";
 
 
-    public string earType;
-    public string noseType;
+    public string Ears;
+    public string Nose;
 
+    public CharacterPart EarObject;
+    public CharacterPart EyesObject;
+    public CharacterPart NoseObject;
+
+    public Sprite[] subCharSprites;
+    private SpriteRenderer charRenderer;
 
     public bool Female
     {
@@ -30,50 +36,50 @@ public class HumanoidBuilder : MonoBehaviour {
     }
     public string SkinName
     {
-        get { return skinName; }
+        get { return Skin; }
         set
         {
-            skinName = value;
+            Skin = value;
             SetBody();
         }
     }
     public string EyeName
     {
-        get { return eyeName; }
+        get { return Eyes; }
         set
         {
-            eyeName = value;
+            Eyes = value;
             string path; // Check if the character is female and then get path names
-            if (female)
+            if (Female)
                 path = "Characters/Female/";
             else
                 path = "Characters/Male/";
 
-            if (EyesObject != null && eyeName != String.Empty)
+            if (EyesObject != null && Eyes != String.Empty)
             {
-                EyesObject.SetSprite(path + "Eyes/" + eyeName);
+                EyesObject.SetSprite(path + "Eyes/" + Eyes);
             }
         }
     }
     public string EarType
     {
-        get { return earType; }
+        get { return Ears; }
         set
         {
-            earType = value;
+            Ears = value;
             string path; // Check if the character is female and then get path names
-            if (female)
+            if (Female)
                 path = "Characters/Female/";
             else
                 path = "Characters/Male/";
 
             if (EarObject != null)
             {
-                if (earType == string.Empty) // Check what type of ears the character has
+                if (Ears == string.Empty) // Check what type of ears the character has
                     EarObject.DisableSprite();
                 else
                 {
-                    string earPath = path + "Ears/" + earType + "_" + skinName;
+                    string earPath = path + "Ears/" + Ears + "_" + Skin;
 
                     EarObject.SetSprite(earPath);
                 }
@@ -82,36 +88,29 @@ public class HumanoidBuilder : MonoBehaviour {
     }
     public string NoseType
     {
-        get { return noseType; }
+        get { return Nose; }
         set
         {
-            noseType = value;
+            Nose = value;
             string path; // Check if the character is female and then get path names
-            if (female)
+            if (Female)
                 path = "Characters/Female/";
             else
                 path = "Characters/Male/";
 
             if (NoseObject != null)
             {
-                if (noseType == string.Empty) // Check what type of ears the character has
+                if (Nose == string.Empty) // Check what type of ears the character has
                     NoseObject.DisableSprite();
                 else
                 {
-                    string nosePath = path + "Nose/" + noseType + "bignose_" + skinName;
+                    string nosePath = path + "Nose/" + Nose + "bignose_" + Skin;
 
                     NoseObject.SetSprite(nosePath);
                 }
             }
         }
     }
-
-    public CharacterPart EarObject;
-    public CharacterPart EyesObject;
-    public CharacterPart NoseObject;
-
-    public Sprite[] subCharSprites;
-    private SpriteRenderer charRenderer;
 
     void Start()
     {
@@ -128,34 +127,34 @@ public class HumanoidBuilder : MonoBehaviour {
             charRenderer.sprite = newCharSprite;
 	}
 
-    void SetBody()
+    virtual protected void SetBody()
     {
         string path; // Check if the character is female and then get path names
-        if (female)
+        if (Female)
             path = "Characters/Female/";
         else
             path = "Characters/Male/";
 
-        subCharSprites = Resources.LoadAll<Sprite>(path + skinName); // Find sub Sprites
+        subCharSprites = Resources.LoadAll<Sprite>(path + Skin); // Find sub Sprites
 
         charRenderer = GetComponent<SpriteRenderer>(); // Get all sprite renderer
     }
 
-    void SetBodyParts()
+    private void SetBodyParts()
     {
         string path; // Check if the character is female and then get path names
-        if (female)
+        if (Female)
             path = "Characters/Female/";
         else
             path = "Characters/Male/";
 
         if (EarObject != null)
         {
-            if (earType == string.Empty) // Check what type of ears the character has
+            if (Ears == string.Empty) // Check what type of ears the character has
                 EarObject.DisableSprite();
             else
             {
-                string earPath = path + "Ears/" + earType + "_" + skinName;
+                string earPath = path + "Ears/" + Ears + "_" + Skin;
 
                 EarObject.SetSprite(earPath);
             }
@@ -163,19 +162,19 @@ public class HumanoidBuilder : MonoBehaviour {
 
         if (NoseObject != null)
         {
-            if (noseType == string.Empty) // Check what type of ears the character has
+            if (Nose == string.Empty) // Check what type of ears the character has
                 NoseObject.DisableSprite();
             else
             {
-                string nosePath = path + "Nose/" + noseType + "bignose_" + skinName;
+                string nosePath = path + "Nose/" + Nose + "bignose_" + Skin;
 
                 NoseObject.SetSprite(nosePath);
             }
         }
 
-        if (EyesObject != null && eyeName != String.Empty)
+        if (EyesObject != null && Eyes != String.Empty)
         {
-            EyesObject.SetSprite(path + "Eyes/" + eyeName);
+            EyesObject.SetSprite(path + "Eyes/" + Eyes);
         }
     }
 }

@@ -28,6 +28,12 @@ public class CharacterMovement : MonoBehaviour {
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 1));
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 2));
         inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 3));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 4));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 5));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 6));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 7));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 8));
+        inventory.AddItem(ItemScript.CreateItem(Category.Equipment, 9));
 
         touching = new List<GameObject>();
 	}
@@ -38,8 +44,11 @@ public class CharacterMovement : MonoBehaviour {
 
         if (Input.GetButtonDown("Inventory"))
         {
-            inventory.Open();
-            characterPanel.Open();
+            Menu.Instance.OpenMenu(MenuTab.Inventory);
+        }
+        if (Input.GetButtonDown("Menu"))
+        {
+            Menu.ToggleMenu();
         }
 
         /*if (Input.GetKeyDown(KeyCode.E))
@@ -72,6 +81,10 @@ public class CharacterMovement : MonoBehaviour {
                     }
                 }
             }
+        }
+        else
+        {
+            ObjectText.RemoveTarget();
         }
     }
 
@@ -107,7 +120,10 @@ public class CharacterMovement : MonoBehaviour {
 
         if (other.tag == "CharNPC")
         {
-            touching.Add(other.gameObject);
+            if (!touching.Contains(other.gameObject))
+            {
+                touching.Add(other.gameObject);
+            }
         }
     }
 
