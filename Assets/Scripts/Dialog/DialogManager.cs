@@ -105,10 +105,7 @@ public class DialogManager : MonoBehaviour
     {
         if (dialogID == -1)
         {
-            dialogElement.gameObject.SetActive(false);
-            actionsElement.gameObject.SetActive(false);
-            currentDialog = null;
-            IsOpen = false;
+            CloseDialog();
             return;
         }
         currentDialog = dialogContainer.FindDialog(dialogID);
@@ -122,6 +119,13 @@ public class DialogManager : MonoBehaviour
         SetActor(currentDialog.ActorID); 
     }
 
+    public void CloseDialog()
+    {
+        dialogElement.gameObject.SetActive(false);
+        actionsElement.gameObject.SetActive(false);
+        currentDialog = null;
+        IsOpen = false;
+    }
 
     public void Advance(int dialogID)
     {
