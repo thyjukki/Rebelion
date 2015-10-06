@@ -115,7 +115,9 @@ public class Menu : MonoBehaviour {
                 break;
             case MenuTab.Inventory:
                 Inventory.GetComponent<CanvasGroup>().alpha = 1;
+                Inventory.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 CharacterPanel.GetComponent<CanvasGroup>().alpha = 1;
+                CharacterPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 CharacterPreview.GetComponent<CanvasGroup>().alpha = 1;
                 MenuText.text = "Inventory";
                 break;
@@ -143,7 +145,9 @@ public class Menu : MonoBehaviour {
     private void hideGroups()
     {
         Inventory.GetComponent<CanvasGroup>().alpha = 0;
+        Inventory.GetComponent<CanvasGroup>().blocksRaycasts = true;
         CharacterPanel.GetComponent<CanvasGroup>().alpha = 0;
+        CharacterPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         CharacterPreview.GetComponent<CanvasGroup>().alpha = 0;
         CharacterAtributes.GetComponent<CanvasGroup>().alpha = 0;
         SettingsGroup.alpha = 0;

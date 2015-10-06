@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<FightContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fights>
+    <Fight xsi:type="Fight">
+      <ID>1</ID>
+      <Enemies>
+        <Int>1</Int>
+      </Enemies>
+      <AfterDialog>2</AfterDialog>
+    </Fight>
+  </Fights>
+</FightContainer>

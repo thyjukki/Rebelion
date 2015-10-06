@@ -18,5 +18,6 @@ public class DialogFight : Dialog
     public override void Start()
     {
         DialogManager.Instance.CloseDialog();
+        FightManager.Instance.StartFight(FightID);
     }
 }

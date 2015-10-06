@@ -14,7 +14,19 @@ public class DialogManager : MonoBehaviour
 
     public Text nameText;
 
-    public CanvasGroup canvasGroup;
+    private CanvasGroup canvasGroup;
+
+    public CanvasGroup CanvasGroup
+    {
+        get
+        {
+            if (canvasGroup == null)
+            {
+                canvasGroup = GetComponent<CanvasGroup>();
+            }
+            return canvasGroup;
+        }
+    }
 
     private static DialogManager instance;
 
@@ -40,7 +52,7 @@ public class DialogManager : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-        Type[] dialogTypes = { typeof(Dialog), typeof(TextDialog), typeof(Action) };
+        Type[] dialogTypes = { typeof(Dialog), typeof(TextDialog), typeof(Action), typeof(DialogFight) };
 
         XmlSerializer serializer = new XmlSerializer(typeof(DialogContainer), dialogTypes);
         TextReader textReader = new StreamReader(Application.streamingAssetsPath + "/dialogs.xml");
@@ -65,7 +77,8 @@ public class DialogManager : MonoBehaviour
 
         currentDialog.Start();
 
-        canvasGroup.alpha = 1;
+        CanvasGroup.alpha = 1;
+        CanvasGroup.blocksRaycasts = true;
         IsOpen = true;
     }
     public void StartDialog(int dialogID)
@@ -75,7 +88,8 @@ public class DialogManager : MonoBehaviour
         if (currentDialog != null)
         {
             currentDialog.Start();
-            canvasGroup.alpha = 1;
+            CanvasGroup.alpha = 1;
+            CanvasGroup.blocksRaycasts = true;
             IsOpen = true;
         }
 
@@ -123,6 +137,8 @@ public class DialogManager : MonoBehaviour
     {
         dialogElement.gameObject.SetActive(false);
         actionsElement.gameObject.SetActive(false);
+        CanvasGroup.alpha = 0;
+        CanvasGroup.blocksRaycasts = false;
         currentDialog = null;
         IsOpen = false;
     }

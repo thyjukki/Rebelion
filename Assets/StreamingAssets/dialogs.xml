@@ -39,10 +39,16 @@
     </Dialog>
     <Dialog xsi:type="TextDialog">
       <ID>5</ID>
-      <NextID>-1</NextID>
+      <NextID>6</NextID>
       <ActorID>1</ActorID>
       <Name>Test Dialog 5</Name>
       <Text>ALLAHU AKBAR!</Text>
+    </Dialog>
+    <Dialog xsi:type="DialogFight">
+      <ID>6</ID>
+      <FightID>1</FightID>
+      <ActorID>0</ActorID>
+      <Name>Test Dialog 6</Name>
     </Dialog>
   </Dialogs>
 </DialogContainer>
