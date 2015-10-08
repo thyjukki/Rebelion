@@ -36,7 +36,11 @@ public class FightManager : MonoBehaviour {
 
         Fights = (FightContainer)serializer.Deserialize(textReader);
         textReader.Close();
+
+        DontDestroyOnLoad(gameObject);
+
     }
+
 	
 	// Update is called once per frame
 	void Update () {

@@ -2,10 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class CharacterMovement : MonoBehaviour {
+public class PlayerCharacter : MonoBehaviour {
 
     Rigidbody2D rbody;
     Animator anim;
+
+    static public GameObject player;
+    static public GameObject Player
+    {
+        get
+        {
+            if (PlayerCharacter.player == null)
+            {
+                PlayerCharacter.player = GameObject.FindObjectOfType<PlayerCharacter>().gameObject;
+            }
+
+            return PlayerCharacter.player;
+        }
+    }
 
     SpriteRenderer pantsAnim;
 
