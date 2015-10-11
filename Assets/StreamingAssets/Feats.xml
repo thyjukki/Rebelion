@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FeatContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Attacks>
+    <Attack xsi:type="Attack">
+      <ID>0</ID>
+      <Need>0</Need>
+      <Unarmed>true</Unarmed>
+      <Armed1H>true</Armed1H>
+      <Armed2H>true</Armed2H>
+      <ArmedBow>false</ArmedBow>
+      <MinLevel>0</MinLevel>
+      <Class>Any</Class>
+      <MinAttack>3</MinAttack>
+      <MaxAttack>3</MaxAttack>
+      <Accuracy>3</Accuracy>
+      <Ammount>1</Ammount>
+      <Icon>Combat/crossed_swords</Icon>
+      <Name>Attack</Name>
+      <Description>Standard attack move</Description>
+    </Attack>
+  </Attacks>
+</FeatContainer>

@@ -72,7 +72,7 @@
       <Dexterity>0</Dexterity>
       <Stamina>0</Stamina>
       <Magic>0</Magic>
-      <MalePath>Items/Pants/Male/white</MalePath>
+      <MalePath>Items/Pants/Male/teal</MalePath>
       <FemalePath>Items/Pants/Male/teal</FemalePath>
     </Item>
     <Item xsi:type="Equipment">

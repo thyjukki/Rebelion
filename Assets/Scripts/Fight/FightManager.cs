@@ -24,6 +24,7 @@ public class FightManager : MonoBehaviour {
     }
 
     public FightContainer Fights { get; private set; }
+    public FeatContainer Feats { get; private set; }
 
     public GameObject SharedObjects
     {
@@ -79,6 +80,14 @@ public class FightManager : MonoBehaviour {
         TextReader textReader = new StreamReader(Application.streamingAssetsPath + "/Fights.xml");
 
         Fights = (FightContainer)serializer.Deserialize(textReader);
+        textReader.Close();
+
+        Type[] featTypes = { typeof(Attack) };
+
+        serializer = new XmlSerializer(typeof(FeatContainer), featTypes);
+        textReader = new StreamReader(Application.streamingAssetsPath + "/Feats.xml");
+
+        Feats = (FeatContainer)serializer.Deserialize(textReader);
         textReader.Close();
     }
 
