@@ -94,6 +94,7 @@ public class Menu : MonoBehaviour {
         currentMenu = menuTab;
         TabsGroup.alpha = 1;
         TabsGroup.interactable = true;
+        TabsGroup.blocksRaycasts = true;
         Time.timeScale = 0;
 
 
@@ -103,7 +104,11 @@ public class Menu : MonoBehaviour {
         {
             case MenuTab.Character:
                 CharacterPreview.GetComponent<CanvasGroup>().alpha = 1;
+                CharacterPreview.GetComponent<CanvasGroup>().interactable = true;
+                CharacterPreview.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 CharacterAtributes.GetComponent<CanvasGroup>().alpha = 1;
+                CharacterAtributes.GetComponent<CanvasGroup>().interactable = true;
+                CharacterAtributes.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 CharacterAtributes.SetCharacterInfo();
                 MenuText.text = "Character";
                 break;
@@ -115,8 +120,10 @@ public class Menu : MonoBehaviour {
                 break;
             case MenuTab.Inventory:
                 Inventory.GetComponent<CanvasGroup>().alpha = 1;
+                Inventory.GetComponent<CanvasGroup>().interactable = true;
                 Inventory.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 CharacterPanel.GetComponent<CanvasGroup>().alpha = 1;
+                CharacterPanel.GetComponent<CanvasGroup>().interactable = true;
                 CharacterPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 CharacterPreview.GetComponent<CanvasGroup>().alpha = 1;
                 MenuText.text = "Inventory";
@@ -125,6 +132,7 @@ public class Menu : MonoBehaviour {
                 MenuText.text = "Settings";
                 SettingsGroup.alpha = 1;
                 SettingsGroup.interactable = true;
+                SettingsGroup.blocksRaycasts = true;
                 break;
             default:
                 break;
@@ -139,19 +147,25 @@ public class Menu : MonoBehaviour {
         canvasGroup.alpha = 0;
         TabsGroup.alpha = 0;
         TabsGroup.interactable = false;
+        TabsGroup.blocksRaycasts = false;
         hideGroups();
     }
 
     private void hideGroups()
     {
         Inventory.GetComponent<CanvasGroup>().alpha = 0;
-        Inventory.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        Inventory.GetComponent<CanvasGroup>().interactable = false;
+        Inventory.GetComponent<CanvasGroup>().blocksRaycasts = false;
         CharacterPanel.GetComponent<CanvasGroup>().alpha = 0;
-        CharacterPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        CharacterPanel.GetComponent<CanvasGroup>().interactable = false;
+        CharacterPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
         CharacterPreview.GetComponent<CanvasGroup>().alpha = 0;
         CharacterAtributes.GetComponent<CanvasGroup>().alpha = 0;
+        CharacterAtributes.GetComponent<CanvasGroup>().interactable = false;
+        CharacterAtributes.GetComponent<CanvasGroup>().blocksRaycasts = false;
         SettingsGroup.alpha = 0;
         SettingsGroup.interactable = false;
+        SettingsGroup.blocksRaycasts = false;
     }
 
     public void SettingsButton(int button)

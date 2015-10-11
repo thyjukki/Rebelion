@@ -79,6 +79,7 @@ public class DialogManager : MonoBehaviour
 
         CanvasGroup.alpha = 1;
         CanvasGroup.blocksRaycasts = true;
+        CanvasGroup.interactable = true;
         IsOpen = true;
     }
     public void StartDialog(int dialogID)
@@ -90,6 +91,7 @@ public class DialogManager : MonoBehaviour
             currentDialog.Start();
             CanvasGroup.alpha = 1;
             CanvasGroup.blocksRaycasts = true;
+            CanvasGroup.interactable = true;
             IsOpen = true;
         }
 
@@ -139,6 +141,7 @@ public class DialogManager : MonoBehaviour
         actionsElement.gameObject.SetActive(false);
         CanvasGroup.alpha = 0;
         CanvasGroup.blocksRaycasts = false;
+        CanvasGroup.interactable = false;
         currentDialog = null;
         IsOpen = false;
     }

@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour {
 
 
-    public Transform target;
+    private GameObject target;
     public float scale = 4f;
     public float speed = 1.0f;
     Camera myCam;
@@ -14,6 +14,12 @@ public class CameraFollow : MonoBehaviour {
 
         myCam = GetComponent<Camera>();
 
+        target = PlayerCharacter.Player;
+
+        if (target)
+        {
+            transform.position = target.transform.position;
+        }
 	}
 	
 	// Update is called once per frame
@@ -24,7 +30,7 @@ public class CameraFollow : MonoBehaviour {
 
         if (target) {
 
-            transform.position = Vector3.Lerp(transform.position, target.position, speed) - new Vector3 (0,0,10);
+            transform.position = Vector3.Lerp(transform.position, target.transform.position, speed) - new Vector3 (0,0,10);
         }
 	}
 }

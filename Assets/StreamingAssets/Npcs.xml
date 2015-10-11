@@ -16,6 +16,7 @@
       <Name>Tanya</Name>
       <DialogID>1</DialogID>
       <Female>true</Female>
+      <Unique>true</Unique>
       <Skin>dark</Skin>
       <Ears />
       <Nose />

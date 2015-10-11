@@ -4,7 +4,9 @@
     <Fight xsi:type="Fight">
       <ID>1</ID>
       <Enemies>
-        <Int>1</Int>
+        <int>
+          <Value>1</Value>
+        </int>
       </Enemies>
       <AfterDialog>2</AfterDialog>
     </Fight>

@@ -5,7 +5,8 @@ public enum CharacterClass
 {
     Soldier,
     Mage,
-    Rogue
+    Rogue,
+    Any
 }
 public class Atributes : MonoBehaviour
 {

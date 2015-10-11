@@ -25,6 +25,7 @@ public class FightSpot : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        Destroy(GetComponent<SpriteRenderer>());
 	}
 	
 	// Update is called once per frame

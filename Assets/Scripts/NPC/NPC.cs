@@ -7,6 +7,7 @@ public class NPC
     public int ID { set; get; }
     public string Name { set; get; }
     public bool Female { set; get; }
+    public bool Unique { set; get; }
     public string Skin { set; get; }
     public string Ears { set; get; }
     public string Nose { set; get; }
@@ -21,12 +22,13 @@ public class NPC
     {
     }
 
-    public NPC(int id, string name, bool female, string skin, string ears, string nose, string eyecolor
+    public NPC(int id, string name, bool female, bool unique, string skin, string ears, string nose, string eyecolor
         , List<KeyValuePair<string, int>> equipments, int dialogID)
     {
         this.ID = id;
         this.Name = name;
         this.Female = female;
+        this.Unique = unique;
         this.Skin = skin;
         this.Ears = ears;
         this.Nose = nose;

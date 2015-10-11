@@ -15,6 +15,24 @@ public class NPCManager : MonoBehaviour
         set { npcContainer = value; }
     }
 
+    private List<GameObject> npcs; 
+    public List<GameObject> Npcs
+    {
+        private set
+        {
+            npcs = value;
+        }
+        get
+        {
+            if (npcs == null)
+            {
+                npcs = new List<GameObject>();
+            }
+
+            return npcs;
+        }
+    }
+
     private static NPCManager instance;
 
     public static NPCManager Instance
@@ -63,5 +81,31 @@ public class NPCManager : MonoBehaviour
     public static NPC GetNPC(int id)
     {
         return Instance.NpcContainer.Npcs.Find(x => x.ID == id);
+    }
+
+    public static GameObject SpawnNPC(int npcID, Transform newTransform)
+    {
+        NPC npc = NPCManager.GetNPC(npcID);
+
+        if (npc == null)
+        {
+            Debug.Log("Missing npc with id " + npcID.ToString());
+        }
+        else
+        {
+            GameObject newNPC = (GameObject)Instantiate(NPCManager.Instance.npcPrefab);
+
+            newNPC.GetComponent<NPCScript>().Npc = npc;
+
+            newNPC.transform.position = newTransform.position;
+
+            newNPC.transform.parent = instance.transform;
+            newNPC.name = "NPC_" + npc.Name;
+
+            instance.Npcs.Add(newNPC);
+            return newNPC;
+        }
+
+        return null;
     }
 }

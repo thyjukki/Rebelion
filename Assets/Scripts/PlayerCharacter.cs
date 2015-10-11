@@ -7,7 +7,7 @@ public class PlayerCharacter : MonoBehaviour {
     Rigidbody2D rbody;
     Animator anim;
 
-    static public GameObject player;
+    static private GameObject player;
     static public GameObject Player
     {
         get
@@ -54,26 +54,16 @@ public class PlayerCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ParseMovement();
 
-        if (Input.GetButtonDown("Inventory"))
+        if (!FightManager.InFight)
         {
-            Menu.Instance.OpenMenu(MenuTab.Inventory);
-        }
-        if (Input.GetButtonDown("Menu"))
-        {
-            Menu.ToggleMenu();
+            ParseMovement();
         }
 
-        /*if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (chest != null)
-            {
-                chest.Open();
-            }
-        }*/
+        ParseInput();
 
-        if (touching.Count > 0)
+
+        if (touching.Count > 0 && !FightManager.InFight)
         {
             foreach (GameObject other in touching)
             {
@@ -99,6 +89,18 @@ public class PlayerCharacter : MonoBehaviour {
         else
         {
             ObjectText.RemoveTarget();
+        }
+    }
+
+    private void ParseInput()
+    {
+        if (Input.GetButtonDown("Inventory"))
+        {
+            Menu.Instance.OpenMenu(MenuTab.Inventory);
+        }
+        if (Input.GetButtonDown("Menu"))
+        {
+            Menu.ToggleMenu();
         }
     }
 
