@@ -9,4 +9,10 @@ public class FeatContainer {
     {
 
     }
+
+
+    public Attack FindAttack(int id)
+    {
+        return Attacks.Find(x => x.ID == id);
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum CharacterClass
 {
@@ -49,15 +50,25 @@ public class Atributes : MonoBehaviour
         get { return Experience / 750; }
     }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public List<int> UnlockedFeatsID;
+
+    public List<Attack> Feats
+    {
+        get
+        {
+            List<Attack> collector = new List<Attack>();
+            foreach (int featID in UnlockedFeatsID)
+            {
+                Attack feat = FightManager.Instance.Feats.FindAttack(featID);
+                if (feat != null)
+                {
+                    collector.Add(feat);
+                }
+            }
+
+            return collector;
+        }
+    }
 
     public void GiveExperience(int exp)
     {

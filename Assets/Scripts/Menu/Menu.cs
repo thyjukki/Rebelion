@@ -19,6 +19,7 @@ public class Menu : MonoBehaviour {
     public CanvasGroup TabsGroup;
     public CanvasGroup SettingsGroup;
     public CharacterInfo CharacterAtributes;
+    public FeatsMenu FeatsMenu;
 
     public Text MenuText;
 
@@ -88,6 +89,15 @@ public class Menu : MonoBehaviour {
         }
     }
 
+    public GameObject Character
+    {
+        get
+        {
+            // TODO(Jukki) Fixme!
+            return PlayerCharacter.Player;
+        }
+    }
+
     private void OpenTab(MenuTab menuTab)
     {
         canvasGroup.alpha = 1;
@@ -117,6 +127,13 @@ public class Menu : MonoBehaviour {
                 break;
             case MenuTab.Feats:
                 MenuText.text = "Feats";
+                FeatsMenu.GetComponent<CanvasGroup>().alpha = 1;
+                FeatsMenu.GetComponent<CanvasGroup>().interactable = true;
+                FeatsMenu.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                CharacterPreview.GetComponent<CanvasGroup>().alpha = 1;
+                CharacterPreview.GetComponent<CanvasGroup>().interactable = true;
+                CharacterPreview.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                FeatsMenu.SetAttacks();
                 break;
             case MenuTab.Inventory:
                 Inventory.GetComponent<CanvasGroup>().alpha = 1;
@@ -163,6 +180,9 @@ public class Menu : MonoBehaviour {
         CharacterAtributes.GetComponent<CanvasGroup>().alpha = 0;
         CharacterAtributes.GetComponent<CanvasGroup>().interactable = false;
         CharacterAtributes.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        FeatsMenu.GetComponent<CanvasGroup>().alpha = 0;
+        FeatsMenu.GetComponent<CanvasGroup>().interactable = false;
+        FeatsMenu.GetComponent<CanvasGroup>().blocksRaycasts = false;
         SettingsGroup.alpha = 0;
         SettingsGroup.interactable = false;
         SettingsGroup.blocksRaycasts = false;

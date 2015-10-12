@@ -26,4 +26,30 @@ public class Attack
     public Attack()
     {
     }
+
+    public string GetToolTip(bool unlocked, bool enoughLevel)
+    {
+        string entry = string.Format("<size=15>{0}</size>", Name);
+
+        if (unlocked)
+        {
+            entry = entry + "\n<color=green>Unlocked</color>";
+        }
+        else if (enoughLevel)
+        {
+            entry = entry + "\nUnlockable\n";
+        }
+        else
+        {
+            entry = entry + "\n<color=red>Not enough level</color>";
+        }
+
+        if (Description != string.Empty)
+        {
+            entry = entry + "\n" + Description;
+        }
+
+
+        return entry;
+    }
 }

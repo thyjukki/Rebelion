@@ -3,7 +3,7 @@
   <Attacks>
     <Attack xsi:type="Attack">
       <ID>0</ID>
-      <Need>0</Need>
+      <Need>-1</Need>
       <Unarmed>true</Unarmed>
       <Armed1H>true</Armed1H>
       <Armed2H>true</Armed2H>
@@ -12,11 +12,62 @@
       <Class>Any</Class>
       <MinAttack>3</MinAttack>
       <MaxAttack>3</MaxAttack>
-      <Accuracy>3</Accuracy>
+      <Accuracy>10</Accuracy>
       <Ammount>1</Ammount>
       <Icon>Combat/crossed_swords</Icon>
       <Name>Attack</Name>
       <Description>Standard attack move</Description>
+    </Attack>
+    <Attack xsi:type="Attack">
+      <ID>1</ID>
+      <Need>-1</Need>
+      <Unarmed>true</Unarmed>
+      <Armed1H>true</Armed1H>
+      <Armed2H>true</Armed2H>
+      <ArmedBow>false</ArmedBow>
+      <MinLevel>0</MinLevel>
+      <Class>Any</Class>
+      <MinAttack>6</MinAttack>
+      <MaxAttack>6</MaxAttack>
+      <Accuracy>3</Accuracy>
+      <Ammount>1</Ammount>
+      <Icon>Combat/crossed_swords</Icon>
+      <Name>Power Attack</Name>
+      <Description>User gives more power to the swing making it more powerful. But same time giving enemy more time to evade the attack.</Description>
+    </Attack>
+    <Attack xsi:type="Attack">
+      <ID>2</ID>
+      <Need>1</Need>
+      <Unarmed>true</Unarmed>
+      <Armed1H>true</Armed1H>
+      <Armed2H>true</Armed2H>
+      <ArmedBow>false</ArmedBow>
+      <MinLevel>5</MinLevel>
+      <Class>Any</Class>
+      <MinAttack>8</MinAttack>
+      <MaxAttack>8</MaxAttack>
+      <Accuracy>4</Accuracy>
+      <Ammount>1</Ammount>
+      <Icon>Combat/crossed_swords</Icon>
+      <Name>Improved Power Attack</Name>
+      <Description>User has trained his ability to swing stronger while also giving enemy less time to react.</Description>
+    </Attack>
+    <Attack xsi:type="Attack">
+      <ID>3</ID>
+      <Need>2</Need>
+      <Unarmed>true</Unarmed>
+      <Armed1H>true</Armed1H>
+      <Armed2H>true</Armed2H>
+      <ArmedBow>false</ArmedBow>
+      <MinLevel>10</MinLevel>
+      <Class>Any</Class>
+      <MinAttack>8</MinAttack>
+      <MaxAttack>8</MaxAttack>
+      <Accuracy>4</Accuracy>
+      <Ammount>1</Ammount>
+      <Icon>Combat/crossed_swords</Icon>
+      <Name>Master Power Attack</Name>
+      <Description>User has perfected his ability to swing stronger making his swings almost as fast as normal swing.</Description>
     </Attack>
   </Attacks>
 </FeatContainer>

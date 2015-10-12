@@ -6,7 +6,16 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+public enum FightState
+{
+    Begining,
+    Chosing,
+    Processing,
+    Ending
+}
+
 public class FightManager : MonoBehaviour {
+
 
     private static FightManager instance;
 
@@ -66,8 +75,16 @@ public class FightManager : MonoBehaviour {
 
     private List<Fighter> fighters;
 
+
+    private bool fadingIn;
+    private bool fadingOut;
+
     //Inspector elements
     public GameObject NameTextPrefab;
+
+    public GridLayoutGroup ChoicesGLG;
+
+    public float fadeTime;
 
     /// <summary>
     /// Load all fights in XML by using this.
@@ -139,8 +156,6 @@ public class FightManager : MonoBehaviour {
         fighters = new List<Fighter>();
         fighters.Add(PlayerCharacter.Player.GetComponent<Fighter>());
 
-        List<NPC> enemyNPCs = new List<NPC>();
-
         int i = 0;
         foreach (int enemyID in currentFight.Enemies)
         {
@@ -175,14 +190,7 @@ public class FightManager : MonoBehaviour {
             Debug.Log("Unknown fight id " + id.ToString());
             return;
         }
-
-        currentFight = fight;
-        foreach (GameObject npc in NPCManager.Instance.Npcs)
-	    {
-            npc.SetActive(false);
-	    } 
-        InFight = true;
-        Application.LoadLevel(1);
+        StartCoroutine(FadeOut(fight));
     }
 
     public void ShowHoverInfo(Fighter other)
@@ -211,6 +219,69 @@ public class FightManager : MonoBehaviour {
 
     public static void ShowOptions(Fighter Selected, Fighter fighter)
     {
+        Instance.ChoicesGLG.gameObject.SetActive(true);
 
+
+    }
+
+    public void ChosedOption(Attack move)
+    {
+
+    }
+
+
+    private IEnumerator FadeOut(Fight fight)
+    {
+        if (!fadingOut)
+        {
+            fadingOut = true;
+            fadingIn = false;
+            StopCoroutine("FadeIn");
+
+            float rate = 1.0f / fadeTime;
+
+            float progress = 0.0f;
+
+            while (progress < 1.0)
+            {
+
+                progress += rate * Time.deltaTime;
+
+                yield return null;
+            }
+            fadingOut = false;
+
+            currentFight = fight;
+            foreach (GameObject npc in NPCManager.Instance.Npcs)
+            {
+                npc.SetActive(false);
+            }
+            InFight = true;
+            Application.LoadLevel(1);
+        }
+    }
+
+    private IEnumerator FadeIn()
+    {
+        if (!fadingIn)
+        {
+            fadingOut = false;
+            fadingIn = true;
+            StopCoroutine("FadeOut");
+
+            float rate = 1.0f / fadeTime;
+
+            float progress = 0.0f;
+
+            while (progress < 1.0)
+            {
+
+                progress += rate * Time.deltaTime;
+
+                yield return null;
+            }
+
+            fadingIn = false;
+        }
     }
 }
