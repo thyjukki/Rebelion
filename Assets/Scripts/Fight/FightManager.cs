@@ -86,6 +86,8 @@ public class FightManager : MonoBehaviour {
 
     public float fadeTime;
 
+    public Image Overlay;
+
     /// <summary>
     /// Load all fights in XML by using this.
     /// </summary>
@@ -106,6 +108,8 @@ public class FightManager : MonoBehaviour {
 
         Feats = (FeatContainer)serializer.Deserialize(textReader);
         textReader.Close();
+
+        Overlay.rectTransform.rect.Set(0, 0, Screen.width, Screen.height);
     }
 
     void Start()
@@ -124,6 +128,7 @@ public class FightManager : MonoBehaviour {
         if (level == 1)
         {
             Destroy(OverworldObjects);
+            StartCoroutine(FadeToClear());
             SetFighters();
         }
         else if (level == 0)
@@ -190,7 +195,7 @@ public class FightManager : MonoBehaviour {
             Debug.Log("Unknown fight id " + id.ToString());
             return;
         }
-        StartCoroutine(FadeOut(fight));
+        StartCoroutine(FadeToBlack(fight));
     }
 
     public void ShowHoverInfo(Fighter other)
@@ -230,58 +235,56 @@ public class FightManager : MonoBehaviour {
     }
 
 
-    private IEnumerator FadeOut(Fight fight)
+    private IEnumerator FadeToClear()
     {
-        if (!fadingOut)
+        Overlay.rectTransform.rect.Set(0, 0, Screen.width, Screen.height);
+        Overlay.gameObject.SetActive(true);
+        Overlay.color = Color.black;
+
+        float rate = 1.0f / fadeTime;
+
+        float progress = 0.0f;
+
+        while (progress < 1.0f)
         {
-            fadingOut = true;
-            fadingIn = false;
-            StopCoroutine("FadeIn");
+            Overlay.color = Color.Lerp(Color.black, Color.clear, progress);
 
-            float rate = 1.0f / fadeTime;
+            progress += rate * Time.deltaTime;
 
-            float progress = 0.0f;
-
-            while (progress < 1.0)
-            {
-
-                progress += rate * Time.deltaTime;
-
-                yield return null;
-            }
-            fadingOut = false;
-
-            currentFight = fight;
-            foreach (GameObject npc in NPCManager.Instance.Npcs)
-            {
-                npc.SetActive(false);
-            }
-            InFight = true;
-            Application.LoadLevel(1);
+            yield return null;
         }
+
+        Overlay.color = Color.clear;
+        Overlay.gameObject.SetActive(false);
     }
 
-    private IEnumerator FadeIn()
+    private IEnumerator FadeToBlack(Fight fight)
     {
-        if (!fadingIn)
+        Overlay.rectTransform.rect.Set(0, 0, Screen.width, Screen.height);
+        Overlay.gameObject.SetActive(true);
+        Overlay.color = Color.clear;
+
+        float rate = 1.0f / fadeTime;
+
+        float progress = 0.0f;
+
+        while (progress < 1.0f)
         {
-            fadingOut = false;
-            fadingIn = true;
-            StopCoroutine("FadeOut");
+            Overlay.color = Color.Lerp(Color.clear, Color.black, progress);
 
-            float rate = 1.0f / fadeTime;
+            progress += rate * Time.deltaTime;
 
-            float progress = 0.0f;
-
-            while (progress < 1.0)
-            {
-
-                progress += rate * Time.deltaTime;
-
-                yield return null;
-            }
-
-            fadingIn = false;
+            yield return null;
         }
+
+
+        currentFight = fight;
+        foreach (GameObject npc in NPCManager.Instance.Npcs)
+        {
+            npc.SetActive(false);
+        }
+        InFight = true;
+        Application.LoadLevel(1);
+        Overlay.color = Color.black;
     }
 }
