@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public enum FightState
 {
+    None,
     Begining,
     Chosing,
     Processing,
@@ -72,6 +73,20 @@ public class FightManager : MonoBehaviour {
 
     public Fight currentFight { get; private set; }
 
+    private FightState state;
+
+    public FightState State
+    {
+        get
+        {
+            return state;
+        }
+        set
+        {
+            state = value;
+        }
+    }
+
 
     private List<Fighter> fighters;
 
@@ -118,7 +133,8 @@ public class FightManager : MonoBehaviour {
         GameObject.DontDestroyOnLoad(SharedObjects);
     }
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 
@@ -130,6 +146,7 @@ public class FightManager : MonoBehaviour {
             Destroy(OverworldObjects);
             StartCoroutine(FadeToClear());
             SetFighters();
+            State = FightState.Begining;
         }
         else if (level == 0)
         {
@@ -137,6 +154,10 @@ public class FightManager : MonoBehaviour {
         }
     }
 
+
+    /// <summary>
+    /// Set the fighters to their positions.
+    /// </summary>
     private void SetFighters()
     {
         List<FightSpot> allSpots = new List<FightSpot>(GameObject.FindObjectsOfType<FightSpot>());
@@ -182,8 +203,6 @@ public class FightManager : MonoBehaviour {
 
             i++;
         }
-
-        SetCharacterNames();
     }
 
     public void StartFight(int id)
@@ -196,11 +215,6 @@ public class FightManager : MonoBehaviour {
             return;
         }
         StartCoroutine(FadeToBlack(fight));
-    }
-
-    public void ShowHoverInfo(Fighter other)
-    {
-
     }
 
     public void SetCharacterNames()
@@ -229,12 +243,10 @@ public class FightManager : MonoBehaviour {
 
     }
 
-    public void ChosedOption(Attack move)
-    {
-
-    }
-
-
+    /// <summary>
+    /// Fade out and start the fighting
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator FadeToClear()
     {
         Overlay.rectTransform.rect.Set(0, 0, Screen.width, Screen.height);
@@ -256,8 +268,17 @@ public class FightManager : MonoBehaviour {
 
         Overlay.color = Color.clear;
         Overlay.gameObject.SetActive(false);
+        State = FightState.Chosing;
+
+        SetCharacterNames();
     }
 
+
+    /// <summary>
+    /// Fades in to the given fight.
+    /// </summary>
+    /// <param name="fight">Fight that we are fading in to.</param>
+    /// <returns></returns>
     private IEnumerator FadeToBlack(Fight fight)
     {
         Overlay.rectTransform.rect.Set(0, 0, Screen.width, Screen.height);
