@@ -30,8 +30,6 @@ public class DialogManager : MonoBehaviour
 
     private static DialogManager instance;
 
-    private GameObject currentActor;
-
     private Dialog currentDialog;
     public static DialogManager Instance
     {

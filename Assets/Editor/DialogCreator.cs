@@ -12,8 +12,6 @@ public class DialogCreator : EditorWindow
     int actorID = 0;
     int nextID = 0;
 
-    string text;
-
     static int currentId = 1;
 
     [MenuItem("Window/Create an dialog")]

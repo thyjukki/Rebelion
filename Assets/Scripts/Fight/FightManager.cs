@@ -90,18 +90,16 @@ public class FightManager : MonoBehaviour {
 
     private List<Fighter> fighters;
 
-
-    private bool fadingIn;
-    private bool fadingOut;
-
     //Inspector elements
     public GameObject NameTextPrefab;
-
-    public GridLayoutGroup ChoicesGLG;
 
     public float fadeTime;
 
     public Image Overlay;
+
+    public FightCharacterBar CharacterBar;
+
+    public FightOptions Options;
 
     /// <summary>
     /// Load all fights in XML by using this.
@@ -197,7 +195,9 @@ public class FightManager : MonoBehaviour {
                 overworldNPC.GetComponent<Animator>().SetFloat("inputX", -1f);
                 overworldNPC.GetComponent<Animator>().SetFloat("inputY", 0f);
 
-                fighters.Add(overworldNPC.GetComponent<Fighter>());
+                Fighter fighter = overworldNPC.GetComponent<Fighter>();
+                fighter.team = FightSpot.FightTeam.Bad;
+                fighters.Add(fighter);
             }
             //enemyNPCs.Add();
 
@@ -216,6 +216,14 @@ public class FightManager : MonoBehaviour {
         }
         StartCoroutine(FadeToBlack(fight));
     }
+
+    private void BeginFight()
+    {
+        SetCharacterNames();
+        CharacterBar.gameObject.SetActive(true);
+        CharacterBar.SetCharacters(fighters.FindAll(x => x.team == FightSpot.FightTeam.Good));
+    }
+
 
     public void SetCharacterNames()
     {
@@ -236,11 +244,13 @@ public class FightManager : MonoBehaviour {
     }
 
 
-    public static void ShowOptions(Fighter Selected, Fighter fighter)
+    public static void ShowOptions(Fighter Selected)
     {
-        Instance.ChoicesGLG.gameObject.SetActive(true);
-
-
+        Instance.Options.SetState(OptionState.Main);
+    }
+    public static void HideOptions()
+    {
+        Instance.Options.SetState(OptionState.None);
     }
 
     /// <summary>
@@ -270,9 +280,8 @@ public class FightManager : MonoBehaviour {
         Overlay.gameObject.SetActive(false);
         State = FightState.Chosing;
 
-        SetCharacterNames();
+        BeginFight();
     }
-
 
     /// <summary>
     /// Fades in to the given fight.

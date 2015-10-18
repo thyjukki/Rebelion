@@ -46,9 +46,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 
     public ItemType canContain;
 
-    private Sprite defaultSprite;
-    private bool defaultState;
-
 	// Use this for initialization
 	void Start () {
         items = new Stack<ItemScript>();

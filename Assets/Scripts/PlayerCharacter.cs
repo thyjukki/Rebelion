@@ -21,8 +21,6 @@ public class PlayerCharacter : MonoBehaviour {
         }
     }
 
-    SpriteRenderer pantsAnim;
-
     public float speed = 1.0f;
 
     public Inventory inventory;

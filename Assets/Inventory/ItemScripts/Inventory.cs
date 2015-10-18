@@ -7,10 +7,6 @@ using System;
 
 public class Inventory : MonoBehaviour {
 
-    private RectTransform inventoryRect;
-
-    private float inventoryWidth, inventoryHeight;
-
     public int slots;
 
 
@@ -461,7 +457,7 @@ public class Inventory : MonoBehaviour {
         hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, clickedTranfsorm.sizeDelta.x);
         hoverTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, clickedTranfsorm.sizeDelta.y);
 
-        InventoryManager.Instance.HoverObject.transform.SetParent(GameObject.Find("Canvas").transform);
+        InventoryManager.Instance.HoverObject.transform.SetParent(GameObject.Find("GameCanvas").transform);
 
         InventoryManager.Instance.HoverObject.transform.localScale = InventoryManager.Instance.Clicked.gameObject.transform.localScale;
 
