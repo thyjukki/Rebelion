@@ -152,6 +152,7 @@ public class FightOptions : MonoBehaviour {
         float yPos = slot.transform.position.y;
 
         InventoryManager.Instance.visualTextObject.text = InventoryManager.Instance.sizeTextObject.text = attack.GetToolTip(true, true);
+        yPos -= InventoryManager.Instance.visualTextObject.rectTransform.sizeDelta.y;
         InventoryManager.Instance.toolTipObject.transform.position = new Vector2(xPos, yPos);
 
     }
@@ -170,13 +171,15 @@ public class FightOptions : MonoBehaviour {
     public void SetState(OptionState state)
     {
         gameObject.SetActive(true);
-        if (state != OptionState.Main)
+        AttackButton.gameObject.SetActive(false);
+        SpellButton.gameObject.SetActive(false);
+        ItemButton.gameObject.SetActive(false);
+        WaitButton.gameObject.SetActive(false);
+        foreach (var button in ChoiseButtons)
         {
-            AttackButton.gameObject.SetActive(false);
-            SpellButton.gameObject.SetActive(false);
-            ItemButton.gameObject.SetActive(false);
-            WaitButton.gameObject.SetActive(false);
+            Destroy(button.gameObject);
         }
+        ChoiseButtons.Clear();
 
         switch (state)
         {
