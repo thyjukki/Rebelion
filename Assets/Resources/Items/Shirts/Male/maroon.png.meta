@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bc5209b5c67ccb34cbcf419094c2cf00
-timeCreated: 1442140404
+timeCreated: 1445669636
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -182,6 +182,136 @@ TextureImporter:
     21300350: humanoid_175
     21300352: humanoid_176
     21300354: humanoid_177
+    21300356: up_spell_0
+    21300358: up_spell_1
+    21300360: up_spell_2
+    21300362: up_spell_3
+    21300364: up_spell_4
+    21300366: up_spell_5
+    21300368: up_spell_6
+    21300370: down_spell_0
+    21300372: down_spell_1
+    21300374: down_spell_2
+    21300376: down_spell_3
+    21300378: down_spell_4
+    21300380: down_spell_5
+    21300382: down_spell_6
+    21300384: 0
+    21300386: right_spell_3
+    21300388: up_twohand_0
+    21300390: up_twohand_1
+    21300392: up_twohand_2
+    21300394: up_twohand_3
+    21300396: up_twohand_4
+    21300398: up_twohand_5
+    21300400: up_twohand_6
+    21300402: up_twohand_7
+    21300404: left_twohand_0
+    21300406: left_twohand_1
+    21300408: left_twohand_2
+    21300410: left_twohand_3
+    21300412: left_twohand_4
+    21300414: left_twohand_5
+    21300416: left_twohand_6
+    21300418: left_twohand_7
+    21300420: down_twohand_0
+    21300422: down_twohand_1
+    21300424: down_twohand_2
+    21300426: down_twohand_3
+    21300428: down_twohand_4
+    21300430: down_twohand_5
+    21300432: down_twohand_6
+    21300434: down_twohand_7
+    21300436: right_twohand_0
+    21300438: right_twohand_1
+    21300440: right_twohand_2
+    21300442: right_twohand_3
+    21300444: right_twohand_4
+    21300446: right_twohand_5
+    21300448: right_twohand_6
+    21300450: right_twohand_7
+    21300452: up_onehand_0
+    21300454: up_onehand_1
+    21300456: up_onehand_2
+    21300458: up_onehand_3
+    21300460: up_onehand_4
+    21300462: up_onehand_5
+    21300464: left_onehand_0
+    21300466: left_onehand_1
+    21300468: left_onehand_2
+    21300470: left_onehand_3
+    21300472: left_onehand_4
+    21300474: left_onehand_5
+    21300476: down_onehand_0
+    21300478: down_onehand_1
+    21300480: down_onehand_2
+    21300482: down_onehand_3
+    21300484: down_onehand_4
+    21300486: down_onehand_5
+    21300488: right_onehand_0
+    21300490: right_onehand_1
+    21300492: right_onehand_2
+    21300494: right_onehand_3
+    21300496: right_onehand_4
+    21300498: right_onehand_5
+    21300500: up_bow_0
+    21300502: up_bow_1
+    21300504: up_bow_2
+    21300506: up_bow_3
+    21300508: up_bow_4
+    21300510: up_bow_5
+    21300512: up_bow_6
+    21300514: up_bow_7
+    21300516: up_bow_8
+    21300518: up_bow_9
+    21300520: up_bow_10
+    21300522: up_bow_11
+    21300524: up_bow_12
+    21300526: left_bow_0
+    21300528: left_bow_1
+    21300530: left_bow_2
+    21300532: left_bow_3
+    21300534: left_bow_4
+    21300536: left_bow_5
+    21300538: left_bow_6
+    21300540: left_bow_7
+    21300542: left_bow_8
+    21300544: left_bow_9
+    21300546: left_bow_10
+    21300548: left_bow_11
+    21300550: left_bow_12
+    21300552: down_bow_0
+    21300554: down_bow_1
+    21300556: down_bow_2
+    21300558: down_bow_3
+    21300560: down_bow_4
+    21300562: down_bow_5
+    21300564: down_bow_6
+    21300566: down_bow_7
+    21300568: down_bow_8
+    21300570: down_bow_9
+    21300572: down_bow_10
+    21300574: down_bow_11
+    21300576: down_bow_12
+    21300578: right_bow_0
+    21300580: right_bow_1
+    21300582: right_bow_2
+    21300584: right_bow_3
+    21300586: right_bow_4
+    21300588: right_bow_5
+    21300590: right_bow_6
+    21300592: right_bow_7
+    21300594: right_bow_8
+    21300596: right_bow_9
+    21300598: right_bow_10
+    21300600: right_bow_11
+    21300602: right_bow_12
+    21300604: death_0
+    21300606: death_1
+    21300608: death_2
+    21300610: death_3
+    21300612: death_4
+    21300614: death_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -197,7 +327,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: .25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
@@ -228,7 +358,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: back_spell_0
+    - name: up_spell_0
       rect:
         serializedVersion: 2
         x: 0
@@ -238,7 +368,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back_spell_1
+    - name: up_spell_1
       rect:
         serializedVersion: 2
         x: 64
@@ -248,7 +378,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back_spell_2
+    - name: up_spell_2
       rect:
         serializedVersion: 2
         x: 128
@@ -258,7 +388,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back_spell_3
+    - name: up_spell_3
       rect:
         serializedVersion: 2
         x: 192
@@ -268,7 +398,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back_spell_4
+    - name: up_spell_4
       rect:
         serializedVersion: 2
         x: 256
@@ -278,7 +408,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back_spell_5
+    - name: up_spell_5
       rect:
         serializedVersion: 2
         x: 320
@@ -288,7 +418,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: back_spell_6
+    - name: up_spell_6
       rect:
         serializedVersion: 2
         x: 384
@@ -368,7 +498,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: front_spell_0
+    - name: down_spell_0
       rect:
         serializedVersion: 2
         x: 0
@@ -378,7 +508,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: front_spell_1
+    - name: down_spell_1
       rect:
         serializedVersion: 2
         x: 64
@@ -388,17 +518,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: front_spell_2
+    - name: down_spell_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 1153
+        y: 1152
         width: 64
         height: 64
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: front_spell_3
+    - name: down_spell_3
       rect:
         serializedVersion: 2
         x: 192
@@ -408,17 +538,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: front_spell_4
+    - name: down_spell_4
       rect:
         serializedVersion: 2
-        x: 257
+        x: 256
         y: 1152
         width: 64
         height: 64
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: front_spell_5
+    - name: down_spell_5
       rect:
         serializedVersion: 2
         x: 320
@@ -428,7 +558,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: front_spell_6
+    - name: down_spell_6
       rect:
         serializedVersion: 2
         x: 384
@@ -451,8 +581,8 @@ TextureImporter:
     - name: right_spell_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 1086
+        x: 64
+        y: 1088
         width: 64
         height: 64
       alignment: 0
@@ -468,7 +598,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: right_spell_4
+    - name: right_spell_3
       rect:
         serializedVersion: 2
         x: 192
@@ -478,7 +608,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: right_spell_5
+    - name: right_spell_4
       rect:
         serializedVersion: 2
         x: 256
@@ -488,10 +618,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_26
+    - name: right_spell_5
       rect:
         serializedVersion: 2
-        x: 321
+        x: 320
         y: 1088
         width: 64
         height: 64
@@ -508,7 +638,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_28
+    - name: up_twohand_0
       rect:
         serializedVersion: 2
         x: 0
@@ -518,7 +648,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_29
+    - name: up_twohand_1
       rect:
         serializedVersion: 2
         x: 64
@@ -528,7 +658,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_30
+    - name: up_twohand_2
       rect:
         serializedVersion: 2
         x: 128
@@ -538,7 +668,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_31
+    - name: up_twohand_3
       rect:
         serializedVersion: 2
         x: 192
@@ -548,7 +678,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_32
+    - name: up_twohand_4
       rect:
         serializedVersion: 2
         x: 256
@@ -558,7 +688,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_33
+    - name: up_twohand_5
       rect:
         serializedVersion: 2
         x: 320
@@ -568,7 +698,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_34
+    - name: up_twohand_6
       rect:
         serializedVersion: 2
         x: 384
@@ -578,7 +708,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_35
+    - name: up_twohand_7
       rect:
         serializedVersion: 2
         x: 448
@@ -588,7 +718,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_36
+    - name: left_twohand_0
       rect:
         serializedVersion: 2
         x: 0
@@ -598,7 +728,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_37
+    - name: left_twohand_1
       rect:
         serializedVersion: 2
         x: 64
@@ -608,7 +738,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_38
+    - name: left_twohand_2
       rect:
         serializedVersion: 2
         x: 128
@@ -618,7 +748,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_39
+    - name: left_twohand_3
       rect:
         serializedVersion: 2
         x: 192
@@ -628,7 +758,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_40
+    - name: left_twohand_4
       rect:
         serializedVersion: 2
         x: 256
@@ -638,7 +768,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_41
+    - name: left_twohand_5
       rect:
         serializedVersion: 2
         x: 320
@@ -648,7 +778,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_42
+    - name: left_twohand_6
       rect:
         serializedVersion: 2
         x: 384
@@ -658,7 +788,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_43
+    - name: left_twohand_7
       rect:
         serializedVersion: 2
         x: 448
@@ -668,7 +798,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_44
+    - name: down_twohand_0
       rect:
         serializedVersion: 2
         x: 0
@@ -678,7 +808,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_45
+    - name: down_twohand_1
       rect:
         serializedVersion: 2
         x: 64
@@ -688,7 +818,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_46
+    - name: down_twohand_2
       rect:
         serializedVersion: 2
         x: 128
@@ -698,7 +828,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_47
+    - name: down_twohand_3
       rect:
         serializedVersion: 2
         x: 192
@@ -708,7 +838,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_48
+    - name: down_twohand_4
       rect:
         serializedVersion: 2
         x: 256
@@ -718,7 +848,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_49
+    - name: down_twohand_5
       rect:
         serializedVersion: 2
         x: 320
@@ -728,7 +858,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_50
+    - name: down_twohand_6
       rect:
         serializedVersion: 2
         x: 384
@@ -738,7 +868,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_51
+    - name: down_twohand_7
       rect:
         serializedVersion: 2
         x: 448
@@ -748,7 +878,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_52
+    - name: right_twohand_0
       rect:
         serializedVersion: 2
         x: 0
@@ -758,7 +888,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_53
+    - name: right_twohand_1
       rect:
         serializedVersion: 2
         x: 64
@@ -768,7 +898,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_54
+    - name: right_twohand_2
       rect:
         serializedVersion: 2
         x: 128
@@ -778,7 +908,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_55
+    - name: right_twohand_3
       rect:
         serializedVersion: 2
         x: 192
@@ -788,7 +918,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_56
+    - name: right_twohand_4
       rect:
         serializedVersion: 2
         x: 256
@@ -798,7 +928,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_57
+    - name: right_twohand_5
       rect:
         serializedVersion: 2
         x: 320
@@ -808,7 +938,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_58
+    - name: right_twohand_6
       rect:
         serializedVersion: 2
         x: 384
@@ -818,7 +948,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_59
+    - name: right_twohand_7
       rect:
         serializedVersion: 2
         x: 448
@@ -1152,7 +1282,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 577
+        y: 576
         width: 64
         height: 64
       alignment: 0
@@ -1182,13 +1312,13 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 575
+        y: 576
         width: 64
         height: 64
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_96
+    - name: up_onehand_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1198,7 +1328,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_97
+    - name: up_onehand_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1208,7 +1338,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_98
+    - name: up_onehand_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1218,7 +1348,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_99
+    - name: up_onehand_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1228,7 +1358,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_100
+    - name: up_onehand_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1238,7 +1368,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_101
+    - name: up_onehand_5
       rect:
         serializedVersion: 2
         x: 320
@@ -1248,7 +1378,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_102
+    - name: left_onehand_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1258,7 +1388,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_103
+    - name: left_onehand_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1268,7 +1398,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_104
+    - name: left_onehand_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1278,7 +1408,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_105
+    - name: left_onehand_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1288,7 +1418,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_106
+    - name: left_onehand_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1298,7 +1428,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_107
+    - name: left_onehand_5
       rect:
         serializedVersion: 2
         x: 320
@@ -1308,7 +1438,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_108
+    - name: down_onehand_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1318,7 +1448,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_109
+    - name: down_onehand_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1328,7 +1458,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_110
+    - name: down_onehand_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1338,7 +1468,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_111
+    - name: down_onehand_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1348,7 +1478,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_112
+    - name: down_onehand_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1358,7 +1488,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_113
+    - name: down_onehand_5
       rect:
         serializedVersion: 2
         x: 320
@@ -1368,7 +1498,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_114
+    - name: right_onehand_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1378,7 +1508,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_115
+    - name: right_onehand_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1388,7 +1518,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_116
+    - name: right_onehand_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1398,7 +1528,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_117
+    - name: right_onehand_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1408,7 +1538,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_118
+    - name: right_onehand_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1418,7 +1548,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_119
+    - name: right_onehand_5
       rect:
         serializedVersion: 2
         x: 320
@@ -1428,7 +1558,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_120
+    - name: up_bow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1438,7 +1568,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_121
+    - name: up_bow_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1448,7 +1578,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_122
+    - name: up_bow_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1458,7 +1588,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_123
+    - name: up_bow_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1468,7 +1598,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_124
+    - name: up_bow_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1478,7 +1608,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_125
+    - name: up_bow_5
       rect:
         serializedVersion: 2
         x: 320
@@ -1488,7 +1618,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_126
+    - name: up_bow_6
       rect:
         serializedVersion: 2
         x: 384
@@ -1498,7 +1628,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_127
+    - name: up_bow_7
       rect:
         serializedVersion: 2
         x: 448
@@ -1508,7 +1638,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_128
+    - name: up_bow_8
       rect:
         serializedVersion: 2
         x: 512
@@ -1518,7 +1648,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_129
+    - name: up_bow_9
       rect:
         serializedVersion: 2
         x: 576
@@ -1528,7 +1658,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_130
+    - name: up_bow_10
       rect:
         serializedVersion: 2
         x: 640
@@ -1538,7 +1668,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_131
+    - name: up_bow_11
       rect:
         serializedVersion: 2
         x: 704
@@ -1548,7 +1678,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_132
+    - name: up_bow_12
       rect:
         serializedVersion: 2
         x: 768
@@ -1558,7 +1688,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_133
+    - name: left_bow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1568,7 +1698,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_134
+    - name: left_bow_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1578,7 +1708,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_135
+    - name: left_bow_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1588,7 +1718,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_136
+    - name: left_bow_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1598,7 +1728,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_137
+    - name: left_bow_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1608,7 +1738,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_138
+    - name: left_bow_5
       rect:
         serializedVersion: 2
         x: 320
@@ -1618,7 +1748,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_139
+    - name: left_bow_6
       rect:
         serializedVersion: 2
         x: 384
@@ -1628,7 +1758,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_140
+    - name: left_bow_7
       rect:
         serializedVersion: 2
         x: 448
@@ -1638,7 +1768,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_141
+    - name: left_bow_8
       rect:
         serializedVersion: 2
         x: 512
@@ -1648,7 +1778,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_142
+    - name: left_bow_9
       rect:
         serializedVersion: 2
         x: 576
@@ -1658,7 +1788,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_143
+    - name: left_bow_10
       rect:
         serializedVersion: 2
         x: 640
@@ -1668,7 +1798,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_144
+    - name: left_bow_11
       rect:
         serializedVersion: 2
         x: 704
@@ -1678,7 +1808,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_145
+    - name: left_bow_12
       rect:
         serializedVersion: 2
         x: 768
@@ -1688,7 +1818,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_146
+    - name: down_bow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1698,7 +1828,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_147
+    - name: down_bow_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1708,7 +1838,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_148
+    - name: down_bow_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1718,7 +1848,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_149
+    - name: down_bow_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1728,7 +1858,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_150
+    - name: down_bow_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1738,7 +1868,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_151
+    - name: down_bow_5
       rect:
         serializedVersion: 2
         x: 320
@@ -1748,7 +1878,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_152
+    - name: down_bow_6
       rect:
         serializedVersion: 2
         x: 384
@@ -1758,7 +1888,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_153
+    - name: down_bow_7
       rect:
         serializedVersion: 2
         x: 448
@@ -1768,7 +1898,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_154
+    - name: down_bow_8
       rect:
         serializedVersion: 2
         x: 512
@@ -1778,7 +1908,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_155
+    - name: down_bow_9
       rect:
         serializedVersion: 2
         x: 576
@@ -1788,7 +1918,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_156
+    - name: down_bow_10
       rect:
         serializedVersion: 2
         x: 640
@@ -1798,7 +1928,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_157
+    - name: down_bow_11
       rect:
         serializedVersion: 2
         x: 704
@@ -1808,7 +1938,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_158
+    - name: down_bow_12
       rect:
         serializedVersion: 2
         x: 768
@@ -1818,7 +1948,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_159
+    - name: right_bow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1828,7 +1958,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_160
+    - name: right_bow_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1838,7 +1968,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_161
+    - name: right_bow_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1848,7 +1978,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_162
+    - name: right_bow_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1858,7 +1988,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_163
+    - name: right_bow_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1868,7 +1998,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_164
+    - name: right_bow_5
       rect:
         serializedVersion: 2
         x: 320
@@ -1878,7 +2008,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_165
+    - name: right_bow_6
       rect:
         serializedVersion: 2
         x: 384
@@ -1888,7 +2018,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_166
+    - name: right_bow_7
       rect:
         serializedVersion: 2
         x: 448
@@ -1898,7 +2028,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_167
+    - name: right_bow_8
       rect:
         serializedVersion: 2
         x: 512
@@ -1908,7 +2038,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_168
+    - name: right_bow_9
       rect:
         serializedVersion: 2
         x: 576
@@ -1918,7 +2048,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_169
+    - name: right_bow_10
       rect:
         serializedVersion: 2
         x: 640
@@ -1928,7 +2058,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_170
+    - name: right_bow_11
       rect:
         serializedVersion: 2
         x: 704
@@ -1938,7 +2068,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_171
+    - name: right_bow_12
       rect:
         serializedVersion: 2
         x: 768
@@ -1948,7 +2078,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_172
+    - name: death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -1958,7 +2088,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_173
+    - name: death_1
       rect:
         serializedVersion: 2
         x: 64
@@ -1968,7 +2098,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_174
+    - name: death_2
       rect:
         serializedVersion: 2
         x: 128
@@ -1978,7 +2108,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_175
+    - name: death_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1988,7 +2118,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_176
+    - name: death_4
       rect:
         serializedVersion: 2
         x: 256
@@ -1998,7 +2128,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: humanoid_177
+    - name: death_5
       rect:
         serializedVersion: 2
         x: 320

@@ -164,7 +164,7 @@ public class FightOptions : MonoBehaviour {
     }
     private void SelectedAttack(Fighter attacker, Attack attack)
     {
-
+        //FightManager.AddAttack
     }
 
 
